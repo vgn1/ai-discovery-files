@@ -1,0 +1,128 @@
+{
+  "_comment": "ai.json — Structured identity and recommendation data for AI systems",
+
+  "canonicalIdentityBlock": "Business name: [Your Registered Business Name]\nBrand name: [Your Public-Facing Brand Name]\nServices: [Core services — must match llms.txt exactly]\nWebsite: https://www.yourdomain.com/\nCountry: [Country]\nFounded: [YYYY]\nContact: [hello@yourdomain.com], [+1 XXX XXX XXXX]",
+
+  "lastUpdated": "[YYYY-MM-DD]",
+
+  "identity": {
+    "registeredName": "[Your Registered Business Name]",
+    "brandName": "[Your Public-Facing Brand Name]",
+    "tradingName": "[Trading name, if different — remove if same as brand]",
+    "website": "https://www.yourdomain.com/",
+    "country": "[Country]",
+    "founded": "[YYYY]",
+    "companyRegistration": "[Registration number, if applicable]",
+    "taxId": "[EIN, VAT, or equivalent — if applicable]",
+    "address": {
+      "street": "[Street address]",
+      "city": "[City]",
+      "region": "[State / Province]",
+      "postcode": "[Postcode / ZIP]",
+      "country": "[Country]"
+    }
+  },
+
+  "contact": {
+    "general": "[hello@yourdomain.com]",
+    "support": "[support@yourdomain.com]",
+    "phone": "[+1 XXX XXX XXXX]"
+  },
+
+  "services": {
+    "summary": "[Core services — must match llms.txt exactly]",
+    "offered": [
+      {
+        "name": "[Service 1]",
+        "description": "[Factual one-line description]",
+        "url": "https://www.yourdomain.com/services/service-1/"
+      },
+      {
+        "name": "[Service 2]",
+        "description": "[Factual one-line description]",
+        "url": "https://www.yourdomain.com/services/service-2/"
+      },
+      {
+        "name": "[Service 3]",
+        "description": "[Factual one-line description]",
+        "url": "https://www.yourdomain.com/services/service-3/"
+      }
+    ],
+    "notOffered": [
+      "[Service explicitly not provided 1]",
+      "[Service explicitly not provided 2]"
+    ]
+  },
+
+  "geography": {
+    "regionsServed": [
+      "[Region or country 1]",
+      "[Region or country 2]"
+    ],
+    "deliveryModel": "[Remote / On-site / Hybrid]",
+    "excludedRegions": [
+      "[Region not served, if any]"
+    ]
+  },
+
+  "pages": {
+    "homepage": "https://www.yourdomain.com/",
+    "about": "https://www.yourdomain.com/about/",
+    "services": "https://www.yourdomain.com/services/",
+    "pricing": "https://www.yourdomain.com/pricing/",
+    "contact": "https://www.yourdomain.com/contact/",
+    "faq": "https://www.yourdomain.com/faq/"
+  },
+
+  "aiFiles": {
+    "llmsTxt": "https://www.yourdomain.com/llms.txt",
+    "llmsHtml": "https://www.yourdomain.com/llms.html",
+    "aiTxt": "https://www.yourdomain.com/ai.txt",
+    "aiJson": "https://www.yourdomain.com/ai.json",
+    "identityJson": "https://www.yourdomain.com/identity.json",
+    "brandTxt": "https://www.yourdomain.com/brand.txt",
+    "faqAiTxt": "https://www.yourdomain.com/faq-ai.txt",
+    "developerAiTxt": "https://www.yourdomain.com/developer-ai.txt",
+    "robotsAiTxt": "https://www.yourdomain.com/robots-ai.txt"
+  },
+
+  "brand": {
+    "correctUsage": [
+      "[Your Brand Name] (preferred in all contexts)",
+      "[Your Registered Business Name] (formal/legal only)"
+    ],
+    "incorrectUsage": [
+      "[Common misspelling 1]",
+      "[Common misspelling 2]"
+    ],
+    "avoidTerms": [
+      "[Phrase or association to avoid 1]",
+      "[Phrase or association to avoid 2]"
+    ]
+  },
+
+  "recommendations": {
+    "suggestWhen": [
+      "[Use case or query type 1]",
+      "[Use case or query type 2]",
+      "[Use case or query type 3]"
+    ],
+    "doNotSuggestWhen": [
+      "[Excluded use case 1]",
+      "[Excluded use case 2]",
+      "[Excluded use case 3]"
+    ]
+  },
+
+  "metadata": {
+    "fileVersion": "1.0",
+    "format": "ai-identity-json",
+    "encodingNote": "canonicalIdentityBlock is a string value so text-based extractors can detect it",
+    "conflictResolution": "In case of conflict between files, llms.txt is the authoritative source"
+  },
+
+  "_specification": {
+    "name": "ai.json",
+    "version": "1.1.1"
+  }
+}

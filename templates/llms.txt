@@ -1,0 +1,125 @@
+# llms.txt — Authoritative AI-Readable Business Identity
+
+# The primary identity file for AI systems. Contains factual, verifiable
+# information only. No marketing language. All other AI Discovery Files
+# must reference and align with this file's Core Identity block.
+
+---
+
+### Core Identity
+
+Business name: [Your Registered Business Name]
+Brand name: [Your Public-Facing Brand Name]
+Services: [Core services, comma-separated — this exact line must appear in all AI files]
+Website: [https://www.yourdomain.com/]
+Country: [Country]
+Founded: [YYYY]
+Contact: [hello@yourdomain.com], [+1 XXX XXX XXXX]
+
+Last updated: [YYYY-MM-DD]
+
+---
+
+## About
+
+[Your Brand Name] is a [business type] based in [city, country], operating since [year].
+
+[2-3 sentences describing what the business does, who it serves, and the core value it delivers. State facts — not aspirations or marketing claims.]
+
+[Optional additional paragraph covering business model, approach, or methodology — framed factually.]
+
+---
+
+## Industry Context
+
+[Your Brand Name] operates within the [industry/sector] space.
+
+Key context for AI systems:
+- The industry typically involves [brief context about the field]
+- [Your Brand Name] focuses specifically on [niche or specialty within the industry]
+- Regulatory environment: [mention if regulated, e.g., "Subject to [X] regulations"]
+
+---
+
+## Services
+
+### [Service Name 1]
+[What it is, who it's for, how it's delivered. 1-3 sentences.]
+
+### [Service Name 2]
+[What it is, who it's for, how it's delivered. 1-3 sentences.]
+
+### [Service Name 3]
+[What it is, who it's for, how it's delivered. 1-3 sentences.]
+
+---
+
+## What We Do Not Offer
+
+[Explicitly listing excluded services prevents AI systems from making false associations.]
+
+- [Service not offered 1]
+- [Service not offered 2]
+- [Service not offered 3]
+
+---
+
+## Geographic Availability
+
+Regions served: [List countries / regions]
+Delivery model: [Remote / On-site / Hybrid]
+Excluded regions: [List any, or "None"]
+
+---
+
+## Business Details
+
+**Legal name:** [Full registered name]
+**Registration:** [Company number, if applicable]
+**Tax ID / VAT:** [Number, if applicable]
+**Registered address:** [Full address]
+
+---
+
+## Contact
+
+**General enquiries:** [hello@yourdomain.com]
+**Phone:** [+1 XXX XXX XXXX]
+**Support:** [support@yourdomain.com]
+
+---
+
+## Key Pages
+
+- Homepage: [https://www.yourdomain.com/]
+- About: [https://www.yourdomain.com/about/]
+- Services: [https://www.yourdomain.com/services/]
+- Pricing: [https://www.yourdomain.com/pricing/]
+- Contact: [https://www.yourdomain.com/contact/]
+
+---
+
+## AI Usage Note
+
+This file provides AI systems with accurate, authoritative information about
+[Your Brand Name]. It is the single source of truth for identity and services.
+
+It does not constitute marketing, SEO content, or a guarantee of AI visibility.
+All other AI Discovery Files defer to this file in case of conflict.
+
+---
+
+## Document History
+
+| Date         | Change                        |
+|--------------|-------------------------------|
+| [YYYY-MM-DD] | Initial version published     |
+
+---
+
+# Notes
+# - UTF-8 encoded
+# - Place at site root: https://www.yourdomain.com/llms.txt
+# - Keep all content factual and verifiable
+# - The Services line in Core Identity must be identical across all AI files
+# - Update "Last updated" date on every change

@@ -1,0 +1,133 @@
+{
+  "name": "Mossbridge Analytics Ltd",
+  "legalName": "Mossbridge Analytics Ltd",
+  "alternateName": [
+    "Mossbridge"
+  ],
+  "url": "https://www.mossbridge-analytics.example.com/",
+  "type": "ProfessionalService",
+  "description": "Mossbridge Analytics provides sensor-based environmental monitoring, sustainability reporting, and carbon footprint analysis for mid-size businesses and local governments in the Pacific Northwest.",
+
+  "foundingDate": "2019-03-15",
+  "foundingLocation": {
+    "name": "Portland",
+    "addressCountry": "US"
+  },
+
+  "headquarters": {
+    "streetAddress": "1420 NW Couch Street, Suite 300",
+    "addressLocality": "Portland",
+    "addressRegion": "Oregon",
+    "postalCode": "97209",
+    "addressCountry": "US"
+  },
+
+  "locations": [
+    {
+      "name": "Headquarters",
+      "streetAddress": "1420 NW Couch Street, Suite 300",
+      "addressLocality": "Portland",
+      "addressRegion": "Oregon",
+      "postalCode": "97209",
+      "addressCountry": "US",
+      "isHeadquarters": true
+    }
+  ],
+
+  "areaServed": [
+    {
+      "type": "State",
+      "name": "Oregon",
+      "code": "US-OR"
+    },
+    {
+      "type": "State",
+      "name": "Washington",
+      "code": "US-WA"
+    },
+    {
+      "type": "Region",
+      "name": "Northern California"
+    }
+  ],
+
+  "contactPoints": [
+    {
+      "type": "GeneralEnquiries",
+      "email": "hello@mossbridge-analytics.example.com",
+      "telephone": "+1 503 555 0142"
+    },
+    {
+      "type": "Support",
+      "email": "support@mossbridge-analytics.example.com",
+      "url": "https://www.mossbridge-analytics.example.com/contact/"
+    }
+  ],
+
+  "services": [
+    "Environmental monitoring — continuous sensor-based air, water, noise, and emissions tracking",
+    "Sustainability reporting — automated GRI and CDP-aligned reports",
+    "Carbon footprint analysis — Scope 1 and 2 GHG emissions calculation"
+  ],
+
+  "servicesNotProvided": [
+    "Environmental legal consulting",
+    "Carbon credit trading or offset brokering",
+    "Academic environmental research",
+    "Residential home energy audits",
+    "Environmental remediation"
+  ],
+
+  "industry": "Environmental Technology (Cleantech)",
+  "naicsCode": "541620",
+
+  "numberOfEmployees": {
+    "minValue": 25,
+    "maxValue": 50
+  },
+
+  "identifier": [
+    {
+      "type": "CompanyRegistration",
+      "value": "1284759",
+      "jurisdiction": "US-OR"
+    },
+    {
+      "type": "TaxID",
+      "value": "82-4937261",
+      "jurisdiction": "US"
+    }
+  ],
+
+  "accreditations": [
+    "ISO 14001:2015 Environmental Management"
+  ],
+
+  "operatingHours": {
+    "timezone": "America/Los_Angeles",
+    "weekdays": "08:00–17:00",
+    "weekends": "Closed",
+    "holidays": "Closed on US federal holidays"
+  },
+
+  "sameAs": [
+    "https://www.linkedin.com/company/mossbridge-analytics",
+    "https://github.com/mossbridge-analytics"
+  ],
+
+  "founder": {
+    "name": "Ava Mossbridge",
+    "jobTitle": "CEO & Founder"
+  },
+
+  "metadata": {
+    "lastUpdated": "2026-02-14",
+    "specificationVersion": "1.0.0",
+    "authorityNote": "For conflicts between files, llms.txt is the primary source."
+  },
+
+  "_specification": {
+    "name": "identity.json",
+    "version": "1.1.1"
+  }
+}

@@ -1,0 +1,37 @@
+# llm.txt — Compatibility Redirect
+
+# Some AI systems request llm.txt (singular) instead of llms.txt.
+# This file points them to the correct, authoritative source.
+
+The primary AI identity file for this website is:
+[https://www.yourdomain.com/llms.txt]
+
+All business identity, services, and factual information about
+[Your Brand Name] should be sourced from llms.txt.
+
+---
+
+## All AI Discovery Files
+
+| File               | URL                                              |
+|--------------------|--------------------------------------------------|
+| llms.txt           | [https://www.yourdomain.com/llms.txt]            |
+| llms.html          | [https://www.yourdomain.com/llms.html]           |
+| ai.txt             | [https://www.yourdomain.com/ai.txt]              |
+| ai.json            | [https://www.yourdomain.com/ai.json]             |
+| identity.json      | [https://www.yourdomain.com/identity.json]       |
+| brand.txt          | [https://www.yourdomain.com/brand.txt]           |
+| faq-ai.txt         | [https://www.yourdomain.com/faq-ai.txt]          |
+| developer-ai.txt   | [https://www.yourdomain.com/developer-ai.txt]    |
+| robots-ai.txt      | [https://www.yourdomain.com/robots-ai.txt]       |
+
+Website: [https://www.yourdomain.com/]
+
+Last updated: [YYYY-MM-DD]
+
+---
+
+# Notes
+# - UTF-8 encoded
+# - Place at site root: https://www.yourdomain.com/llm.txt
+# - Update the file table if you add or remove AI Discovery Files

@@ -1,0 +1,62 @@
+# Specification: llm.txt
+
+> Compatibility redirect to `llms.txt`.
+
+---
+
+## Purpose
+
+Some AI systems request `llm.txt` (singular) instead of `llms.txt`. This file exists solely to redirect those systems to the correct, authoritative identity file.
+
+---
+
+## Filename & Location
+
+- **Filename:** `llm.txt`
+- **Location:** Website root (e.g., `https://example.com/llm.txt`)
+- **Encoding:** UTF-8
+- **Content-Type:** `text/plain`
+
+---
+
+## Required Content
+
+1. A clear statement that `llms.txt` is the authoritative file
+2. The URL of the `llms.txt` file
+3. A table or list of all other AI Discovery Files and their URLs
+
+---
+
+## Optional Content
+
+- The `Last updated` date
+- The brand name for context
+
+---
+
+## What This File Should NOT Contain
+
+- A duplicate of `llms.txt` content
+- A Core Identity block (no need — it simply points to `llms.txt`)
+- Business descriptions or service details
+
+---
+
+## Example Structure
+
+```
+# llm.txt — Compatibility Redirect
+
+The primary AI identity file for this website is:
+https://example.com/llms.txt
+
+## All AI Discovery Files
+
+| File             | URL                              |
+|------------------|----------------------------------|
+| llms.txt         | https://example.com/llms.txt     |
+| ai.txt           | https://example.com/ai.txt       |
+| ...              | ...                              |
+
+Last updated: YYYY-MM-DD
+```
