@@ -5,9 +5,9 @@ on:
   push:
     branches: [main]
     paths:
-      - '*.txt'
-      - '*.json'
-      - '*.html'
+      - 'templates/*.txt'
+      - 'templates/*.json'
+      - 'templates/*.html'
 
 jobs:
   trigger-rebuild:
