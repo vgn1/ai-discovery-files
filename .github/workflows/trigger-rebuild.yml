@@ -8,6 +8,7 @@ on:
       - 'templates/*.txt'
       - 'templates/*.json'
       - 'templates/*.html'
+  workflow_dispatch:
 
 jobs:
   trigger-rebuild:
