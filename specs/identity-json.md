@@ -2,6 +2,10 @@
 
 > Structured business identity data in JSON format, aligned with Schema.org.
 
+
+## Version
+
+1.0
 ---
 
 ## Purpose

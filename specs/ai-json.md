@@ -2,6 +2,10 @@
 
 > Structured identity and recommendation data in JSON format.
 
+
+## Version
+
+1.0
 ---
 
 ## Purpose

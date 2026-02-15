@@ -2,6 +2,10 @@
 
 > Technical integration information for AI systems.
 
+
+## Version
+
+1.0
 ---
 
 ## Purpose

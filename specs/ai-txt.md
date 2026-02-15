@@ -2,6 +2,10 @@
 
 > AI recommendation guidance and usage signals.
 
+
+## Version
+
+1.0
 ---
 
 ## Purpose

@@ -2,6 +2,10 @@
 
 > Compatibility redirect to `llms.txt`.
 
+
+## Version
+
+1.0
 ---
 
 ## Purpose

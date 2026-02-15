@@ -2,6 +2,10 @@
 
 > Brand naming, voice, and representation rules for AI systems.
 
+
+## Version
+
+1.0
 ---
 
 ## Purpose

@@ -2,6 +2,10 @@
 
 > Human-readable HTML version of the business identity.
 
+
+## Version
+
+1.0
 ---
 
 ## Purpose

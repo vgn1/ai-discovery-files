@@ -2,6 +2,10 @@
 
 > Verified answers to common customer questions for AI systems.
 
+
+## Version
+
+1.0
 ---
 
 ## Purpose

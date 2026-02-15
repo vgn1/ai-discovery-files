@@ -2,6 +2,10 @@
 
 > Informational content usage and citation guidance for AI systems.
 
+
+## Version
+
+1.0
 ---
 
 ## Purpose

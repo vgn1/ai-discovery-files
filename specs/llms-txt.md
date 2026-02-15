@@ -2,6 +2,10 @@
 
 > Primary AI-readable business identity file.
 
+
+## Version
+
+1.0
 ---
 
 ## Purpose
