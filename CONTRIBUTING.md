@@ -31,6 +31,16 @@ Open a [GitHub Issue](../../issues) with:
 - What the problem is
 - What you think the fix should be (if you have a suggestion)
 
+### Proposing Spec Changes (RFCs)
+
+For spec-level changes, use the RFC process:
+
+1. Copy [rfcs/template.md](rfcs/template.md) to a new numbered file in `rfcs/` (for example `rfcs/0002-your-change.md`).
+2. Open a PR with the RFC and link the related issue.
+3. Discuss in PR comments until maintainers decide Accepted / Rejected / Superseded.
+
+Use normal PRs for typos, small docs edits, and non-spec maintenance changes.
+
 ### Submitting Changes
 
 1. Fork this repository

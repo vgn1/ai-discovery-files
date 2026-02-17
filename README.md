@@ -125,6 +125,8 @@ The [`examples/`](examples/) directory contains a fully filled-in set of AI Disc
 
 Contributions are welcome! See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines on how to help improve these templates.
 
+For spec-level changes (new file types, normative format updates, validator rule changes, deprecations), please use the RFC process in [rfcs/0001-rfc-process.md](rfcs/0001-rfc-process.md). Start from [rfcs/template.md](rfcs/template.md).
+
 ### Contributors
 
 <!-- Add your name here when you contribute! -->
