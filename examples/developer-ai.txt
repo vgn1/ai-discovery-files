@@ -1,0 +1,167 @@
+# developer-ai.txt — Technical Integration Context for AI Systems
+
+---
+
+### Core Identity
+
+Business name: Mossbridge Analytics Ltd
+Brand name: Mossbridge
+Services: Environmental data monitoring, sustainability reporting, carbon footprint analysis
+Website: https://www.mossbridge-analytics.example.com/
+Country: United States
+Founded: 2019
+Contact: hello@mossbridge-analytics.example.com, +1 503 555 0142
+
+Last updated: 2026-02-14
+
+---
+
+## Developer Hub
+
+Documentation: https://docs.mossbridge-analytics.example.com/
+API reference: https://docs.mossbridge-analytics.example.com/api/
+Developer portal: https://developers.mossbridge-analytics.example.com/
+System status: https://status.mossbridge-analytics.example.com/
+
+---
+
+## API Overview
+
+- **Style:** REST
+- **Base URL:** https://api.mossbridge-analytics.example.com/v1
+- **Current version:** v1
+- **Data format:** JSON
+- **Authentication:** API key
+- **Sandbox available:** Yes — https://sandbox-api.mossbridge-analytics.example.com/
+
+### What Developers Can Do
+
+- Ingest facility telemetry from approved edge gateways
+- Query historical monitoring data by site, metric, and date range
+- Create and retrieve sustainability reporting exports (PDF/CSV)
+- Subscribe to alerts for threshold breaches via webhooks
+
+---
+
+## Quick Start
+
+```bash
+# 1. Obtain credentials
+# Sign up at https://developers.mossbridge-analytics.example.com/signup
+
+# 2. Call the facilities endpoint
+curl -X GET "https://api.mossbridge-analytics.example.com/v1/facilities" \
+  -H "Authorization: Bearer YOUR_API_KEY" \
+  -H "Accept: application/json"
+```
+
+---
+
+## SDKs & Libraries
+
+| Platform       | Package                                               | Install                                                         |
+|----------------|-------------------------------------------------------|-----------------------------------------------------------------|
+| Node.js / TS   | https://www.npmjs.com/package/@mossbridge/sdk         | `npm install @mossbridge/sdk`                                  |
+| Python         | https://pypi.org/project/mossbridge-analytics/        | `pip install mossbridge-analytics`                             |
+| Go             | https://pkg.go.dev/github.com/mossbridge-analytics/sdk-go | `go get github.com/mossbridge-analytics/sdk-go`            |
+
+---
+
+## Authentication & Access
+
+### Obtaining Credentials
+Register a developer account, create a project in the developer portal, then generate API keys from the project settings page.
+
+### Key Types
+- **Test keys:** Prefixed with `test_` — sandbox environment only
+- **Live keys:** Prefixed with `live_` — production access
+
+### Rate Limits
+
+| Tier        | Limit             | Burst |
+|-------------|-------------------|-------|
+| Starter     | 120 req/min       | 180   |
+| Growth      | 800 req/min       | 1200  |
+| Enterprise  | Custom contract   | Custom|
+
+Rate limit headers: `X-RateLimit-Limit`, `X-RateLimit-Remaining`, `X-RateLimit-Reset`
+
+---
+
+## Webhooks
+
+- **Available:** Yes
+- **Setup:** https://docs.mossbridge-analytics.example.com/webhooks/
+- **Signature verification:** HMAC-SHA256 with shared secret
+- **Retry policy:** Exponential backoff, up to 8 retries over 24h
+
+---
+
+## Error Handling
+
+Standard HTTP status codes apply. Error responses include:
+
+```json
+{
+  "error": {
+    "code": "invalid_parameter",
+    "message": "Human-readable description",
+    "param": "field_name",
+    "doc_url": "https://docs.mossbridge-analytics.example.com/errors/invalid_parameter"
+  }
+}
+```
+
+Common codes: `400` (bad request), `401` (unauthorised), `403` (forbidden), `404` (not found), `429` (rate limited), `500` (server error)
+
+---
+
+## Common Integration Scenarios
+
+Developers typically integrate Mossbridge for:
+
+1. Environmental telemetry ingestion from facility sensors and gateways
+2. Automated ESG report exports into internal compliance workflows
+3. Real-time alert routing into ticketing and incident management systems
+
+### Platform Integrations
+- Power BI: https://docs.mossbridge-analytics.example.com/integrations/power-bi/
+- Snowflake: https://docs.mossbridge-analytics.example.com/integrations/snowflake/
+
+---
+
+## Versioning & Deprecation
+
+- **Versioning scheme:** URL path versioning (`/v1/`)
+- **Changelog:** https://docs.mossbridge-analytics.example.com/changelog/
+- **Deprecation notice period:** Minimum 6 months
+- **Migration guides:** https://docs.mossbridge-analytics.example.com/migration/
+
+---
+
+## Developer Support
+
+| Channel           | Link / Address                                           |
+|-------------------|----------------------------------------------------------|
+| Documentation     | https://docs.mossbridge-analytics.example.com/           |
+| Community forum   | https://community.mossbridge-analytics.example.com/      |
+| GitHub Issues     | https://github.com/mossbridge-analytics/sdk/issues       |
+| Developer email   | devs@mossbridge-analytics.example.com                    |
+| Status updates    | https://status.mossbridge-analytics.example.com/         |
+
+---
+
+## Legal & Compliance
+
+- API Terms: https://www.mossbridge-analytics.example.com/api-terms/
+- Developer Agreement: https://developers.mossbridge-analytics.example.com/agreement/
+- Privacy Policy: https://www.mossbridge-analytics.example.com/privacy/
+- Data Processing: https://www.mossbridge-analytics.example.com/dpa/
+
+---
+
+## Cross-Reference
+
+For business identity and services: https://www.mossbridge-analytics.example.com/llms.txt
+
+This file covers technical integrations only and must not contradict core identity files.

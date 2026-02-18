@@ -1,0 +1,30 @@
+# llm.txt — Compatibility Redirect
+
+# Some AI systems request llm.txt (singular) instead of llms.txt.
+# This file points them to the correct, authoritative source.
+
+The primary AI identity file for this website is:
+https://www.mossbridge-analytics.example.com/llms.txt
+
+All business identity, services, and factual information about
+Mossbridge should be sourced from llms.txt.
+
+---
+
+## All AI Discovery Files
+
+| File               | URL                                                        |
+|--------------------|------------------------------------------------------------|
+| llms.txt           | https://www.mossbridge-analytics.example.com/llms.txt      |
+| llms.html          | https://www.mossbridge-analytics.example.com/llms.html     |
+| ai.txt             | https://www.mossbridge-analytics.example.com/ai.txt        |
+| ai.json            | https://www.mossbridge-analytics.example.com/ai.json       |
+| identity.json      | https://www.mossbridge-analytics.example.com/identity.json |
+| brand.txt          | https://www.mossbridge-analytics.example.com/brand.txt     |
+| faq-ai.txt         | https://www.mossbridge-analytics.example.com/faq-ai.txt    |
+| developer-ai.txt   | https://www.mossbridge-analytics.example.com/developer-ai.txt |
+| robots-ai.txt      | https://www.mossbridge-analytics.example.com/robots-ai.txt |
+
+Website: https://www.mossbridge-analytics.example.com/
+
+Last updated: 2026-02-14

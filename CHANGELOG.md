@@ -9,6 +9,7 @@ The format is based on Keep a Changelog and this project uses Semantic Versionin
 ### Added
 
 - Added `CHANGELOG.md` to track repository-level updates.
+- Added missing Mossbridge example files in `examples/`: `llm.txt`, `llms.html`, `ai.json`, `developer-ai.txt`, and `robots-ai.txt`.
 
 ## [1.0.0] - 2026-02-16
 

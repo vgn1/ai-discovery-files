@@ -17,7 +17,12 @@ Use these as a reference when filling in your own templates. The example is enti
 | File | Description |
 |------|-------------|
 | `llms.txt` | Primary identity with full business details |
+| `llm.txt` | Compatibility redirect to `llms.txt` |
+| `llms.html` | Human-readable HTML version of the identity |
 | `identity.json` | Structured identity data |
 | `ai.txt` | Recommendation guidance |
+| `ai.json` | Structured identity + recommendation signals |
 | `brand.txt` | Naming and representation rules |
 | `faq-ai.txt` | Common customer questions |
+| `developer-ai.txt` | Technical API/SDK integration context |
+| `robots-ai.txt` | AI citation and content freshness guidance |
