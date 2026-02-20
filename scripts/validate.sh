@@ -81,7 +81,13 @@ section "Encoding"
 for f in "$DIR"/*.txt "$DIR"/*.json "$DIR"/*.html; do
   [ -f "$f" ] || continue
   basename=$(basename "$f")
-  if file "$f" | grep -qi "utf-8\|ascii\|unicode"; then
+  if python3 - "$f" > /dev/null 2>&1 <<'PY'
+import sys
+path = sys.argv[1]
+with open(path, "rb") as fh:
+    fh.read().decode("utf-8")
+PY
+  then
     pass "$basename is UTF-8 compatible"
   else
     warn "$basename may not be UTF-8 encoded"
@@ -97,6 +103,10 @@ if [ -f "$DIR/llms.txt" ]; then
   BUSINESS_NAME=$(grep -m1 "^Business name:" "$DIR/llms.txt" 2>/dev/null | sed 's/^Business name: *//' || true)
   BRAND_NAME=$(grep -m1 "^Brand name:" "$DIR/llms.txt" 2>/dev/null | sed 's/^Brand name: *//' || true)
   SERVICES=$(grep -m1 "^Services:" "$DIR/llms.txt" 2>/dev/null | sed 's/^Services: *//' || true)
+  WEBSITE=$(grep -m1 "^Website:" "$DIR/llms.txt" 2>/dev/null | sed 's/^Website: *//' || true)
+  COUNTRY=$(grep -m1 "^Country:" "$DIR/llms.txt" 2>/dev/null | sed 's/^Country: *//' || true)
+  FOUNDED=$(grep -m1 "^Founded:" "$DIR/llms.txt" 2>/dev/null | sed 's/^Founded: *//' || true)
+  CONTACT=$(grep -m1 "^Contact:" "$DIR/llms.txt" 2>/dev/null | sed 's/^Contact: *//' || true)
 
   if [ -n "$BUSINESS_NAME" ]; then
     pass "llms.txt has Business name: $BUSINESS_NAME"
@@ -116,6 +126,30 @@ if [ -f "$DIR/llms.txt" ]; then
     fail "llms.txt is missing 'Services:' field"
   fi
 
+  if [ -n "$WEBSITE" ]; then
+    pass "llms.txt has Website field"
+  else
+    fail "llms.txt is missing 'Website:' field"
+  fi
+
+  if [ -n "$COUNTRY" ]; then
+    pass "llms.txt has Country field"
+  else
+    fail "llms.txt is missing 'Country:' field"
+  fi
+
+  if [ -n "$FOUNDED" ]; then
+    pass "llms.txt has Founded field"
+  else
+    fail "llms.txt is missing 'Founded:' field"
+  fi
+
+  if [ -n "$CONTACT" ]; then
+    pass "llms.txt has Contact field"
+  else
+    fail "llms.txt is missing 'Contact:' field"
+  fi
+
   # Check consistency across other txt files
   IDENTITY_FILES=("ai.txt" "developer-ai.txt" "faq-ai.txt" "robots-ai.txt")
 
@@ -125,25 +159,153 @@ if [ -f "$DIR/llms.txt" ]; then
     file_bname=$(grep -m1 "^Business name:" "$DIR/$f" 2>/dev/null | sed 's/^Business name: *//' || true)
     file_brand=$(grep -m1 "^Brand name:" "$DIR/$f" 2>/dev/null | sed 's/^Brand name: *//' || true)
     file_services=$(grep -m1 "^Services:" "$DIR/$f" 2>/dev/null | sed 's/^Services: *//' || true)
+    file_website=$(grep -m1 "^Website:" "$DIR/$f" 2>/dev/null | sed 's/^Website: *//' || true)
+    file_country=$(grep -m1 "^Country:" "$DIR/$f" 2>/dev/null | sed 's/^Country: *//' || true)
+    file_founded=$(grep -m1 "^Founded:" "$DIR/$f" 2>/dev/null | sed 's/^Founded: *//' || true)
+    file_contact=$(grep -m1 "^Contact:" "$DIR/$f" 2>/dev/null | sed 's/^Contact: *//' || true)
 
-    if [ -n "$BUSINESS_NAME" ] && [ "$file_bname" = "$BUSINESS_NAME" ]; then
+    if [ "$file_bname" = "$BUSINESS_NAME" ]; then
       pass "$f Business name matches llms.txt"
-    elif [ -n "$file_bname" ]; then
+    else
       fail "$f Business name differs from llms.txt"
     fi
 
-    if [ -n "$BRAND_NAME" ] && [ "$file_brand" = "$BRAND_NAME" ]; then
+    if [ "$file_brand" = "$BRAND_NAME" ]; then
       pass "$f Brand name matches llms.txt"
-    elif [ -n "$file_brand" ]; then
+    else
       fail "$f Brand name differs from llms.txt"
     fi
 
-    if [ -n "$SERVICES" ] && [ "$file_services" = "$SERVICES" ]; then
+    if [ "$file_services" = "$SERVICES" ]; then
       pass "$f Services matches llms.txt"
-    elif [ -n "$file_services" ]; then
+    else
       fail "$f Services differs from llms.txt"
     fi
+
+    if [ "$file_website" = "$WEBSITE" ]; then
+      pass "$f Website matches llms.txt"
+    else
+      fail "$f Website differs from llms.txt"
+    fi
+
+    if [ "$file_country" = "$COUNTRY" ]; then
+      pass "$f Country matches llms.txt"
+    else
+      fail "$f Country differs from llms.txt"
+    fi
+
+    if [ "$file_founded" = "$FOUNDED" ]; then
+      pass "$f Founded matches llms.txt"
+    else
+      fail "$f Founded differs from llms.txt"
+    fi
+
+    if [ "$file_contact" = "$CONTACT" ]; then
+      pass "$f Contact matches llms.txt"
+    else
+      fail "$f Contact differs from llms.txt"
+    fi
   done
+
+  # brand.txt includes naming identity fields and should align with llms.txt
+  if [ -f "$DIR/brand.txt" ]; then
+    brand_registered=$(grep -m1 "^\*\*Registered name:\*\*" "$DIR/brand.txt" 2>/dev/null | sed 's/^\*\*Registered name:\*\* *//' || true)
+    brand_public=$(grep -m1 "^\*\*Brand name:\*\*" "$DIR/brand.txt" 2>/dev/null | sed 's/^\*\*Brand name:\*\* *//' || true)
+
+    if [ "$brand_registered" = "$BUSINESS_NAME" ]; then
+      pass "brand.txt Registered name matches llms.txt Business name"
+    else
+      fail "brand.txt Registered name differs from llms.txt Business name"
+    fi
+
+    if [ "$brand_public" = "$BRAND_NAME" ]; then
+      pass "brand.txt Brand name matches llms.txt Brand name"
+    else
+      fail "brand.txt Brand name differs from llms.txt Brand name"
+    fi
+  fi
+
+  # ai.json canonicalIdentityBlock should align with llms.txt identity fields
+  if [ -f "$DIR/ai.json" ]; then
+    ai_fields_file=$(mktemp)
+    python3 - "$DIR/ai.json" > "$ai_fields_file" <<'PY'
+import json
+import sys
+
+keys = ["Business name", "Brand name", "Services", "Website", "Country", "Founded", "Contact"]
+try:
+    with open(sys.argv[1], encoding="utf-8") as f:
+        data = json.load(f)
+except Exception:
+    for _ in keys:
+        print("")
+    raise SystemExit(0)
+
+block = data.get("canonicalIdentityBlock", "")
+if not isinstance(block, str):
+    block = ""
+lines = block.splitlines()
+
+for key in keys:
+    prefix = f"{key}: "
+    value = ""
+    for line in lines:
+        if line.startswith(prefix):
+            value = line[len(prefix):]
+            break
+    print(value)
+PY
+    ai_bname=$(sed -n '1p' "$ai_fields_file")
+    ai_brand=$(sed -n '2p' "$ai_fields_file")
+    ai_services=$(sed -n '3p' "$ai_fields_file")
+    ai_website=$(sed -n '4p' "$ai_fields_file")
+    ai_country=$(sed -n '5p' "$ai_fields_file")
+    ai_founded=$(sed -n '6p' "$ai_fields_file")
+    ai_contact=$(sed -n '7p' "$ai_fields_file")
+    rm -f "$ai_fields_file"
+
+    if [ "$ai_bname" = "$BUSINESS_NAME" ]; then
+      pass "ai.json canonicalIdentityBlock Business name matches llms.txt"
+    else
+      fail "ai.json canonicalIdentityBlock Business name differs from llms.txt"
+    fi
+
+    if [ "$ai_brand" = "$BRAND_NAME" ]; then
+      pass "ai.json canonicalIdentityBlock Brand name matches llms.txt"
+    else
+      fail "ai.json canonicalIdentityBlock Brand name differs from llms.txt"
+    fi
+
+    if [ "$ai_services" = "$SERVICES" ]; then
+      pass "ai.json canonicalIdentityBlock Services matches llms.txt"
+    else
+      fail "ai.json canonicalIdentityBlock Services differs from llms.txt"
+    fi
+
+    if [ "$ai_website" = "$WEBSITE" ]; then
+      pass "ai.json canonicalIdentityBlock Website matches llms.txt"
+    else
+      fail "ai.json canonicalIdentityBlock Website differs from llms.txt"
+    fi
+
+    if [ "$ai_country" = "$COUNTRY" ]; then
+      pass "ai.json canonicalIdentityBlock Country matches llms.txt"
+    else
+      fail "ai.json canonicalIdentityBlock Country differs from llms.txt"
+    fi
+
+    if [ "$ai_founded" = "$FOUNDED" ]; then
+      pass "ai.json canonicalIdentityBlock Founded matches llms.txt"
+    else
+      fail "ai.json canonicalIdentityBlock Founded differs from llms.txt"
+    fi
+
+    if [ "$ai_contact" = "$CONTACT" ]; then
+      pass "ai.json canonicalIdentityBlock Contact matches llms.txt"
+    else
+      fail "ai.json canonicalIdentityBlock Contact differs from llms.txt"
+    fi
+  fi
 else
   fail "llms.txt not found — cannot check identity consistency"
 fi
@@ -152,17 +314,33 @@ fi
 
 section "Placeholder Check"
 
-PLACEHOLDER_COUNT=0
-for f in "$DIR"/*.txt "$DIR"/*.json "$DIR"/*.html; do
-  [ -f "$f" ] || continue
-  count=$(grep -c '\[.*\]' "$f" 2>/dev/null || true)
-  if [ "$count" -gt 0 ]; then
-    PLACEHOLDER_COUNT=$((PLACEHOLDER_COUNT + count))
-  fi
-done
+PLACEHOLDER_COUNT=$(python3 - "$DIR" <<'PY'
+import pathlib
+import re
+import sys
+
+root = pathlib.Path(sys.argv[1])
+count = 0
+
+for pattern in ("*.txt", "*.json", "*.html"):
+    for path in root.glob(pattern):
+        text = path.read_text(encoding="utf-8", errors="ignore")
+        for match in re.finditer(r"\[([^\[\]\n]+)\]", text):
+            # Ignore Markdown link/image labels: [label](url)
+            if match.end() < len(text) and text[match.end()] == "(":
+                continue
+            count += 1
+
+print(count)
+PY
+)
 
 if [ "$PLACEHOLDER_COUNT" -gt 0 ]; then
-  warn "$PLACEHOLDER_COUNT placeholder(s) found — replace [brackets] with real values before deploying"
+  if [ "$(basename "$DIR")" = "examples" ]; then
+    fail "$PLACEHOLDER_COUNT placeholder(s) found in examples — examples should be fully filled and placeholder-free"
+  else
+    warn "$PLACEHOLDER_COUNT placeholder(s) found — replace [brackets] with real values before deploying"
+  fi
 else
   pass "No placeholders detected"
 fi

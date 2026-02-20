@@ -12,6 +12,9 @@
 
 Some AI systems request `llm.txt` (singular) instead of `llms.txt`. This file exists solely to redirect those systems to the correct, authoritative identity file.
 
+The target `llms.txt` should conform to the canonical upstream format in:
+- https://github.com/AnswerDotAI/llms-txt/blob/main/nbs/index.qmd#format
+
 ---
 
 ## Filename & Location
@@ -28,6 +31,7 @@ Some AI systems request `llm.txt` (singular) instead of `llms.txt`. This file ex
 1. A clear statement that `llms.txt` is the authoritative file
 2. The URL of the `llms.txt` file
 3. A table or list of all other AI Discovery Files and their URLs
+4. A note that `llms.txt` follows the canonical upstream `llms.txt` format (link recommended)
 
 ---
 
@@ -53,6 +57,9 @@ Some AI systems request `llm.txt` (singular) instead of `llms.txt`. This file ex
 
 The primary AI identity file for this website is:
 https://example.com/llms.txt
+
+Canonical llms.txt format reference:
+https://github.com/AnswerDotAI/llms-txt/blob/main/nbs/index.qmd#format
 
 ## All AI Discovery Files
 

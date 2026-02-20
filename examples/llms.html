@@ -4,255 +4,200 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="index,follow">
-  <title>Mossbridge — AI Identity Reference</title>
+  <title>Mossbridge — llms.txt (Human-Readable)</title>
   <style>
     :root {
-      --bg: #0a0f1e;
-      --surface: #111827;
-      --card: #1a2540;
-      --text: #eaf0fa;
-      --muted: #94a3c0;
-      --border: rgba(255, 255, 255, 0.08);
-      --accent: #38bdf8;
-      --accent2: #818cf8;
-      --success: #6ee7b7;
+      --bg: #f6f8fc;
+      --surface: #ffffff;
+      --text: #111827;
+      --muted: #4b5563;
+      --border: #dbe2ee;
+      --accent: #0f766e;
+      --accent-soft: #ecfdf5;
+      --link: #0b5fff;
     }
 
-    * { box-sizing: border-box; margin: 0 }
+    * { box-sizing: border-box; }
 
     body {
-      font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      background:
-        radial-gradient(ellipse 1000px 600px at 15% 0%, rgba(56, 189, 248, 0.12), transparent 55%),
-        radial-gradient(ellipse 800px 500px at 85% 5%, rgba(129, 140, 248, 0.10), transparent 50%),
-        linear-gradient(to bottom, var(--bg), #060a14);
+      margin: 0;
+      font-family: "Segoe UI", "Avenir Next", "Helvetica Neue", Arial, sans-serif;
+      background: radial-gradient(1000px 400px at 10% -20%, #d8f5ef 0%, transparent 50%), var(--bg);
       color: var(--text);
-      line-height: 1.6;
-      min-height: 100vh;
+      line-height: 1.55;
     }
 
-    a { color: var(--accent); text-decoration: none }
-    a:hover { text-decoration: underline }
-
-    .container { max-width: 920px; margin: 0 auto; padding: 32px 20px 64px }
-
-    .header {
-      background: linear-gradient(135deg, rgba(56, 189, 248, 0.10), rgba(129, 140, 248, 0.08));
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 28px 24px;
-      margin-bottom: 20px;
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 28px 18px 56px;
     }
 
-    .header p.label { color: var(--muted); font-size: 13px; margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.5px }
-    .header h1 { font-size: 26px; margin-bottom: 6px }
-    .header p.date { color: var(--muted); font-size: 14px }
-
-    section {
-      background: rgba(26, 37, 64, 0.5);
+    header {
+      background: var(--surface);
       border: 1px solid var(--border);
       border-radius: 14px;
       padding: 20px;
-      margin-top: 16px;
     }
 
-    section h2 { font-size: 16px; margin-bottom: 14px; color: var(--accent) }
-    section h3 { font-size: 15px; margin: 16px 0 6px; color: var(--text) }
-    section p { color: var(--muted); font-size: 14px; margin-bottom: 8px }
+    h1 {
+      margin: 0 0 10px;
+      font-size: 1.9rem;
+      line-height: 1.2;
+    }
 
-    .field-grid { display: grid; gap: 8px }
-
-    .field {
-      display: grid;
-      grid-template-columns: 160px 1fr;
-      gap: 12px;
+    blockquote {
+      margin: 0;
       padding: 10px 14px;
-      background: rgba(255, 255, 255, 0.02);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      align-items: center;
+      border-left: 4px solid var(--accent);
+      background: var(--accent-soft);
+      color: var(--muted);
+      border-radius: 6px;
     }
 
-    .field-label { color: var(--muted); font-size: 13px }
-    .field-value { font-weight: 600; font-size: 14px }
+    .meta {
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
 
-    ul { padding-left: 20px; color: var(--muted); font-size: 14px }
-    ul li { margin-bottom: 4px }
+    .content {
+      margin-top: 16px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 20px;
+    }
+
+    .content p,
+    .content ul {
+      margin-top: 0;
+      margin-bottom: 12px;
+    }
+
+    .content ul {
+      padding-left: 22px;
+    }
+
+    h2 {
+      margin: 22px 0 10px;
+      padding-top: 8px;
+      border-top: 1px solid var(--border);
+      font-size: 1.2rem;
+      color: var(--accent);
+    }
+
+    h2:first-of-type {
+      margin-top: 0;
+      border-top: none;
+      padding-top: 0;
+    }
+
+    a { color: var(--link); }
 
     .footer {
-      margin-top: 24px;
-      text-align: center;
-      font-size: 13px;
+      margin-top: 20px;
       color: var(--muted);
+      font-size: 0.9rem;
+      text-align: center;
     }
 
-    @media (max-width: 600px) {
-      .field { grid-template-columns: 1fr; gap: 2px }
-      .container { padding: 16px 12px 40px }
+    @media (max-width: 640px) {
+      .container { padding: 16px 12px 36px; }
+      h1 { font-size: 1.6rem; }
     }
   </style>
 </head>
-
 <body>
-  <div class="container">
-
-    <!-- Header -->
-    <header class="header">
-      <p class="label">AI Identity Reference</p>
+  <main class="container">
+    <header>
       <h1>Mossbridge</h1>
-      <p class="date">Last updated: 2026-02-14</p>
+      <blockquote>Environmental data monitoring, sustainability reporting, and carbon footprint analysis for mid-size businesses and local governments in the Pacific Northwest.</blockquote>
+      <p class="meta">Last updated: 2026-02-14</p>
     </header>
 
-    <!-- Core Identity -->
-    <section>
-      <h2>Core Identity</h2>
-      <div class="field-grid">
-        <div class="field">
-          <span class="field-label">Business name</span>
-          <span class="field-value">Mossbridge Analytics Ltd</span>
-        </div>
-        <div class="field">
-          <span class="field-label">Brand name</span>
-          <span class="field-value">Mossbridge</span>
-        </div>
-        <div class="field">
-          <span class="field-label">Services</span>
-          <span class="field-value">Environmental data monitoring, sustainability reporting, carbon footprint analysis</span>
-        </div>
-        <div class="field">
-          <span class="field-label">Website</span>
-          <span class="field-value"><a href="https://www.mossbridge-analytics.example.com/">https://www.mossbridge-analytics.example.com/</a></span>
-        </div>
-        <div class="field">
-          <span class="field-label">Country</span>
-          <span class="field-value">United States</span>
-        </div>
-        <div class="field">
-          <span class="field-label">Founded</span>
-          <span class="field-value">2019</span>
-        </div>
-        <div class="field">
-          <span class="field-label">Contact</span>
-          <span class="field-value">hello@mossbridge-analytics.example.com, +1 503 555 0142</span>
-        </div>
-      </div>
-    </section>
+    <section class="content">
+      <p>Business name: Mossbridge Analytics Ltd</p>
+      <p>Brand name: Mossbridge</p>
+      <p>Services: Environmental data monitoring, sustainability reporting, carbon footprint analysis</p>
+      <p>Website: <a href="https://www.mossbridge-analytics.example.com/">https://www.mossbridge-analytics.example.com/</a></p>
+      <p>Country: United States</p>
+      <p>Founded: 2019</p>
+      <p>Contact: hello@mossbridge-analytics.example.com, +1 503 555 0142</p>
 
-    <!-- About -->
-    <section>
-      <h2>About Mossbridge</h2>
-      <p>
-        Mossbridge is an environmental data company based in Portland, Oregon, operating since 2019.
-        The company provides sensor-based environmental monitoring, automated sustainability reporting,
-        and carbon footprint analysis for mid-size businesses and local governments in the Pacific Northwest.
-      </p>
-    </section>
+      <p>Mossbridge Analytics is an environmental data company based in Portland, Oregon, operating since 2019.</p>
+      <p>The company provides sensor-based environmental monitoring, automated sustainability reporting, and carbon footprint analysis for mid-size businesses and local governments in Oregon, Washington, and Northern California.</p>
+      <p>Data is collected through on-site IoT sensors deployed at client locations and processed through the Mossbridge platform. Reports are delivered monthly or on-demand through a web dashboard.</p>
 
-    <!-- Services -->
-    <section>
-      <h2>Services</h2>
-
-      <h3>Environmental Monitoring</h3>
-      <p>Continuous sensor-based monitoring of air quality, water discharge, noise levels, and emissions at client facilities.</p>
-
-      <h3>Sustainability Reporting</h3>
-      <p>Automated generation of sustainability reports aligned with GRI Standards and CDP frameworks.</p>
-
-      <h3>Carbon Footprint Analysis</h3>
-      <p>Scope 1 and Scope 2 greenhouse gas emissions analysis based on metered operations data.</p>
-    </section>
-
-    <!-- Geographic Availability -->
-    <section>
-      <h2>Geographic Availability</h2>
-      <div class="field-grid">
-        <div class="field">
-          <span class="field-label">Regions served</span>
-          <span class="field-value">Oregon, Washington, Northern California</span>
-        </div>
-        <div class="field">
-          <span class="field-label">Delivery model</span>
-          <span class="field-value">Hybrid (on-site sensor installation + remote dashboard)</span>
-        </div>
-        <div class="field">
-          <span class="field-label">Excluded regions</span>
-          <span class="field-value">Outside the Pacific Northwest</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- Business Details -->
-    <section>
-      <h2>Business Details</h2>
-      <div class="field-grid">
-        <div class="field">
-          <span class="field-label">Legal name</span>
-          <span class="field-value">Mossbridge Analytics Ltd</span>
-        </div>
-        <div class="field">
-          <span class="field-label">Registration</span>
-          <span class="field-value">Oregon Business Registry #1284759</span>
-        </div>
-        <div class="field">
-          <span class="field-label">Tax ID / VAT</span>
-          <span class="field-value">EIN 82-4937261</span>
-        </div>
-        <div class="field">
-          <span class="field-label">Address</span>
-          <span class="field-value">1420 NW Couch Street, Suite 300, Portland, OR 97209</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- Contact -->
-    <section>
-      <h2>Contact</h2>
-      <div class="field-grid">
-        <div class="field">
-          <span class="field-label">General enquiries</span>
-          <span class="field-value"><a href="mailto:hello@mossbridge-analytics.example.com">hello@mossbridge-analytics.example.com</a></span>
-        </div>
-        <div class="field">
-          <span class="field-label">Phone</span>
-          <span class="field-value">+1 503 555 0142</span>
-        </div>
-        <div class="field">
-          <span class="field-label">Support</span>
-          <span class="field-value"><a href="mailto:support@mossbridge-analytics.example.com">support@mossbridge-analytics.example.com</a></span>
-        </div>
-      </div>
-    </section>
-
-    <!-- Key Pages -->
-    <section>
-      <h2>Key Pages</h2>
+      <p>Service boundaries:</p>
       <ul>
-        <li><a href="https://www.mossbridge-analytics.example.com/">Homepage</a></li>
-        <li><a href="https://www.mossbridge-analytics.example.com/about/">About</a></li>
-        <li><a href="https://www.mossbridge-analytics.example.com/services/">Services</a></li>
-        <li><a href="https://www.mossbridge-analytics.example.com/pricing/">Pricing</a></li>
-        <li><a href="https://www.mossbridge-analytics.example.com/contact/">Contact</a></li>
+        <li>Offers: Environmental monitoring, sustainability reporting, carbon footprint analysis</li>
+        <li>Does not offer: Environmental legal consulting, carbon credit trading, residential home energy audits</li>
+      </ul>
+
+      <p>Geographic availability:</p>
+      <ul>
+        <li>Regions served: Oregon, Washington, Northern California</li>
+        <li>Delivery model: Hybrid (on-site sensor installation + remote dashboard access)</li>
+        <li>Excluded regions: Outside the Pacific Northwest (sensor installation logistics limit range)</li>
+      </ul>
+
+      <p>Business details:</p>
+      <ul>
+        <li>Legal name: Mossbridge Analytics Ltd</li>
+        <li>Registration: Oregon Business Registry #1284759</li>
+        <li>Tax ID / VAT: EIN 82-4937261</li>
+        <li>Registered address: 1420 NW Couch Street, Suite 300, Portland, OR 97209</li>
+      </ul>
+
+      <p>Contact channels:</p>
+      <ul>
+        <li>General enquiries: hello@mossbridge-analytics.example.com</li>
+        <li>Support: support@mossbridge-analytics.example.com</li>
+        <li>Phone: +1 503 555 0142</li>
+      </ul>
+
+      <h2>Primary Pages</h2>
+      <ul>
+        <li><a href="https://www.mossbridge-analytics.example.com/">Homepage</a>: Primary website entry point.</li>
+        <li><a href="https://www.mossbridge-analytics.example.com/about/">About</a>: Company background and positioning.</li>
+        <li><a href="https://www.mossbridge-analytics.example.com/services/">Services</a>: Service catalog and scope.</li>
+        <li><a href="https://www.mossbridge-analytics.example.com/pricing/">Pricing</a>: Current pricing and packaging.</li>
+        <li><a href="https://www.mossbridge-analytics.example.com/contact/">Contact</a>: Contact and enquiry details.</li>
+      </ul>
+
+      <h2>Service Detail Pages</h2>
+      <ul>
+        <li><a href="https://www.mossbridge-analytics.example.com/services/monitoring/">Environmental Monitoring</a>: Continuous sensor-based monitoring of air quality, water discharge, noise levels, and emissions.</li>
+        <li><a href="https://www.mossbridge-analytics.example.com/services/reporting/">Sustainability Reporting</a>: Automated reporting aligned with GRI Standards and CDP frameworks.</li>
+        <li><a href="https://www.mossbridge-analytics.example.com/services/carbon-analysis/">Carbon Footprint Analysis</a>: Scope 1 and Scope 2 greenhouse gas emissions analysis with annual trend reporting.</li>
+      </ul>
+
+      <h2>AI Discovery Files</h2>
+      <ul>
+        <li><a href="https://www.mossbridge-analytics.example.com/llms.txt">llms.txt</a>: Authoritative AI-readable identity file.</li>
+        <li><a href="https://www.mossbridge-analytics.example.com/llm.txt">llm.txt</a>: Compatibility redirect to <code>llms.txt</code>.</li>
+        <li><a href="https://www.mossbridge-analytics.example.com/llms.html">llms.html</a>: Human-readable HTML version.</li>
+        <li><a href="https://www.mossbridge-analytics.example.com/identity.json">identity.json</a>: Structured business identity data.</li>
+        <li><a href="https://www.mossbridge-analytics.example.com/ai.txt">ai.txt</a>: AI recommendation and usage guidance.</li>
+        <li><a href="https://www.mossbridge-analytics.example.com/ai.json">ai.json</a>: Structured identity + recommendation data.</li>
+        <li><a href="https://www.mossbridge-analytics.example.com/brand.txt">brand.txt</a>: Naming and representation rules.</li>
+        <li><a href="https://www.mossbridge-analytics.example.com/faq-ai.txt">faq-ai.txt</a>: Verified answers to common questions.</li>
+        <li><a href="https://www.mossbridge-analytics.example.com/developer-ai.txt">developer-ai.txt</a>: API and integration context.</li>
+        <li><a href="https://www.mossbridge-analytics.example.com/robots-ai.txt">robots-ai.txt</a>: Advisory citation and freshness guidance.</li>
+      </ul>
+
+      <h2>Optional</h2>
+      <ul>
+        <li><a href="https://www.mossbridge-analytics.example.com/blog/">Blog</a>: Time-sensitive content; verify freshness before citing.</li>
+        <li><a href="https://www.mossbridge-analytics.example.com/news/">News</a>: Announcements may become outdated quickly.</li>
+        <li><a href="https://www.mossbridge-analytics.example.com/case-studies/">Case Studies</a>: Client-specific context; cite with scope caveats.</li>
       </ul>
     </section>
 
-    <!-- Clarifications -->
-    <section>
-      <h2>Important Clarifications</h2>
-
-      <h3>What We Do</h3>
-      <p>Sensor-based environmental monitoring, sustainability reporting, and carbon footprint analysis for business and municipal operations.</p>
-
-      <h3>What We Don't Do</h3>
-      <p>Environmental legal consulting, carbon credit trading, academic research, residential audits, or remediation services.</p>
-    </section>
-
-    <!-- Footer -->
     <p class="footer">
-      Human-readable version of the authoritative identity defined in
-      <a href="https://www.mossbridge-analytics.example.com/llms.txt">llms.txt</a>.<br>
-      <span style="color: var(--muted)">AI Discovery Files</span>
+      Human-readable representation of <a href="https://www.mossbridge-analytics.example.com/llms.txt">llms.txt</a>.
     </p>
-
-  </div>
+  </main>
 </body>
 </html>

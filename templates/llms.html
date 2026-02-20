@@ -4,266 +4,211 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="index,follow">
-  <title>[Your Brand Name] — AI Identity Reference</title>
+  <title>[Your Brand Name] — llms.txt (Human-Readable)</title>
   <style>
     :root {
-      --bg: #0a0f1e;
-      --surface: #111827;
-      --card: #1a2540;
-      --text: #eaf0fa;
-      --muted: #94a3c0;
-      --border: rgba(255, 255, 255, 0.08);
-      --accent: #38bdf8;
-      --accent2: #818cf8;
-      --success: #6ee7b7;
+      --bg: #f6f8fc;
+      --surface: #ffffff;
+      --text: #111827;
+      --muted: #4b5563;
+      --border: #dbe2ee;
+      --accent: #0f766e;
+      --accent-soft: #ecfdf5;
+      --link: #0b5fff;
     }
 
-    * { box-sizing: border-box; margin: 0 }
+    * { box-sizing: border-box; }
 
     body {
-      font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      background:
-        radial-gradient(ellipse 1000px 600px at 15% 0%, rgba(56, 189, 248, 0.12), transparent 55%),
-        radial-gradient(ellipse 800px 500px at 85% 5%, rgba(129, 140, 248, 0.10), transparent 50%),
-        linear-gradient(to bottom, var(--bg), #060a14);
+      margin: 0;
+      font-family: "Segoe UI", "Avenir Next", "Helvetica Neue", Arial, sans-serif;
+      background: radial-gradient(1000px 400px at 10% -20%, #d8f5ef 0%, transparent 50%), var(--bg);
       color: var(--text);
-      line-height: 1.6;
-      min-height: 100vh;
+      line-height: 1.55;
     }
 
-    a { color: var(--accent); text-decoration: none }
-    a:hover { text-decoration: underline }
-
-    .container { max-width: 920px; margin: 0 auto; padding: 32px 20px 64px }
-
-    .header {
-      background: linear-gradient(135deg, rgba(56, 189, 248, 0.10), rgba(129, 140, 248, 0.08));
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 28px 24px;
-      margin-bottom: 20px;
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 28px 18px 56px;
     }
 
-    .header p.label { color: var(--muted); font-size: 13px; margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.5px }
-    .header h1 { font-size: 26px; margin-bottom: 6px }
-    .header p.date { color: var(--muted); font-size: 14px }
-
-    section {
-      background: rgba(26, 37, 64, 0.5);
+    header {
+      background: var(--surface);
       border: 1px solid var(--border);
       border-radius: 14px;
       padding: 20px;
-      margin-top: 16px;
     }
 
-    section h2 { font-size: 16px; margin-bottom: 14px; color: var(--accent) }
-    section h3 { font-size: 15px; margin: 16px 0 6px; color: var(--text) }
-    section p { color: var(--muted); font-size: 14px; margin-bottom: 8px }
+    h1 {
+      margin: 0 0 10px;
+      font-size: 1.9rem;
+      line-height: 1.2;
+    }
 
-    .field-grid { display: grid; gap: 8px }
-
-    .field {
-      display: grid;
-      grid-template-columns: 160px 1fr;
-      gap: 12px;
+    blockquote {
+      margin: 0;
       padding: 10px 14px;
-      background: rgba(255, 255, 255, 0.02);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      align-items: center;
+      border-left: 4px solid var(--accent);
+      background: var(--accent-soft);
+      color: var(--muted);
+      border-radius: 6px;
     }
 
-    .field-label { color: var(--muted); font-size: 13px }
-    .field-value { font-weight: 600; font-size: 14px }
+    .meta {
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
 
-    ul { padding-left: 20px; color: var(--muted); font-size: 14px }
-    ul li { margin-bottom: 4px }
+    .content {
+      margin-top: 16px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 20px;
+    }
+
+    .content p,
+    .content ul {
+      margin-top: 0;
+      margin-bottom: 12px;
+    }
+
+    .content ul {
+      padding-left: 22px;
+    }
+
+    h2 {
+      margin: 22px 0 10px;
+      padding-top: 8px;
+      border-top: 1px solid var(--border);
+      font-size: 1.2rem;
+      color: var(--accent);
+    }
+
+    h2:first-of-type {
+      margin-top: 0;
+      border-top: none;
+      padding-top: 0;
+    }
+
+    a { color: var(--link); }
 
     .footer {
-      margin-top: 24px;
-      text-align: center;
-      font-size: 13px;
+      margin-top: 20px;
       color: var(--muted);
+      font-size: 0.9rem;
+      text-align: center;
     }
 
-    @media (max-width: 600px) {
-      .field { grid-template-columns: 1fr; gap: 2px }
-      .container { padding: 16px 12px 40px }
+    @media (max-width: 640px) {
+      .container { padding: 16px 12px 36px; }
+      h1 { font-size: 1.6rem; }
     }
   </style>
 </head>
-
 <body>
-  <div class="container">
-
-    <!-- Header -->
-    <header class="header">
-      <p class="label">AI Identity Reference</p>
+  <main class="container">
+    <header>
       <h1>[Your Brand Name]</h1>
-      <p class="date">Last updated: [YYYY-MM-DD]</p>
+      <blockquote>[One-sentence factual summary of what your business does, who it serves, and where it operates.]</blockquote>
+      <p class="meta">Last updated: [YYYY-MM-DD]</p>
     </header>
 
-    <!-- Core Identity -->
-    <section>
-      <h2>Core Identity</h2>
-      <div class="field-grid">
-        <div class="field">
-          <span class="field-label">Business name</span>
-          <span class="field-value">[Your Registered Business Name]</span>
-        </div>
-        <div class="field">
-          <span class="field-label">Brand name</span>
-          <span class="field-value">[Your Public-Facing Brand Name]</span>
-        </div>
-        <div class="field">
-          <span class="field-label">Services</span>
-          <span class="field-value">[Core services — must match llms.txt exactly]</span>
-        </div>
-        <div class="field">
-          <span class="field-label">Website</span>
-          <span class="field-value"><a href="https://www.yourdomain.com/">https://www.yourdomain.com/</a></span>
-        </div>
-        <div class="field">
-          <span class="field-label">Country</span>
-          <span class="field-value">[Country]</span>
-        </div>
-        <div class="field">
-          <span class="field-label">Founded</span>
-          <span class="field-value">[YYYY]</span>
-        </div>
-        <div class="field">
-          <span class="field-label">Contact</span>
-          <span class="field-value">[hello@yourdomain.com], [+1 XXX XXX XXXX]</span>
-        </div>
-      </div>
-    </section>
+    <section class="content">
+      <p>Business name: [Your Registered Business Name]</p>
+      <p>Brand name: [Your Public-Facing Brand Name]</p>
+      <p>Services: [Core services, comma-separated — this exact line must appear in all AI files]</p>
+      <p>Website: <a href="https://www.yourdomain.com/">https://www.yourdomain.com/</a></p>
+      <p>Country: [Country]</p>
+      <p>Founded: [YYYY]</p>
+      <p>Contact: [hello@yourdomain.com], [+1 XXX XXX XXXX]</p>
 
-    <!-- About -->
-    <section>
-      <h2>About [Your Brand Name]</h2>
-      <p>
-        [Your Brand Name] is a [business type] based in [city, country], operating since [year].
-        [2-3 sentences describing what the business does and who it serves. Keep it factual.]
-      </p>
-    </section>
+      <p>[Your Brand Name] is a [business type] based in [city, country], operating since [year].</p>
+      <p>[2-3 sentences describing what the business does, who it serves, and how services are delivered. Keep statements factual and verifiable.]</p>
+      <p>[Optional additional paragraph with operational context, industry positioning, or regulatory context.]</p>
 
-    <!-- Services -->
-    <section>
-      <h2>Services</h2>
-
-      <h3>[Service Name 1]</h3>
-      <p>[Factual description — what it is, who it's for, how it's delivered.]</p>
-
-      <h3>[Service Name 2]</h3>
-      <p>[Factual description — what it is, who it's for, how it's delivered.]</p>
-
-      <h3>[Service Name 3]</h3>
-      <p>[Factual description — what it is, who it's for, how it's delivered.]</p>
-    </section>
-
-    <!-- Geographic Availability -->
-    <section>
-      <h2>Geographic Availability</h2>
-      <div class="field-grid">
-        <div class="field">
-          <span class="field-label">Regions served</span>
-          <span class="field-value">[List countries or regions]</span>
-        </div>
-        <div class="field">
-          <span class="field-label">Delivery model</span>
-          <span class="field-value">[Remote / On-site / Hybrid]</span>
-        </div>
-        <div class="field">
-          <span class="field-label">Excluded regions</span>
-          <span class="field-value">[List any, or "None"]</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- Business Details -->
-    <section>
-      <h2>Business Details</h2>
-      <div class="field-grid">
-        <div class="field">
-          <span class="field-label">Legal name</span>
-          <span class="field-value">[Full registered name]</span>
-        </div>
-        <div class="field">
-          <span class="field-label">Registration</span>
-          <span class="field-value">[Company number, if applicable]</span>
-        </div>
-        <div class="field">
-          <span class="field-label">Tax ID / VAT</span>
-          <span class="field-value">[Number, if applicable]</span>
-        </div>
-        <div class="field">
-          <span class="field-label">Address</span>
-          <span class="field-value">[Registered address]</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- Contact -->
-    <section>
-      <h2>Contact</h2>
-      <div class="field-grid">
-        <div class="field">
-          <span class="field-label">General enquiries</span>
-          <span class="field-value"><a href="mailto:hello@yourdomain.com">[hello@yourdomain.com]</a></span>
-        </div>
-        <div class="field">
-          <span class="field-label">Phone</span>
-          <span class="field-value">[+1 XXX XXX XXXX]</span>
-        </div>
-        <div class="field">
-          <span class="field-label">Support</span>
-          <span class="field-value"><a href="mailto:support@yourdomain.com">[support@yourdomain.com]</a></span>
-        </div>
-      </div>
-    </section>
-
-    <!-- Key Pages -->
-    <section>
-      <h2>Key Pages</h2>
+      <p>Service boundaries:</p>
       <ul>
-        <li><a href="https://www.yourdomain.com/">Homepage</a></li>
-        <li><a href="https://www.yourdomain.com/about/">About</a></li>
-        <li><a href="https://www.yourdomain.com/services/">Services</a></li>
-        <li><a href="https://www.yourdomain.com/pricing/">Pricing</a></li>
-        <li><a href="https://www.yourdomain.com/contact/">Contact</a></li>
+        <li>Offers: [Core service area 1], [Core service area 2], [Core service area 3]</li>
+        <li>Does not offer: [Excluded service 1], [Excluded service 2], [Excluded service 3]</li>
+      </ul>
+
+      <p>Geographic availability:</p>
+      <ul>
+        <li>Regions served: [List countries or regions]</li>
+        <li>Delivery model: [Remote / On-site / Hybrid]</li>
+        <li>Excluded regions: [List any, or "None"]</li>
+      </ul>
+
+      <p>Business details:</p>
+      <ul>
+        <li>Legal name: [Full registered name]</li>
+        <li>Registration: [Company number, if applicable]</li>
+        <li>Tax ID / VAT: [Number, if applicable]</li>
+        <li>Registered address: [Full address]</li>
+      </ul>
+
+      <p>Contact channels:</p>
+      <ul>
+        <li>General enquiries: [hello@yourdomain.com]</li>
+        <li>Support: [support@yourdomain.com]</li>
+        <li>Phone: [+1 XXX XXX XXXX]</li>
+      </ul>
+
+      <h2>Primary Pages</h2>
+      <ul>
+        <li><a href="https://www.yourdomain.com/">Homepage</a>: Primary website entry point.</li>
+        <li><a href="https://www.yourdomain.com/about/">About</a>: Business overview and company background.</li>
+        <li><a href="https://www.yourdomain.com/services/">Services</a>: Service catalog and scope.</li>
+        <li><a href="https://www.yourdomain.com/pricing/">Pricing</a>: Current pricing and plan details.</li>
+        <li><a href="https://www.yourdomain.com/contact/">Contact</a>: Contact and enquiry details.</li>
+      </ul>
+
+      <h2>Service Detail Pages</h2>
+      <ul>
+        <li><a href="https://www.yourdomain.com/services/service-1/">Service 1</a>: [One-line factual service description.]</li>
+        <li><a href="https://www.yourdomain.com/services/service-2/">Service 2</a>: [One-line factual service description.]</li>
+        <li><a href="https://www.yourdomain.com/services/service-3/">Service 3</a>: [One-line factual service description.]</li>
+      </ul>
+
+      <h2>AI Discovery Files</h2>
+      <ul>
+        <li><a href="https://www.yourdomain.com/llms.txt">llms.txt</a>: Authoritative AI-readable identity file.</li>
+        <li><a href="https://www.yourdomain.com/llm.txt">llm.txt</a>: Compatibility redirect to <code>llms.txt</code>.</li>
+        <li><a href="https://www.yourdomain.com/llms.html">llms.html</a>: Human-readable HTML version.</li>
+        <li><a href="https://www.yourdomain.com/identity.json">identity.json</a>: Structured business identity data.</li>
+        <li><a href="https://www.yourdomain.com/ai.txt">ai.txt</a>: AI recommendation and usage guidance.</li>
+        <li><a href="https://www.yourdomain.com/ai.json">ai.json</a>: Structured identity + recommendation data.</li>
+        <li><a href="https://www.yourdomain.com/brand.txt">brand.txt</a>: Naming and representation rules.</li>
+        <li><a href="https://www.yourdomain.com/faq-ai.txt">faq-ai.txt</a>: Verified answers to common questions.</li>
+        <li><a href="https://www.yourdomain.com/developer-ai.txt">developer-ai.txt</a>: API/SDK integration context (if applicable).</li>
+        <li><a href="https://www.yourdomain.com/robots-ai.txt">robots-ai.txt</a>: Advisory citation and freshness guidance (optional).</li>
+      </ul>
+
+      <h2>Optional</h2>
+      <ul>
+        <li><a href="https://www.yourdomain.com/blog/">Blog</a>: Time-sensitive content; verify freshness before citing.</li>
+        <li><a href="https://www.yourdomain.com/news/">News</a>: Announcements may become outdated quickly.</li>
+        <li><a href="https://www.yourdomain.com/case-studies/">Case Studies</a>: Client-specific context; cite with scope caveats.</li>
       </ul>
     </section>
 
-    <!-- Clarifications -->
-    <section>
-      <h2>Important Clarifications</h2>
-
-      <h3>What We Do</h3>
-      <p>[List what you definitively offer — factual statements only.]</p>
-
-      <h3>What We Don't Do</h3>
-      <p>[List services you explicitly do not provide — prevents AI from making incorrect associations.]</p>
-    </section>
-
-    <!-- Footer -->
     <p class="footer">
-      Human-readable version of the authoritative identity defined in
-      <a href="https://www.yourdomain.com/llms.txt">llms.txt</a>.<br>
-      <span style="color: var(--muted)">AI Discovery Files</span>
+      Human-readable representation of <a href="https://www.yourdomain.com/llms.txt">llms.txt</a>.
     </p>
-
-  </div>
+  </main>
 </body>
 </html>
 
 <!--
-TEMPLATE NOTES:
-
-1. Only replace placeholder text — do not modify the HTML structure or CSS
-2. Core Identity values must match llms.txt exactly
-3. Add or remove service <h3> blocks as needed, but keep the <section> wrapper
-4. All content should be factual and verifiable
-5. Save as: llms.html
-6. Place at website root: https://www.yourdomain.com/llms.html
-7. Serve with Content-Type: text/html; charset=utf-8
+Specification:
+- Canonical upstream format: https://github.com/AnswerDotAI/llms-txt/blob/main/nbs/index.qmd#format
+- Repository profile: specs/llms-txt.md
+Notes:
+- UTF-8 encoded
+- Place at site root: https://www.yourdomain.com/llms.html
+- Keep content aligned with llms.txt
+- Serve with Content-Type: text/html; charset=utf-8
 -->

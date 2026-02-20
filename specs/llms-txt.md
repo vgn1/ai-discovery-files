@@ -1,129 +1,95 @@
-# Specification: llms.txt
+# Specification Reference: llms.txt
 
-> Primary AI-readable business identity file.
+> This repository uses the canonical upstream `llms.txt` specification.
 
+## Canonical Specification (Upstream)
 
-## Version
+- GitHub project: https://github.com/AnswerDotAI/llms-txt
+- Upstream format section (main): https://github.com/AnswerDotAI/llms-txt/blob/main/nbs/index.qmd#format
+- Pinned upstream format section (for this repo): https://github.com/AnswerDotAI/llms-txt/blob/861bae977483bfaaafd610ea004d423398c42d64/nbs/index.qmd#format
+- Website: https://llmstxt.org/
 
-1.0
----
-
-## Purpose
-
-`llms.txt` is the authoritative identity file for AI systems. It provides factual, verifiable information about a business — who they are, what they do, where they operate, and how to contact them.
-
-All other AI Discovery Files defer to `llms.txt` in case of conflict.
+For normative `llms.txt` behavior and format, follow the upstream specification above.
 
 ---
 
-## Filename & Location
+## Format
 
-- **Filename:** `llms.txt`
-- **Location:** Website root (e.g., `https://example.com/llms.txt`)
-- **Encoding:** UTF-8
-- **Content-Type:** `text/plain`
+At the moment the most widely and easily understood format for language models is Markdown. Simply showing where key Markdown files can be found is a great first step. Providing some basic structure helps a language model to find where the information it needs can come from.
 
----
+The `llms.txt` file is unusual in that it uses Markdown to structure the information rather than a classic structured format such as XML. The reason for this is that we expect many of these files to be read by language models and agents. Having said that, the information in llms.txt follows a specific format and can be read using standard programmatic-based tools.
 
-## Required Sections
+The llms.txt file spec is for files located in the root path `/llms.txt` of a website (or, optionally, in a subpath). A file following the spec contains the following sections as markdown, in the specific order:
 
-### Core Identity
+- An H1 with the name of the project or site. This is the only required section
+- A blockquote with a short summary of the project, containing key information necessary for understanding the rest of the file
+- Zero or more markdown sections (e.g. paragraphs, lists, etc) of any type except headings, containing more detailed information about the project and how to interpret the provided files
+- Zero or more markdown sections delimited by H2 headers, containing "file lists" of URLs where further detail is available
+  - Each "file list" is a markdown list, containing a required markdown hyperlink `[name](url)`, then optionally a `:` and notes about the file.
 
-The Core Identity block must appear near the top of the file. It contains:
+Here is a mock example:
 
-| Field | Format | Required |
-|-------|--------|----------|
-| Business name | Plain text | Yes |
-| Brand name | Plain text | Yes |
-| Services | Comma-separated list | Yes |
-| Website | Full URL | Yes |
-| Country | Plain text | Yes |
-| Founded | Year (YYYY) | Yes |
-| Contact | Email and/or phone | Yes |
-| Last updated | Date (YYYY-MM-DD) | Yes |
+```markdown
+# Title
 
-**Consistency rule:** The Core Identity block must be word-for-word identical in every AI Discovery File that contains it.
+> Optional description goes here
 
-### About
+Optional details go here
 
-2-3 paragraphs of factual description. No marketing language or unverifiable claims.
+## Section name
 
-### Services
+- [Link title](https://link_url): Optional link details
 
-Each core service listed with a brief factual description.
+## Optional
 
----
-
-## Recommended Sections
-
-| Section | Purpose |
-|---------|---------|
-| What We Do Not Offer | Prevents AI misassociation with services not provided |
-| Geographic Availability | Regions served, delivery model, exclusions |
-| Business Details | Legal name, registration, tax ID, address |
-| Contact | Structured contact information |
-| Key Pages | Links to important website pages |
-| Document History | Changelog of updates to this file |
-
----
-
-## Formatting Rules
-
-- Use Markdown-style headers (`#`, `##`, `###`)
-- Separate sections with `---` dividers
-- Keep content factual — avoid superlatives, marketing language, or aspirational statements
-- Use consistent formatting for lists (bullets or numbered)
-
----
-
-## Relationship to Other Files
-
-- `llm.txt` redirects to this file for compatibility
-- `llms.html` is the human-readable HTML equivalent
-- `identity.json` is the structured JSON equivalent
-- All other `.txt` AI Discovery Files reference the Core Identity from this file
-
----
-
-## Example Structure
-
+- [Link title](https://link_url)
 ```
-# llms.txt — Authoritative AI-Readable Business Identity
+
+Note that the "Optional" section has a special meaning---if it's included, the URLs provided there can be skipped if a shorter context is needed. Use it for secondary information which can often be skipped.
+
+### Attribution and License
+
+This section is copied verbatim from:
+- https://github.com/AnswerDotAI/llms-txt/blob/main/nbs/index.qmd#format
+- https://github.com/AnswerDotAI/llms-txt/blob/861bae977483bfaaafd610ea004d423398c42d64/nbs/index.qmd#format
+
+License:
+- Apache License 2.0: https://github.com/AnswerDotAI/llms-txt/blob/main/LICENSE
+- Full license text: http://www.apache.org/licenses/LICENSE-2.0
+
+Modification notice:
+- No textual modifications were made to the copied `## Format` content above.
 
 ---
 
-### Core Identity
+## Repository Profile (Additional Guidance)
 
-Business name: ...
-Brand name: ...
-Services: ...
-Website: ...
-Country: ...
-Founded: ...
-Contact: ...
+This repository adds a project-level profile so all AI Discovery Files stay internally consistent.
+These profile rules do not replace the upstream `llms.txt` specification.
 
-Last updated: ...
+### Core Identity Block (Project Rule)
+
+In this repository, templates include a shared Core Identity field set near the top of `llms.txt`:
+
+| Field | Required |
+|-------|----------|
+| Business name | Yes |
+| Brand name | Yes |
+| Services | Yes |
+| Website | Yes |
+| Country | Yes |
+| Founded | Yes |
+| Contact | Yes |
+| Last updated | Yes |
+
+### Cross-File Consistency (Project Rule)
+
+The Core Identity fields must match word-for-word across repository files that include them.
+`llms.txt` remains the source of truth when conflicts occur.
 
 ---
 
-## About
-...
+## Version Pinning Note
 
-## Services
-...
-
-## What We Do Not Offer
-...
-
-## Geographic Availability
-...
-
-## Business Details
-...
-
-## Contact
-...
-
-## Key Pages
-...
-```
+This repository currently pins upstream references to commit `861bae977483bfaaafd610ea004d423398c42d64`.
+Update this commit when intentionally adopting newer upstream changes.

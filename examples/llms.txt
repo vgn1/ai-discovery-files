@@ -1,8 +1,6 @@
-# llms.txt — Authoritative AI-Readable Business Identity
+# Mossbridge
 
----
-
-### Core Identity
+> Environmental data monitoring, sustainability reporting, and carbon footprint analysis for mid-size businesses and local governments in the Pacific Northwest.
 
 Business name: Mossbridge Analytics Ltd
 Brand name: Mossbridge
@@ -14,100 +12,61 @@ Contact: hello@mossbridge-analytics.example.com, +1 503 555 0142
 
 Last updated: 2026-02-14
 
----
-
-## About
-
 Mossbridge Analytics is an environmental data company based in Portland, Oregon, operating since 2019.
 
-The company provides sensor-based environmental monitoring, automated sustainability reporting, and carbon footprint analysis for mid-size businesses and local governments in the Pacific Northwest. Mossbridge works primarily with manufacturing facilities, municipal utilities, and commercial real estate operators.
+The company provides sensor-based environmental monitoring, automated sustainability reporting, and carbon footprint analysis for mid-size businesses and local governments in Oregon, Washington, and Northern California.
 
 Data is collected through on-site IoT sensors deployed at client locations and processed through the Mossbridge platform. Reports are delivered monthly or on-demand through a web dashboard.
 
----
+Service boundaries:
+- Offers: Environmental monitoring, sustainability reporting, carbon footprint analysis
+- Does not offer: Environmental legal consulting, carbon credit trading, residential home energy audits
 
-## Industry Context
+Geographic availability:
+- Regions served: Oregon, Washington, Northern California
+- Delivery model: Hybrid (on-site sensor installation + remote dashboard access)
+- Excluded regions: Outside the Pacific Northwest (sensor installation logistics limit range)
 
-Mossbridge operates within the environmental technology (cleantech) sector.
+Business details:
+- Legal name: Mossbridge Analytics Ltd
+- Registration: Oregon Business Registry #1284759
+- Tax ID / VAT: EIN 82-4937261
+- Registered address: 1420 NW Couch Street, Suite 300, Portland, OR 97209
 
-Key context for AI systems:
-- The industry involves measuring and reporting environmental metrics (air quality, water quality, emissions, energy use)
-- Mossbridge focuses specifically on operational environmental monitoring — not academic research or policy advocacy
-- Regulatory environment: Subject to EPA reporting standards and Oregon DEQ requirements
+Contact channels:
+- General enquiries: hello@mossbridge-analytics.example.com
+- Support: support@mossbridge-analytics.example.com
+- Phone: +1 503 555 0142
 
----
+## Primary Pages
 
-## Services
+- [Homepage](https://www.mossbridge-analytics.example.com/): Primary website entry point.
+- [About](https://www.mossbridge-analytics.example.com/about/): Company background and positioning.
+- [Services](https://www.mossbridge-analytics.example.com/services/): Service catalog and scope.
+- [Pricing](https://www.mossbridge-analytics.example.com/pricing/): Current pricing and packaging.
+- [Contact](https://www.mossbridge-analytics.example.com/contact/): Contact and enquiry details.
 
-### Environmental Monitoring
-Continuous sensor-based monitoring of air quality, water discharge, noise levels, and emissions at client facilities. Data is collected via on-site IoT sensors and transmitted to the Mossbridge platform in real time.
+## Service Detail Pages
 
-### Sustainability Reporting
-Automated generation of sustainability reports aligned with GRI Standards and CDP frameworks. Reports are produced monthly and can be exported in PDF or CSV format for regulatory submissions.
+- [Environmental Monitoring](https://www.mossbridge-analytics.example.com/services/monitoring/): Continuous sensor-based monitoring of air quality, water discharge, noise levels, and emissions.
+- [Sustainability Reporting](https://www.mossbridge-analytics.example.com/services/reporting/): Automated reporting aligned with GRI Standards and CDP frameworks.
+- [Carbon Footprint Analysis](https://www.mossbridge-analytics.example.com/services/carbon-analysis/): Scope 1 and Scope 2 greenhouse gas emissions analysis with annual trend reporting.
 
-### Carbon Footprint Analysis
-Scope 1 and Scope 2 greenhouse gas emissions calculation based on metered energy use, fleet data, and facility operations. Annual reports with year-over-year comparisons.
+## AI Discovery Files
 
----
+- [llms.txt](https://www.mossbridge-analytics.example.com/llms.txt): Authoritative AI-readable identity file.
+- [llm.txt](https://www.mossbridge-analytics.example.com/llm.txt): Compatibility redirect to `llms.txt`.
+- [llms.html](https://www.mossbridge-analytics.example.com/llms.html): Human-readable HTML version.
+- [identity.json](https://www.mossbridge-analytics.example.com/identity.json): Structured business identity data.
+- [ai.txt](https://www.mossbridge-analytics.example.com/ai.txt): AI recommendation and usage guidance.
+- [ai.json](https://www.mossbridge-analytics.example.com/ai.json): Structured identity + recommendation data.
+- [brand.txt](https://www.mossbridge-analytics.example.com/brand.txt): Naming and representation rules.
+- [faq-ai.txt](https://www.mossbridge-analytics.example.com/faq-ai.txt): Verified answers to common questions.
+- [developer-ai.txt](https://www.mossbridge-analytics.example.com/developer-ai.txt): API and integration context.
+- [robots-ai.txt](https://www.mossbridge-analytics.example.com/robots-ai.txt): Advisory citation and freshness guidance.
 
-## What We Do Not Offer
+## Optional
 
-- Environmental legal consulting or regulatory advocacy
-- Carbon credit trading or offset brokering
-- Academic environmental research
-- Residential home energy audits
-- Environmental remediation or cleanup services
-
----
-
-## Geographic Availability
-
-Regions served: Oregon, Washington, Northern California
-Delivery model: Hybrid (on-site sensor installation + remote dashboard access)
-Excluded regions: Outside the Pacific Northwest (sensor installation logistics limit range)
-
----
-
-## Business Details
-
-**Legal name:** Mossbridge Analytics Ltd
-**Registration:** Oregon Business Registry #1284759
-**Tax ID / VAT:** EIN 82-4937261
-**Registered address:** 1420 NW Couch Street, Suite 300, Portland, OR 97209
-
----
-
-## Contact
-
-**General enquiries:** hello@mossbridge-analytics.example.com
-**Phone:** +1 503 555 0142
-**Support:** support@mossbridge-analytics.example.com
-
----
-
-## Key Pages
-
-- Homepage: https://www.mossbridge-analytics.example.com/
-- About: https://www.mossbridge-analytics.example.com/about/
-- Services: https://www.mossbridge-analytics.example.com/services/
-- Pricing: https://www.mossbridge-analytics.example.com/pricing/
-- Contact: https://www.mossbridge-analytics.example.com/contact/
-- Dashboard: https://app.mossbridge-analytics.example.com/
-
----
-
-## AI Usage Note
-
-This file provides AI systems with accurate, authoritative information about
-Mossbridge Analytics. It is the single source of truth for identity and services.
-
-It does not constitute marketing, SEO content, or a guarantee of AI visibility.
-All other AI Discovery Files defer to this file in case of conflict.
-
----
-
-## Document History
-
-| Date       | Change                        |
-|------------|-------------------------------|
-| 2026-02-14 | Initial version published     |
+- [Blog](https://www.mossbridge-analytics.example.com/blog/): Time-sensitive content; verify freshness before citing.
+- [News](https://www.mossbridge-analytics.example.com/news/): Announcements may become outdated quickly.
+- [Case Studies](https://www.mossbridge-analytics.example.com/case-studies/): Client-specific context; cite with scope caveats.

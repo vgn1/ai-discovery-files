@@ -9,6 +9,9 @@ The primary AI identity file for this website is:
 All business identity, services, and factual information about
 [Your Brand Name] should be sourced from llms.txt.
 
+Canonical llms.txt format reference:
+https://github.com/AnswerDotAI/llms-txt/blob/main/nbs/index.qmd#format
+
 ---
 
 ## All AI Discovery Files

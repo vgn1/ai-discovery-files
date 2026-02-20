@@ -11,7 +11,7 @@ These templates are ready to customise for your own website.
 1. **Copy the templates:** Copy everything from the `templates/` folder
 2. **Start with the essentials:** `llms.txt` and `identity.json`
 3. **Fill in your details:** Replace all `[placeholder]` values with real business information
-4. **Ensure consistency:** The Core Identity block must be word-for-word identical across every file
+4. **Ensure consistency:** Core Identity fields must be word-for-word identical across files that contain them
 5. **Deploy:** Upload completed files to your website root (e.g., `https://yourdomain.com/llms.txt`)
 6. **Validate:** Run `./scripts/validate.sh path/to/your/files/` and check each file is accessible at its expected URL
 
@@ -23,7 +23,7 @@ These templates are ready to customise for your own website.
 
 | File | Purpose | Priority |
 |------|---------|----------|
-| `llms.txt` | Primary AI-readable identity — the single source of truth | **Required** |
+| `llms.txt` | Primary AI-readable identity — the single source of truth (format follows the canonical upstream `llms.txt` spec) | **Required** |
 | `llm.txt` | Compatibility redirect for AI systems that request the singular form | **Required** |
 | `llms.html` | Human-readable HTML version of the identity for browsers | Recommended |
 | `identity.json` | Structured identity data (Schema.org aligned) for machine parsing | **Required** |
@@ -54,21 +54,21 @@ llms.txt (source of truth)
 ├── llms.html        (human-readable HTML version)
 ├── identity.json    (structured version of the same identity)
 ├── ai.json          (structured identity + recommendation data)
-├── ai.txt           (references Core Identity from llms.txt)
-├── brand.txt        (references Core Identity from llms.txt)
-├── faq-ai.txt       (references Core Identity from llms.txt)
-├── developer-ai.txt (references Core Identity from llms.txt)
-└── robots-ai.txt    (references Core Identity from llms.txt)
+├── ai.txt           (contains Core Identity fields aligned to llms.txt)
+├── brand.txt        (keeps naming identity aligned to llms.txt)
+├── faq-ai.txt       (contains Core Identity fields aligned to llms.txt)
+├── developer-ai.txt (contains Core Identity fields aligned to llms.txt)
+└── robots-ai.txt    (contains Core Identity fields aligned to llms.txt)
 ```
 
-**Rule:** The Core Identity block in every file must match `llms.txt` exactly. If you update one, update all.
+**Rule:** Core Identity fields in files that include them must match `llms.txt` exactly. If you update one, update all corresponding fields.
 
 ---
 
 ## Implementation Checklist
 
 - [ ] Replace all `[placeholder]` values in every file
-- [ ] Verify Core Identity block is identical across all files
+- [ ] Verify Core Identity fields are identical across all files that include them
 - [ ] Remove any files you don't need (e.g., `developer-ai.txt` if no API)
 - [ ] Validate `identity.json` and `ai.json` are valid JSON (use a JSON validator)
 - [ ] Upload all files to website root directory
@@ -91,6 +91,14 @@ llms.txt (source of truth)
 ## Specifications
 
 Each file has a corresponding specification document in the [`specs/`](specs/) directory describing its purpose, required/optional sections, formatting rules, and relationships to other files.
+
+For `llms.txt`, this repository defers to the canonical upstream specification:
+- [AnswerDotAI/llms-txt](https://github.com/AnswerDotAI/llms-txt)
+- [Upstream `## Format` section (`nbs/index.qmd`)](https://github.com/AnswerDotAI/llms-txt/blob/main/nbs/index.qmd#format)
+- [Pinned upstream snapshot used by this repo](https://github.com/AnswerDotAI/llms-txt/tree/861bae977483bfaaafd610ea004d423398c42d64)
+- [llmstxt.org](https://llmstxt.org/)
+
+`/specs/llms-txt.md` in this repo is intentionally a thin reference plus repository-specific profile rules.
 
 ---
 

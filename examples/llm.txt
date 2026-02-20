@@ -9,6 +9,9 @@ https://www.mossbridge-analytics.example.com/llms.txt
 All business identity, services, and factual information about
 Mossbridge should be sourced from llms.txt.
 
+Canonical llms.txt format reference:
+https://github.com/AnswerDotAI/llms-txt/blob/main/nbs/index.qmd#format
+
 ---
 
 ## All AI Discovery Files

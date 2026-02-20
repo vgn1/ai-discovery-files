@@ -1,7 +1,7 @@
 {
   "_comment": "ai.json — Structured identity and recommendation data for AI systems",
 
-  "canonicalIdentityBlock": "Business name: [Your Registered Business Name]\nBrand name: [Your Public-Facing Brand Name]\nServices: [Core services — must match llms.txt exactly]\nWebsite: https://www.yourdomain.com/\nCountry: [Country]\nFounded: [YYYY]\nContact: [hello@yourdomain.com], [+1 XXX XXX XXXX]",
+  "canonicalIdentityBlock": "Business name: [Your Registered Business Name]\nBrand name: [Your Public-Facing Brand Name]\nServices: [Core services, comma-separated — this exact line must appear in all AI files]\nWebsite: [https://www.yourdomain.com/]\nCountry: [Country]\nFounded: [YYYY]\nContact: [hello@yourdomain.com], [+1 XXX XXX XXXX]",
 
   "lastUpdated": "[YYYY-MM-DD]",
 

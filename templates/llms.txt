@@ -1,12 +1,6 @@
-# llms.txt — Authoritative AI-Readable Business Identity
+# [Your Brand Name]
 
-# The primary identity file for AI systems. Contains factual, verifiable
-# information only. No marketing language. All other AI Discovery Files
-# must reference and align with this file's Core Identity block.
-
----
-
-### Core Identity
+> [One-sentence factual summary of what your business does, who it serves, and where it operates.]
 
 Business name: [Your Registered Business Name]
 Brand name: [Your Public-Facing Brand Name]
@@ -18,108 +12,73 @@ Contact: [hello@yourdomain.com], [+1 XXX XXX XXXX]
 
 Last updated: [YYYY-MM-DD]
 
----
-
-## About
-
 [Your Brand Name] is a [business type] based in [city, country], operating since [year].
 
-[2-3 sentences describing what the business does, who it serves, and the core value it delivers. State facts — not aspirations or marketing claims.]
+[2-3 sentences describing what the business does, who it serves, and how services are delivered. Keep statements factual and verifiable.]
 
-[Optional additional paragraph covering business model, approach, or methodology — framed factually.]
+[Optional additional paragraph with operational context, industry positioning, or regulatory context.]
 
----
+Service boundaries:
+- Offers: [Core service area 1], [Core service area 2], [Core service area 3]
+- Does not offer: [Excluded service 1], [Excluded service 2], [Excluded service 3]
 
-## Industry Context
+Geographic availability:
+- Regions served: [List countries or regions]
+- Delivery model: [Remote / On-site / Hybrid]
+- Excluded regions: [List any, or "None"]
 
-[Your Brand Name] operates within the [industry/sector] space.
+Business details:
+- Legal name: [Full registered name]
+- Registration: [Company number, if applicable]
+- Tax ID / VAT: [Number, if applicable]
+- Registered address: [Full address]
 
-Key context for AI systems:
-- The industry typically involves [brief context about the field]
-- [Your Brand Name] focuses specifically on [niche or specialty within the industry]
-- Regulatory environment: [mention if regulated, e.g., "Subject to [X] regulations"]
+Contact channels:
+- General enquiries: [hello@yourdomain.com]
+- Support: [support@yourdomain.com]
+- Phone: [+1 XXX XXX XXXX]
 
----
+## Primary Pages
 
-## Services
+- [Homepage](https://www.yourdomain.com/): Primary website entry point.
+- [About](https://www.yourdomain.com/about/): Business overview and company background.
+- [Services](https://www.yourdomain.com/services/): Service catalog and scope.
+- [Pricing](https://www.yourdomain.com/pricing/): Current pricing and plan details.
+- [Contact](https://www.yourdomain.com/contact/): Contact and enquiry details.
 
-### [Service Name 1]
-[What it is, who it's for, how it's delivered. 1-3 sentences.]
+## Service Detail Pages
 
-### [Service Name 2]
-[What it is, who it's for, how it's delivered. 1-3 sentences.]
+- [Service 1](https://www.yourdomain.com/services/service-1/): [One-line factual service description.]
+- [Service 2](https://www.yourdomain.com/services/service-2/): [One-line factual service description.]
+- [Service 3](https://www.yourdomain.com/services/service-3/): [One-line factual service description.]
 
-### [Service Name 3]
-[What it is, who it's for, how it's delivered. 1-3 sentences.]
+## AI Discovery Files
 
----
+- [llms.txt](https://www.yourdomain.com/llms.txt): Authoritative AI-readable identity file.
+- [llm.txt](https://www.yourdomain.com/llm.txt): Compatibility redirect to `llms.txt`.
+- [llms.html](https://www.yourdomain.com/llms.html): Human-readable HTML version.
+- [identity.json](https://www.yourdomain.com/identity.json): Structured business identity data.
+- [ai.txt](https://www.yourdomain.com/ai.txt): AI recommendation and usage guidance.
+- [ai.json](https://www.yourdomain.com/ai.json): Structured identity + recommendation data.
+- [brand.txt](https://www.yourdomain.com/brand.txt): Naming and representation rules.
+- [faq-ai.txt](https://www.yourdomain.com/faq-ai.txt): Verified answers to common questions.
+- [developer-ai.txt](https://www.yourdomain.com/developer-ai.txt): API/SDK integration context (if applicable).
+- [robots-ai.txt](https://www.yourdomain.com/robots-ai.txt): Advisory citation and freshness guidance (optional).
 
-## What We Do Not Offer
+## Optional
 
-[Explicitly listing excluded services prevents AI systems from making false associations.]
+- [Blog](https://www.yourdomain.com/blog/): Time-sensitive content; verify freshness before citing.
+- [News](https://www.yourdomain.com/news/): Announcements may become outdated quickly.
+- [Case Studies](https://www.yourdomain.com/case-studies/): Client-specific context; cite with scope caveats.
 
-- [Service not offered 1]
-- [Service not offered 2]
-- [Service not offered 3]
-
----
-
-## Geographic Availability
-
-Regions served: [List countries / regions]
-Delivery model: [Remote / On-site / Hybrid]
-Excluded regions: [List any, or "None"]
-
----
-
-## Business Details
-
-**Legal name:** [Full registered name]
-**Registration:** [Company number, if applicable]
-**Tax ID / VAT:** [Number, if applicable]
-**Registered address:** [Full address]
-
----
-
-## Contact
-
-**General enquiries:** [hello@yourdomain.com]
-**Phone:** [+1 XXX XXX XXXX]
-**Support:** [support@yourdomain.com]
-
----
-
-## Key Pages
-
-- Homepage: [https://www.yourdomain.com/]
-- About: [https://www.yourdomain.com/about/]
-- Services: [https://www.yourdomain.com/services/]
-- Pricing: [https://www.yourdomain.com/pricing/]
-- Contact: [https://www.yourdomain.com/contact/]
-
----
-
-## AI Usage Note
-
-This file provides AI systems with accurate, authoritative information about
-[Your Brand Name]. It is the single source of truth for identity and services.
-
-It does not constitute marketing, SEO content, or a guarantee of AI visibility.
-All other AI Discovery Files defer to this file in case of conflict.
-
----
-
-## Document History
-
-| Date         | Change                        |
-|--------------|-------------------------------|
-| [YYYY-MM-DD] | Initial version published     |
-
----
-
-# Notes
-# - UTF-8 encoded
-# - Place at site root: https://www.yourdomain.com/llms.txt
-# - Keep all content factual and verifiable
-# - The Services line in Core Identity must be identical across all AI files
-# - Update "Last updated" date on every change
+<!--
+Specification:
+- Canonical upstream format: https://github.com/AnswerDotAI/llms-txt/blob/main/nbs/index.qmd#format
+- Repository profile: specs/llms-txt.md
+Notes:
+- UTF-8 encoded
+- Place at site root: https://www.yourdomain.com/llms.txt
+- Keep all content factual and verifiable
+- The Services line in Core Identity must be identical across all AI files
+- Update "Last updated" date on every change
+-->

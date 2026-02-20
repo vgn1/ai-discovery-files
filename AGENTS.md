@@ -30,19 +30,21 @@ scripts/           ← Validation and utility scripts
 
 ## Critical Rule: Core Identity Consistency
 
-Every `.txt` file and `identity.json` contains a **Core Identity** block (sometimes called "Canonical Identity Block" in the spec). The values in this block **must be identical word-for-word across all files**.
+Not every file contains a full **Core Identity** block. For files that do contain Core Identity fields (sometimes called "Canonical Identity Block" in the spec), those values **must be identical word-for-word across corresponding files**.
 
 When editing any Core Identity field in one file, you **must** update the same field in every other file that contains it.
 
-Files that contain the Core Identity block (all in `templates/`):
+Files that contain full Core Identity fields (all in `templates/`):
 - `llms.txt` (the source of truth)
 - `ai.txt`
-- `brand.txt` (partial — Identity section)
 - `developer-ai.txt`
 - `faq-ai.txt`
 - `robots-ai.txt`
 - `identity.json` (structured equivalent)
-- `ai.json` (structured equivalent with recommendation data)
+- `ai.json` (`canonicalIdentityBlock` + structured identity fields)
+
+Related file:
+- `brand.txt` includes naming identity fields (registered/brand name) and must remain aligned with `llms.txt`
 
 ---
 
@@ -86,12 +88,12 @@ Files that contain the Core Identity block (all in `templates/`):
 - Update the `Last updated: [YYYY-MM-DD]` placeholder note if adding date-relevant content
 
 ### Do Not
-- Remove the `---` / `Specification:` attribution block at the end of files
+- Remove existing `Specification:` attribution blocks in templates that include them
 - Add marketing language, superlatives, or unverifiable claims
 - Rename any template files — AI systems expect these exact filenames
 - Move template files out of the `templates/` directory
 - Add example/dummy business data in place of `[placeholder]` values
-- Introduce dependencies between files beyond the Core Identity block
+- Introduce dependencies between files beyond Core Identity field alignment
 
 ---
 
@@ -100,9 +102,9 @@ Files that contain the Core Identity block (all in `templates/`):
 Before committing changes:
 
 1. **JSON validity:** Run `python3 -m json.tool templates/identity.json` and `python3 -m json.tool templates/ai.json` — both must pass without errors
-2. **Core Identity match:** Grep for the Core Identity fields across all `.txt` files and confirm they use the same placeholder wording
-3. **No broken structure:** Each `.txt` file should have its `---` section dividers intact
-4. **Spec references:** Each file should end with its specification attribution line
+2. **Core Identity match:** Grep for Core Identity fields across files that include them and confirm they use the same wording
+3. **No broken structure:** Keep each file's expected structure intact (`llms.txt` follows upstream `llms.txt` format; other `.txt` templates keep their section dividers where present)
+4. **Spec references:** Keep specification attribution/notes blocks where the template includes them
 
 ---
 
