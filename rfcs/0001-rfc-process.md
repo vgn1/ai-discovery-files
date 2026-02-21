@@ -3,7 +3,7 @@
 - Status: Accepted
 - Authors: Maintainers
 - Created: 2026-02-17
-- Discussion: https://github.com/vgn1/ai-discovery-files/issues
+- Discussion: https://github.com/GenerellAI/ai-discovery-files/issues
 
 ## Summary
 

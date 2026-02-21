@@ -63,6 +63,10 @@ llms.txt (source of truth)
 
 **Rule:** Core Identity fields in files that include them must match `llms.txt` exactly. If you update one, update all corresponding fields.
 
+Machine-readable dependency authority: [`specs/dependency-map.yaml`](specs/dependency-map.yaml)
+- This maps duplicated fields, similar/semantic fields, and cross-file change triggers.
+- The validator performs a first pass from this map for literal exact-match dependencies.
+
 ---
 
 ## Implementation Checklist
@@ -119,6 +123,7 @@ The script checks:
 | **JSON validity** | Confirms `identity.json` and `ai.json` parse without errors |
 | **UTF-8 encoding** | Checks all `.txt`, `.json`, and `.html` files are UTF-8 compatible |
 | **Core Identity consistency** | Compares `Business name`, `Brand name`, and `Services` fields across all `.txt` files against `llms.txt` (the source of truth) |
+| **Dependency map (first pass)** | Loads `specs/dependency-map.yaml` and enforces all `exact_match` + `literal` rules |
 | **Placeholder detection** | Counts remaining `[bracket]` placeholders that need to be replaced before deploying |
 
 ---

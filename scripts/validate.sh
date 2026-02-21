@@ -11,6 +11,10 @@ set -euo pipefail
 DIR="${1:-templates}"
 ERRORS=0
 WARNINGS=0
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+REPO_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
+DEPENDENCY_MAP="$REPO_ROOT/specs/dependency-map.yaml"
+DEPENDENCY_CHECKER="$SCRIPT_DIR/check-dependency-map.py"
 
 # Colors (disable if not a terminal)
 if [ -t 1 ]; then
@@ -343,6 +347,50 @@ if [ "$PLACEHOLDER_COUNT" -gt 0 ]; then
   fi
 else
   pass "No placeholders detected"
+fi
+
+# ─── Dependency Map (First Pass) ─────────────────────────────
+
+section "Dependency Map (First Pass)"
+
+if [ -f "$DEPENDENCY_MAP" ] && [ -f "$DEPENDENCY_CHECKER" ]; then
+  dep_results_file=$(mktemp)
+  dep_stderr_file=$(mktemp)
+
+  if python3 "$DEPENDENCY_CHECKER" "$DIR" "$DEPENDENCY_MAP" > "$dep_results_file" 2> "$dep_stderr_file"; then
+    :
+  else
+    fail "Dependency map checker execution failed"
+  fi
+
+  while IFS=$'\t' read -r dep_level dep_message; do
+    [ -n "$dep_level" ] || continue
+    case "$dep_level" in
+      PASS)
+        pass "$dep_message"
+        ;;
+      FAIL)
+        fail "$dep_message"
+        ;;
+      WARN)
+        warn "$dep_message"
+        ;;
+      INFO)
+        echo -e "  ${YELLOW}-${NC} $dep_message"
+        ;;
+      *)
+        warn "Dependency checker emitted unknown level '$dep_level': $dep_message"
+        ;;
+    esac
+  done < "$dep_results_file"
+
+  if [ -s "$dep_stderr_file" ]; then
+    warn "Dependency checker wrote diagnostic output to stderr"
+  fi
+
+  rm -f "$dep_results_file" "$dep_stderr_file"
+else
+  warn "Dependency map or checker script missing; skipping dependency-map validation"
 fi
 
 # ─── Summary ─────────────────────────────────────────────────

@@ -48,6 +48,20 @@ Related file:
 
 ---
 
+## Cross-File Dependency Map
+
+Cross-file dependencies are defined in:
+- `specs/dependency-map.yaml`
+
+Use this file as the machine-readable authority for:
+- duplicated fields that must stay in sync
+- similar/semantic fields that require manual review
+- change triggers and impacted files
+
+`llms.txt` remains the identity source of truth when conflicts occur.
+
+---
+
 ## Placeholder Conventions
 
 - All placeholder values use the format `[Description]`, e.g., `[Your Brand Name]`
@@ -93,7 +107,7 @@ Related file:
 - Rename any template files — AI systems expect these exact filenames
 - Move template files out of the `templates/` directory
 - Add example/dummy business data in place of `[placeholder]` values
-- Introduce dependencies between files beyond Core Identity field alignment
+- Introduce undocumented cross-file dependencies; if a new dependency is required, record it in `specs/dependency-map.yaml`
 
 ---
 
@@ -103,8 +117,9 @@ Before committing changes:
 
 1. **JSON validity:** Run `python3 -m json.tool templates/identity.json` and `python3 -m json.tool templates/ai.json` — both must pass without errors
 2. **Core Identity match:** Grep for Core Identity fields across files that include them and confirm they use the same wording
-3. **No broken structure:** Keep each file's expected structure intact (`llms.txt` follows upstream `llms.txt` format; other `.txt` templates keep their section dividers where present)
-4. **Spec references:** Keep specification attribution/notes blocks where the template includes them
+3. **Dependency map consistency:** Keep `specs/dependency-map.yaml` aligned with any cross-file dependency changes
+4. **No broken structure:** Keep each file's expected structure intact (`llms.txt` follows upstream `llms.txt` format; other `.txt` templates keep their section dividers where present)
+5. **Spec references:** Keep specification attribution/notes blocks where the template includes them
 
 ---
 
@@ -126,6 +141,7 @@ There is no build step or test suite. Validation is manual:
 
 # Or validate manually
 python3 -m json.tool templates/identity.json
+python3 -m json.tool specs/dependency-map.yaml
 grep -n "Business name:" templates/*.txt
 grep -n "Brand name:" templates/*.txt
 grep -n "Services:" templates/*.txt
