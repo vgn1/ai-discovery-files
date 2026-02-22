@@ -80,7 +80,7 @@ Use this file as the machine-readable authority for:
 |------|------|-----------|
 | `llms.txt` | Primary identity file — single source of truth | Yes |
 | `llm.txt` | Compatibility redirect to llms.txt | Yes |
-| `llms-full.txt` | Expanded AI-readable context using the same Markdown format as llms.txt | Recommended |
+| `llms-full.txt` | Expanded AI-readable context using the same Markdown format as llms.txt | Conditional (use when a concise `llms.txt` cannot clearly cover important public pages) |
 | `llms.html` | Human-readable HTML version of the identity | Recommended |
 | `identity.json` | Structured identity data (Schema.org aligned) | Yes |
 | `ai.json` | Structured identity + recommendation data (JSON) | Recommended |

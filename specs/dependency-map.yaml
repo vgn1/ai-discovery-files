@@ -18,8 +18,9 @@
       "role": "Compatibility redirect and file index."
     },
     "llms-full.txt": {
-      "priority": "recommended",
-      "role": "Expanded AI-readable context companion using llms.txt Markdown format."
+      "priority": "conditional",
+      "role": "Expanded AI-readable context companion using llms.txt Markdown format.",
+      "condition": "Use when a concise llms.txt cannot clearly cover the site's important public pages and link groups."
     },
     "llms.html": {
       "priority": "recommended",

@@ -36,9 +36,10 @@ section() { echo -e "\n${BOLD}$1${NC}"; }
 
 section "File Existence"
 
-REQUIRED_FILES=("llms.txt" "identity.json")
-RECOMMENDED_FILES=("llm.txt" "llms-full.txt" "ai.txt" "brand.txt" "faq-ai.txt" "llms.html" "ai.json")
-OPTIONAL_FILES=("robots-ai.txt" "developer-ai.txt")
+REQUIRED_FILES=("llms.txt" "llm.txt" "identity.json")
+RECOMMENDED_FILES=("ai.txt" "brand.txt" "faq-ai.txt" "llms.html" "ai.json")
+OPTIONAL_FILES=("robots-ai.txt")
+CONDITIONAL_FILES=("llms-full.txt" "developer-ai.txt")
 
 for f in "${REQUIRED_FILES[@]}"; do
   if [ -f "$DIR/$f" ]; then
@@ -61,6 +62,14 @@ for f in "${OPTIONAL_FILES[@]}"; do
     pass "$f exists"
   else
     echo -e "  ${YELLOW}-${NC} $f not present (optional)"
+  fi
+done
+
+for f in "${CONDITIONAL_FILES[@]}"; do
+  if [ -f "$DIR/$f" ]; then
+    pass "$f exists"
+  else
+    echo -e "  ${YELLOW}-${NC} $f not present (conditional)"
   fi
 done
 
