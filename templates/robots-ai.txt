@@ -164,5 +164,5 @@ Nothing in this file creates legal obligations or restrictions beyond existing l
 ---
 
 # Notes
-# - Specification reference (v1.0.0): https://github.com/GenerellAI/ai-discovery-files/blob/667715bc6f573f7c6b3f0106c36e08404d06fb73/specs/robots-ai-txt.md
+# - Specification reference (v1.0.0): https://github.com/GenerellAI/ai-discovery-files/blob/1b9af2a9f836837d139cafd776a833e5aeec812c/specs/robots-ai-txt.md
 # - Deploy path: https://www.yourdomain.com/robots-ai.txt
