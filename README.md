@@ -143,6 +143,11 @@ Contributions are welcome! See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines
 
 For spec-level changes (new file types, normative format updates, validator rule changes, deprecations), please use the RFC process in [rfcs/0001-rfc-process.md](rfcs/0001-rfc-process.md). Start from [rfcs/template.md](rfcs/template.md).
 
+Standards governance note:
+- Anyone may propose changes via issues/PRs, but maintainers control merges.
+- Spec-level changes are gated by the RFC process and maintainer approval.
+- Repository validation CI and CODEOWNERS are used to reduce accidental standards drift.
+
 ### Contributors
 
 <!-- Add your name here when you contribute! -->

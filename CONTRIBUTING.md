@@ -41,6 +41,8 @@ For spec-level changes, use the RFC process:
 
 Use normal PRs for typos, small docs edits, and non-spec maintenance changes.
 
+Maintainers may reclassify a PR as spec-level if it affects interoperability, validation behavior, file roles/priorities, or normative guidance.
+
 ### Submitting Changes
 
 1. Fork this repository
@@ -61,6 +63,13 @@ Use normal PRs for typos, small docs edits, and non-spec maintenance changes.
 5. Commit with a clear message describing what changed and why
 6. Open a Pull Request against `main`
 
+### Review and Merge Controls
+
+- Standards-critical paths are covered by `CODEOWNERS` (for example `specs/`, `templates/`, and validator files)
+- Pull requests should complete repository validation checks before merge
+- Spec-level changes require RFC review and maintainer approval before merge
+- Maintainers may request additional review time for broad-impact changes
+
 ---
 
 ## Guidelines
@@ -78,6 +87,17 @@ Use normal PRs for typos, small docs edits, and non-spec maintenance changes.
 - Add dependencies or build steps
 - Include real business data in template placeholders
 - Remove structural elements (section dividers, heading hierarchy)
+
+---
+
+## Maintainer Protections (Repository Settings)
+
+Maintainers should enable GitHub branch protection on `main` with:
+
+- Required pull request reviews
+- Required status checks (at minimum the repository validation workflow)
+- Dismiss stale approvals when new commits are pushed (recommended)
+- Restrict direct pushes to `main` (recommended)
 
 ---
 

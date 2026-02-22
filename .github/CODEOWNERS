@@ -1,0 +1,15 @@
+# Default owner for the repository
+* @GenerellAI
+
+# Standards-critical files require maintainer review
+/specs/ @GenerellAI
+/templates/ @GenerellAI
+/scripts/validate.sh @GenerellAI
+/scripts/check-dependency-map.py @GenerellAI
+/AGENTS.md @GenerellAI
+/README.md @GenerellAI
+/CONTRIBUTING.md @GenerellAI
+/rfcs/ @GenerellAI
+
+# Workflow and repository policy changes
+/.github/ @GenerellAI
