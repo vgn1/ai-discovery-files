@@ -10,8 +10,8 @@
 
 ## Purpose
 
-`llms-full.txt` is an optional, more comprehensive companion to `llms.txt`.
-It is intended for sites that want to provide deeper AI-readable context than the concise, curated `llms.txt` file.
+`llms-full.txt` is a conditional, more comprehensive companion to `llms.txt`.
+Use it when a concise `llms.txt` cannot clearly cover the site's important public pages and link groups.
 
 This repository treats `llms-full.txt` as a project-level extension. It is not part of the core upstream `llms.txt` filename specification.
 
