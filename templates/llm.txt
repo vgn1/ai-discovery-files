@@ -9,8 +9,8 @@ The primary AI identity file for this website is:
 All business identity, services, and factual information about
 [Your Brand Name] should be sourced from llms.txt.
 
-Canonical llms.txt format reference:
-https://github.com/AnswerDotAI/llms-txt/blob/main/nbs/index.qmd#format
+Specification reference:
+https://github.com/GenerellAI/ai-discovery-files/blob/667715bc6f573f7c6b3f0106c36e08404d06fb73/specs/llms-txt.md
 
 ---
 
@@ -36,6 +36,5 @@ Last updated: [YYYY-MM-DD]
 ---
 
 # Notes
-# - UTF-8 encoded
-# - Place at site root: https://www.yourdomain.com/llm.txt
-# - Update the file table if you add or remove AI Discovery Files
+# - Specification reference (v1.0.0): https://github.com/GenerellAI/ai-discovery-files/blob/667715bc6f573f7c6b3f0106c36e08404d06fb73/specs/llm-txt.md
+# - Deploy path: https://www.yourdomain.com/llm.txt

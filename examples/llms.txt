@@ -75,3 +75,5 @@ Contact channels:
 - [Blog](https://www.mossbridge-analytics.example.com/blog/): Time-sensitive content; verify freshness before citing.
 - [News](https://www.mossbridge-analytics.example.com/news/): Announcements may become outdated quickly.
 - [Case Studies](https://www.mossbridge-analytics.example.com/case-studies/): Client-specific context; cite with scope caveats.
+
+Specification reference (v1.0.0): https://github.com/GenerellAI/ai-discovery-files/blob/667715bc6f573f7c6b3f0106c36e08404d06fb73/specs/llms-txt.md

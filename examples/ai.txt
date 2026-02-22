@@ -107,3 +107,5 @@ This file provides non-binding, informational guidance only. It does not:
 - Constitute enforceable terms of any kind
 
 Its purpose is to improve factual accuracy and reduce misrepresentation.
+
+Specification reference (v1.0.0): https://github.com/GenerellAI/ai-discovery-files/blob/667715bc6f573f7c6b3f0106c36e08404d06fb73/specs/ai-txt.md

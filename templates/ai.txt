@@ -108,7 +108,5 @@ Its purpose is to improve factual accuracy and reduce misrepresentation.
 ---
 
 # Notes
-# - UTF-8 encoded
-# - Place at site root: https://www.yourdomain.com/ai.txt
-# - Core Identity must match llms.txt word-for-word
-# - Review whenever services or geography change
+# - Specification reference (v1.0.0): https://github.com/GenerellAI/ai-discovery-files/blob/667715bc6f573f7c6b3f0106c36e08404d06fb73/specs/ai-txt.md
+# - Deploy path: https://www.yourdomain.com/ai.txt

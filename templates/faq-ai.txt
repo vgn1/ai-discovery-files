@@ -156,9 +156,5 @@ Official website: [https://www.yourdomain.com/]
 ---
 
 # Notes
-# - UTF-8 encoded
-# - Place at site root: https://www.yourdomain.com/faq-ai.txt
-# - Use real customer questions, not SEO filler
-# - Source URLs must actually contain the referenced information
-# - Core Identity must match llms.txt
-# - Update when pricing, services, or policies change
+# - Specification reference (v1.0.0): https://github.com/GenerellAI/ai-discovery-files/blob/667715bc6f573f7c6b3f0106c36e08404d06fb73/specs/faq-ai-txt.md
+# - Deploy path: https://www.yourdomain.com/faq-ai.txt

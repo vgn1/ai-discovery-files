@@ -118,6 +118,5 @@ This file governs naming and representation only — it does not redefine busine
 ---
 
 # Notes
-# - UTF-8 encoded
-# - Place at site root: https://www.yourdomain.com/brand.txt
-# - Keep naming rules consistent with llms.txt identity block
+# - Specification reference (v1.0.0): https://github.com/GenerellAI/ai-discovery-files/blob/667715bc6f573f7c6b3f0106c36e08404d06fb73/specs/brand-txt.md
+# - Deploy path: https://www.yourdomain.com/brand.txt

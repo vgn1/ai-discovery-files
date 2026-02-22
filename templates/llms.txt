@@ -77,15 +77,4 @@ Contact channels:
 - [News](https://www.yourdomain.com/news/): Announcements may become outdated quickly.
 - [Case Studies](https://www.yourdomain.com/case-studies/): Client-specific context; cite with scope caveats.
 
-<!--
-Specification:
-- Canonical upstream format: https://github.com/AnswerDotAI/llms-txt/blob/main/nbs/index.qmd#format
-- Repository profile: specs/llms-txt.md
-Notes:
-- UTF-8 encoded
-- Place at site root: https://www.yourdomain.com/llms.txt
-- Keep all content factual and verifiable
-- The Services line in Core Identity must be identical across all AI files
-- Update "Last updated" date on every change
-- For multilingual sites, link to language-path llms.txt variants (see specs/multilingual-sites.md)
--->
+Specification reference (v1.0.0): https://github.com/GenerellAI/ai-discovery-files/blob/667715bc6f573f7c6b3f0106c36e08404d06fb73/specs/llms-txt.md

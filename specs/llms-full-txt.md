@@ -5,8 +5,10 @@
 
 ## Version
 
-1.0
+1.0.0
 ---
+
+Note: Template/example spec-reference footer lines included in this repository are optional provenance/attribution defaults and are not required by this specification.
 
 ## Purpose
 

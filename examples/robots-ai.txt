@@ -160,3 +160,5 @@ accessible content in accordance with:
 - Applicable laws
 
 Nothing in this file creates legal obligations or restrictions beyond existing law.
+
+Specification reference (v1.0.0): https://github.com/GenerellAI/ai-discovery-files/blob/667715bc6f573f7c6b3f0106c36e08404d06fb73/specs/robots-ai-txt.md

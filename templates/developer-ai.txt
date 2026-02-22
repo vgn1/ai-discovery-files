@@ -180,8 +180,5 @@ This file covers technical integrations only and must not contradict core identi
 ---
 
 # Notes
-# - Only include if you offer APIs, SDKs, or developer integrations
-# - UTF-8 encoded
-# - Place at site root: https://www.yourdomain.com/developer-ai.txt
-# - Keep technical details accurate and current
-# - Core Identity must match llms.txt
+# - Specification reference (v1.0.0): https://github.com/GenerellAI/ai-discovery-files/blob/667715bc6f573f7c6b3f0106c36e08404d06fb73/specs/developer-ai-txt.md
+# - Deploy path: https://www.yourdomain.com/developer-ai.txt

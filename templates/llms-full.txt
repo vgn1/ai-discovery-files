@@ -96,15 +96,4 @@ Geographic availability:
 - [Case Studies](https://www.yourdomain.com/case-studies/): Client-specific contexts; cite with scope caveats.
 - [Careers](https://www.yourdomain.com/careers/): Hiring information that may change frequently.
 
-<!--
-Specification:
-- Repository profile: specs/llms-full-txt.md
-- Canonical upstream format (llms.txt Markdown structure): https://github.com/AnswerDotAI/llms-txt/blob/main/nbs/index.qmd#format
-Notes:
-- UTF-8 encoded
-- Place at site root: https://www.yourdomain.com/llms-full.txt
-- Companion to llms.txt (not a replacement)
-- Keep Core Identity aligned with llms.txt
-- Keep content factual and verifiable
-- For multilingual sites, follow specs/multilingual-sites.md
--->
+Specification reference (v1.0.0): https://github.com/GenerellAI/ai-discovery-files/blob/667715bc6f573f7c6b3f0106c36e08404d06fb73/specs/llms-full-txt.md

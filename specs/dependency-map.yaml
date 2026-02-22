@@ -977,6 +977,24 @@
         "README.md"
       ],
       "notes": "Synchronize every AI file manifest/list to avoid stale discovery links."
+    },
+    {
+      "trigger": "spec_file_change",
+      "reviewFiles": [
+        "templates/ai.txt",
+        "templates/brand.txt",
+        "templates/developer-ai.txt",
+        "templates/faq-ai.txt",
+        "templates/llm.txt",
+        "templates/llms.txt",
+        "templates/llms-full.txt",
+        "templates/llms.html",
+        "templates/robots-ai.txt",
+        "templates/ai.json",
+        "templates/identity.json",
+        "scripts/pin-template-spec-links.py"
+      ],
+      "notes": "After changing specs/, refresh pinned template/example spec links so provenance references point to the intended commit SHA."
     }
   ]
 }

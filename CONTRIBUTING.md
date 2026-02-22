@@ -53,6 +53,9 @@ Maintainers may reclassify a PR as spec-level if it affects interoperability, va
    # Run the validation script
    ./scripts/validate.sh
 
+   # If specs/ changed, refresh pinned template/example spec links
+   python3 scripts/pin-template-spec-links.py
+
    # Or check manually
    python3 -m json.tool templates/identity.json
    python3 -m json.tool templates/ai.json
@@ -69,6 +72,7 @@ Maintainers may reclassify a PR as spec-level if it affects interoperability, va
 - Pull requests should complete repository validation checks before merge
 - Spec-level changes require RFC review and maintainer approval before merge
 - Maintainers may request additional review time for broad-impact changes
+- If `specs/` changes are included, PRs should also update pinned template/example spec links via `scripts/pin-template-spec-links.py`
 
 ---
 

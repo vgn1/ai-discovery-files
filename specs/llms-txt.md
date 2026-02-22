@@ -2,6 +2,12 @@
 
 > This repository uses the canonical upstream `llms.txt` specification.
 
+## Version
+
+1.0.0
+
+Note: Template/example spec-reference footer lines included in this repository are optional provenance/attribution defaults and are not required by the `llms.txt` format specification.
+
 ## Canonical Specification (Upstream)
 
 - GitHub project: https://github.com/AnswerDotAI/llms-txt

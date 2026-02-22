@@ -165,3 +165,5 @@ Developers typically integrate Mossbridge for:
 For business identity and services: https://www.mossbridge-analytics.example.com/llms.txt
 
 This file covers technical integrations only and must not contradict core identity files.
+
+Specification reference (v1.0.0): https://github.com/GenerellAI/ai-discovery-files/blob/667715bc6f573f7c6b3f0106c36e08404d06fb73/specs/developer-ai-txt.md

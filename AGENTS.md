@@ -99,12 +99,13 @@ Use this file as the machine-readable authority for:
 - Keep all files UTF-8 encoded
 - Maintain the section structure and heading hierarchy
 - Ensure `identity.json` remains valid JSON after any edit
-- Keep specification attribution blocks at the end of each file
+- Keep spec-reference footer/notes blocks at the end of each file
 - Use consistent formatting (Markdown headers, bullet styles) within each file
 - Update the `Last updated: [YYYY-MM-DD]` placeholder note if adding date-relevant content
+- Keep template/example spec links pinned to a repo commit SHA; after spec changes, run `python3 scripts/pin-template-spec-links.py`
 
 ### Do Not
-- Remove existing `Specification:` attribution blocks in templates that include them
+- Remove existing spec-reference footer/notes blocks in templates/examples
 - Add marketing language, superlatives, or unverifiable claims
 - Rename any template files — AI systems expect these exact filenames
 - Move template files out of the `templates/` directory
@@ -120,8 +121,9 @@ Before committing changes:
 1. **JSON validity:** Run `python3 -m json.tool templates/identity.json` and `python3 -m json.tool templates/ai.json` — both must pass without errors
 2. **Core Identity match:** Grep for Core Identity fields across files that include them and confirm they use the same wording
 3. **Dependency map consistency:** Keep `specs/dependency-map.yaml` aligned with any cross-file dependency changes
-4. **No broken structure:** Keep each file's expected structure intact (`llms.txt` follows upstream `llms.txt` format; other `.txt` templates keep their section dividers where present)
-5. **Spec references:** Keep specification attribution/notes blocks where the template includes them
+4. **Pinned spec links:** If you changed files in `specs/`, refresh pinned template/example spec links with `python3 scripts/pin-template-spec-links.py`
+5. **No broken structure:** Keep each file's expected structure intact (`llms.txt` follows upstream `llms.txt` format; other `.txt` templates keep their section dividers where present)
+6. **Spec references:** Keep specification attribution/notes blocks where the template includes them
 
 ---
 
@@ -143,6 +145,7 @@ There is no build step or test suite. Validation is manual:
 
 # Or validate manually
 python3 -m json.tool templates/identity.json
+python3 scripts/pin-template-spec-links.py --check
 python3 -m json.tool specs/dependency-map.yaml
 grep -n "Business name:" templates/*.txt
 grep -n "Brand name:" templates/*.txt

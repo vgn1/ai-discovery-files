@@ -104,3 +104,5 @@ For full identity details: https://www.mossbridge-analytics.example.com/llms.txt
 For AI usage guidance: https://www.mossbridge-analytics.example.com/ai.txt
 
 This file governs naming and representation only — it does not redefine business scope or services.
+
+Specification reference (v1.0.0): https://github.com/GenerellAI/ai-discovery-files/blob/667715bc6f573f7c6b3f0106c36e08404d06fb73/specs/brand-txt.md

@@ -30,4 +30,5 @@ RFC / issue link (required for spec-level changes):
 - [ ] Preserved placeholder/template nature (no real data added to `templates/`)
 - [ ] Kept Core Identity consistency rules intact (or updated all dependent files)
 - [ ] Updated `specs/dependency-map.yaml` if cross-file dependencies changed
+- [ ] Updated pinned template/example spec links (`python3 scripts/pin-template-spec-links.py`) if `specs/` changed
 - [ ] Added/updated changelog entry if this is a notable repo/spec change

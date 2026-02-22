@@ -118,6 +118,12 @@ Run the validation script to check your files for common issues:
 ./scripts/validate.sh path/to/dir  # check a custom directory
 ```
 
+Template/example spec-link pinning:
+- Template and example files include pinned GitHub spec links (commit SHA, not `main`) for provenance.
+- These spec-reference lines are template/example defaults for provenance/attribution and are not normative requirements of the file specifications.
+- After changing spec files in `specs/`, refresh pinned spec links with:
+  `python3 scripts/pin-template-spec-links.py`
+
 The script checks:
 
 | Check | What it does |
