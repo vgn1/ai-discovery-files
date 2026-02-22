@@ -86,7 +86,7 @@ Machine-readable dependency authority: [`specs/dependency-map.yaml`](specs/depen
 
 ## Important Notes
 
-- **No subdirectories when deployed.** All files must live at the site root. (They are grouped in `templates/` in this repo for organisation — flatten when deploying.)
+- **Root deployment is the default.** Publish primary AI Discovery files at the site root. For multilingual sites, language-path variants (for example `/fr/llms.txt`) are supported by the repository multilingual profile.
 - **No renaming.** AI systems look for these exact filenames.
 - **UTF-8 encoding** for all files.
 - **Facts only.** Avoid marketing language — AI systems work best with straightforward, verifiable statements.
@@ -105,6 +105,7 @@ For `llms.txt`, this repository defers to the canonical upstream specification:
 - [llmstxt.org](https://llmstxt.org/)
 
 `/specs/llms-txt.md` in this repo is intentionally a thin reference plus repository-specific profile rules.
+For multilingual websites, see `/specs/multilingual-sites.md` for repository guidance on linking root `llms.txt` to language-path `llms.txt` variants.
 
 ---
 

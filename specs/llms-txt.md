@@ -87,6 +87,11 @@ In this repository, templates include a shared Core Identity field set near the 
 The Core Identity fields must match word-for-word across repository files that include them.
 `llms.txt` remains the source of truth when conflicts occur.
 
+### Multilingual Sites (Project Rule)
+
+For multilingual sites, publish the primary `llms.txt` at the root and link from it to language-path variants (for example `/fr/llms.txt`).
+See `specs/multilingual-sites.md` for the repository multilingual profile.
+
 ---
 
 ## Version Pinning Note

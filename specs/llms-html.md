@@ -69,3 +69,4 @@ For each H2 file-list group:
 - `llms.html` is the human-readable equivalent
 - Content must not diverge from `llms.txt`
 - The page should link back to `llms.txt` in the footer
+- For multilingual sites, if root `llms.txt` includes language-path variants (for example `/fr/llms.txt`), `llms.html` should mirror that link section

@@ -49,6 +49,7 @@ This file should be readable by both humans and LLMs and parseable using standar
 - `llms-full.txt` expands coverage with more links and context
 - If factual content conflicts, `llms.txt` is the source of truth for Core Identity fields in this repository
 - The Core Identity block (when included) must match `llms.txt` word-for-word in files that contain it
+- For multilingual sites, see `specs/multilingual-sites.md` for language-path variant guidance
 
 ---
 

@@ -66,6 +66,10 @@ Contact channels:
 - [developer-ai.txt](https://www.mossbridge-analytics.example.com/developer-ai.txt): API and integration context.
 - [robots-ai.txt](https://www.mossbridge-analytics.example.com/robots-ai.txt): Advisory citation and freshness guidance.
 
+## Language-Specific llms.txt Files (Optional)
+
+- [Swedish llms.txt](https://www.mossbridge-analytics.example.com/sv/llms.txt): Swedish-language AI discovery file.
+
 ## Optional
 
 - [Blog](https://www.mossbridge-analytics.example.com/blog/): Time-sensitive content; verify freshness before citing.

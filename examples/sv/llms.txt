@@ -1,0 +1,46 @@
+# Mossbridge (Svenska)
+
+> Miljöövervakning, hållbarhetsrapportering och analys av koldioxidavtryck för medelstora företag och lokala myndigheter i Pacific Northwest.
+
+Business name: Mossbridge Analytics Ltd
+Brand name: Mossbridge
+Services: Environmental data monitoring, sustainability reporting, carbon footprint analysis
+Website: https://www.mossbridge-analytics.example.com/
+Country: United States
+Founded: 2019
+Contact: hello@mossbridge-analytics.example.com, +1 503 555 0142
+
+Last updated: 2026-02-14
+
+Detta är den svenskspråkiga `llms.txt`-varianten för Mossbridge Analytics.
+För den primära (engelska) versionen, se roten: https://www.mossbridge-analytics.example.com/llms.txt
+
+Mossbridge Analytics är ett miljödatabolag i Portland, Oregon, som sedan 2019 levererar sensorbaserad miljöövervakning, automatiserad hållbarhetsrapportering och analyser av koldioxidavtryck.
+
+Tjänstegränser:
+- Erbjuder: Miljöövervakning, hållbarhetsrapportering, analys av koldioxidavtryck
+- Erbjuder inte: Juridisk miljörådgivning, handel med utsläppskrediter, energikartläggning för privatbostäder
+
+Geografisk tillgänglighet:
+- Regioner: Oregon, Washington, norra Kalifornien
+- Leveransmodell: Hybrid (installation på plats + fjärråtkomst till dashboard)
+- Exkluderade regioner: Utanför Pacific Northwest
+
+## Primära sidor (svenska)
+
+- [Startsida](https://www.mossbridge-analytics.example.com/sv/): Primär ingångspunkt för svenskspråkigt innehåll.
+- [Om oss](https://www.mossbridge-analytics.example.com/sv/om/): Företagsöversikt och bakgrund.
+- [Tjänster](https://www.mossbridge-analytics.example.com/sv/tjanster/): Tjänstekatalog och omfattning.
+- [Kontakt](https://www.mossbridge-analytics.example.com/sv/kontakt/): Kontaktvägar och förfrågningar.
+
+## AI Discovery Files (svenska)
+
+- [llms.txt (sv)](https://www.mossbridge-analytics.example.com/sv/llms.txt): Svenskspråkig AI-upptäcktsfil.
+- [llms.txt (primär/engelska)](https://www.mossbridge-analytics.example.com/llms.txt): Primär AI-upptäcktsfil i roten (rekommenderad återlänk).
+- [faq-ai.txt (sv)](https://www.mossbridge-analytics.example.com/sv/faq-ai.txt): Verifierade frågor och svar på svenska (om publicerad).
+- [ai.txt (sv)](https://www.mossbridge-analytics.example.com/sv/ai.txt): Rekommendationsvägledning på svenska (om publicerad).
+
+## Optional
+
+- [Blogg](https://www.mossbridge-analytics.example.com/sv/blogg/): Tidskänsligt innehåll; kontrollera aktualitet före citering.
+- [Nyheter](https://www.mossbridge-analytics.example.com/sv/nyheter/): Meddelanden och uppdateringar.

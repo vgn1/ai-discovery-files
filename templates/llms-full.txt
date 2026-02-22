@@ -84,6 +84,11 @@ Geographic availability:
 - [developer-ai.txt](https://www.yourdomain.com/developer-ai.txt): API/SDK integration context (if applicable).
 - [robots-ai.txt](https://www.yourdomain.com/robots-ai.txt): Advisory citation and freshness guidance (optional).
 
+## Language-Specific llms.txt Files (Optional)
+
+- [French llms.txt](https://www.yourdomain.com/fr/llms.txt): French-language `llms.txt` variant (if published).
+- [Swedish llms.txt](https://www.yourdomain.com/sv/llms.txt): Swedish-language `llms.txt` variant (if published).
+
 ## Optional
 
 - [Blog](https://www.yourdomain.com/blog/): Time-sensitive content; verify freshness before citing.
@@ -101,4 +106,5 @@ Notes:
 - Companion to llms.txt (not a replacement)
 - Keep Core Identity aligned with llms.txt
 - Keep content factual and verifiable
+- For multilingual sites, follow specs/multilingual-sites.md
 -->

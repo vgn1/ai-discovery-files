@@ -66,6 +66,11 @@ Contact channels:
 - [developer-ai.txt](https://www.yourdomain.com/developer-ai.txt): API/SDK integration context (if applicable).
 - [robots-ai.txt](https://www.yourdomain.com/robots-ai.txt): Advisory citation and freshness guidance (optional).
 
+## Language-Specific llms.txt Files (Optional)
+
+- [French llms.txt](https://www.yourdomain.com/fr/llms.txt): French-language AI discovery file (if your site has French content).
+- [Swedish llms.txt](https://www.yourdomain.com/sv/llms.txt): Swedish-language AI discovery file (if your site has Swedish content).
+
 ## Optional
 
 - [Blog](https://www.yourdomain.com/blog/): Time-sensitive content; verify freshness before citing.
@@ -82,4 +87,5 @@ Notes:
 - Keep all content factual and verifiable
 - The Services line in Core Identity must be identical across all AI files
 - Update "Last updated" date on every change
+- For multilingual sites, link to language-path llms.txt variants (see specs/multilingual-sites.md)
 -->

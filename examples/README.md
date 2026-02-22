@@ -4,6 +4,8 @@ This directory contains a fully filled-in example of AI Discovery Files for a fi
 
 Use these as a reference when filling in your own templates. The example is entirely fictional — any resemblance to real businesses is coincidental.
 
+This directory also includes a language-path example at `examples/sv/llms.txt` showing a Swedish `llms.txt` variant linked from the root `llms.txt`.
+
 ## The Example Business
 
 - **Company:** Mossbridge Analytics Ltd
