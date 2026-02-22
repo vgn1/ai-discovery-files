@@ -31,6 +31,7 @@ Business details:
 - Legal name: [Full registered name]
 - Registration: [Company number, if applicable]
 - Tax ID / VAT: [Number, if applicable]
+- DUNS number: [9-digit DUNS number, if applicable]
 - Registered address: [Full address]
 
 Contact channels:

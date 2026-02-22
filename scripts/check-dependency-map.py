@@ -183,6 +183,7 @@ def run_first_pass(templates_dir: pathlib.Path, dep_map: Dict[str, Any]) -> None
         exact_rules += 1
         field_id = str(field.get("fieldId", "unknown_field"))
         severity = str(field.get("severity", "error"))
+        allow_missing_source = bool(field.get("allowMissingSource", False))
         source = field.get("source", {})
         targets = field.get("targets", [])
         if not isinstance(source, dict) or not isinstance(targets, list):
@@ -199,6 +200,9 @@ def run_first_pass(templates_dir: pathlib.Path, dep_map: Dict[str, Any]) -> None
             templates_dir, source_file, source_selector
         )
         if source_error:
+            if allow_missing_source and _source_code == "missing_selector":
+                emit("INFO", f"{field_id}: skipped (optional source field not present in {source_file}).")
+                continue
             level = severity_to_level(severity)
             emit(level, f"{field_id}: {source_error}")
             continue

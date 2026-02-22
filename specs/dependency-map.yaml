@@ -644,6 +644,49 @@
       ]
     },
     {
+      "fieldId": "business_identifiers.duns_number",
+      "label": "DUNS number",
+      "dependencyType": "duplicated",
+      "relationType": "exact_match",
+      "comparisonRule": "literal",
+      "severity": "warning",
+      "allowMissingSource": true,
+      "source": {
+        "file": "llms.txt",
+        "selector": {
+          "type": "line_prefix",
+          "value": "- DUNS number: "
+        }
+      },
+      "targets": [
+        {
+          "file": "llms-full.txt",
+          "selector": {
+            "type": "line_prefix",
+            "value": "- DUNS number: "
+          }
+        },
+        {
+          "file": "identity.json",
+          "selector": {
+            "type": "json_path",
+            "value": "dunsNumber"
+          }
+        },
+        {
+          "file": "ai.json",
+          "selector": {
+            "type": "json_path",
+            "value": "identity.dunsNumber"
+          }
+        }
+      ],
+      "changeTriggers": [
+        "business_identifier_change",
+        "duns_number_change"
+      ]
+    },
+    {
       "fieldId": "freshness.last_updated",
       "label": "Last updated",
       "dependencyType": "duplicated",

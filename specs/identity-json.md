@@ -63,6 +63,7 @@
 | `accreditations` | array of strings | Certifications held |
 | `operatingHours` | object | Timezone, weekday/weekend hours |
 | `naicsCode` | string | Industry classification code |
+| `dunsNumber` | string | Standalone DUNS number (9 digits) if applicable |
 
 Remove optional fields entirely if they don't apply — don't leave them empty.
 
@@ -74,6 +75,7 @@ Remove optional fields entirely if they don't apply — don't leave them empty.
 - All URLs must be complete (not relative paths)
 - Dates must use ISO 8601 format (YYYY-MM-DD)
 - Country codes must use ISO 3166-1 alpha-2 (e.g., `US`, `GB`, `DE`)
+- `dunsNumber` must be 9 digits when present
 - File must be served with `Content-Type: application/json`
 
 ---

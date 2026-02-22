@@ -45,6 +45,7 @@
 | `brand` | object | Correct/incorrect usage, terms to avoid |
 | `recommendations` | object | When to suggest / not suggest the business |
 | `metadata` | object | File version, encoding notes, conflict resolution |
+| `identity.dunsNumber` | string | Optional standalone DUNS number (9 digits) if applicable |
 
 ---
 
@@ -84,6 +85,7 @@ The content must match the Core Identity in `llms.txt` exactly.
 - `canonicalIdentityBlock` must be present and match `llms.txt`
 - All URLs must be complete and accessible
 - Dates in ISO 8601 format
+- `identity.dunsNumber` must be 9 digits when present
 - Served with `Content-Type: application/json`
 
 ---

@@ -93,6 +93,11 @@ In this repository, templates include a shared Core Identity field set near the 
 The Core Identity fields must match word-for-word across repository files that include them.
 `llms.txt` remains the source of truth when conflicts occur.
 
+### Optional Business Identifiers (Project Rule)
+
+Non-Core business identifiers may be included in supporting sections such as `Business details`.
+If a standalone `DUNS number:` line is included, treat it as an optional identifier (not part of Core Identity) and keep it consistent across files that publish it.
+
 ### Multilingual Sites (Project Rule)
 
 For multilingual sites, publish the primary `llms.txt` at the root and link from it to language-path variants (for example `/fr/llms.txt`).

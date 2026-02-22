@@ -31,6 +31,7 @@ Business details:
 - Legal name: Mossbridge Analytics Ltd
 - Registration: Oregon Business Registry #1284759
 - Tax ID / VAT: EIN 82-4937261
+- DUNS number: 123456789
 - Registered address: 1420 NW Couch Street, Suite 300, Portland, OR 97209
 
 Contact channels:

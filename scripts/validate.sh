@@ -323,6 +323,164 @@ else
   fail "llms.txt not found — cannot check identity consistency"
 fi
 
+# ─── DUNS Number (Optional) ──────────────────────────────────
+
+section "DUNS Number (Optional)"
+
+extract_json_value() {
+  local file_path="$1"
+  local json_path="$2"
+  python3 - "$file_path" "$json_path" <<'PY'
+import json
+import re
+import sys
+
+def parse_path(expr):
+    tokens = []
+    for part in expr.split("."):
+        if not part:
+            continue
+        m = re.fullmatch(r"([A-Za-z0-9_-]+)(\[[0-9]+\])?", part)
+        if not m:
+            tokens.append(part)
+            continue
+        tokens.append(m.group(1))
+        if m.group(2):
+            tokens.append(int(m.group(2)[1:-1]))
+    return tokens
+
+try:
+    with open(sys.argv[1], encoding="utf-8") as fh:
+        data = json.load(fh)
+except Exception:
+    print("")
+    raise SystemExit(0)
+
+value = data
+for token in parse_path(sys.argv[2]):
+    if isinstance(token, int):
+        if not isinstance(value, list) or token >= len(value):
+            print("")
+            raise SystemExit(0)
+        value = value[token]
+    else:
+        if not isinstance(value, dict) or token not in value:
+            print("")
+            raise SystemExit(0)
+        value = value[token]
+
+if isinstance(value, (dict, list)):
+    print("")
+else:
+    print(str(value).strip())
+PY
+}
+
+extract_html_duns() {
+  local file_path="$1"
+  python3 - "$file_path" <<'PY'
+import re
+import sys
+
+try:
+    text = open(sys.argv[1], encoding="utf-8").read()
+except Exception:
+    print("")
+    raise SystemExit(0)
+
+m = re.search(r"<li>\s*DUNS number:\s*([^<\n]+)\s*</li>", text)
+print(m.group(1).strip() if m else "")
+PY
+}
+
+is_placeholder_duns() {
+  [[ "$1" =~ ^\[[^][]+\]$ ]]
+}
+
+check_duns_format() {
+  local label="$1"
+  local value="$2"
+  if [ -z "$value" ]; then
+    return 1
+  fi
+  if is_placeholder_duns "$value"; then
+    pass "$label DUNS number placeholder present"
+    return 0
+  fi
+  if [[ "$value" =~ ^[0-9]{9}$ ]]; then
+    pass "$label DUNS number format is valid"
+  else
+    fail "$label DUNS number must be 9 digits"
+  fi
+  return 0
+}
+
+check_duns_match() {
+  local label="$1"
+  local value="$2"
+  local source_value="$3"
+  if [ -z "$value" ]; then
+    warn "$label DUNS number not present while llms.txt includes one"
+    return
+  fi
+  if [ "$value" = "$source_value" ]; then
+    pass "$label DUNS number matches llms.txt"
+  else
+    fail "$label DUNS number differs from llms.txt"
+  fi
+}
+
+LLMS_DUNS=""
+if [ -f "$DIR/llms.txt" ]; then
+  LLMS_DUNS=$(grep -m1 "^- DUNS number:" "$DIR/llms.txt" 2>/dev/null | sed 's/^- DUNS number: *//' || true)
+fi
+
+if [ -z "$LLMS_DUNS" ]; then
+  echo -e "  ${YELLOW}-${NC} llms.txt DUNS number not present (optional)"
+else
+  check_duns_format "llms.txt" "$LLMS_DUNS" || true
+fi
+
+if [ -f "$DIR/llms-full.txt" ]; then
+  llms_full_duns=$(grep -m1 "^- DUNS number:" "$DIR/llms-full.txt" 2>/dev/null | sed 's/^- DUNS number: *//' || true)
+  check_duns_format "llms-full.txt" "$llms_full_duns" || true
+  if [ -n "$LLMS_DUNS" ]; then
+    check_duns_match "llms-full.txt" "$llms_full_duns" "$LLMS_DUNS"
+  elif [ -n "$llms_full_duns" ]; then
+    warn "llms-full.txt includes DUNS number but llms.txt does not"
+  fi
+fi
+
+if [ -f "$DIR/llms.html" ]; then
+  llms_html_duns=$(extract_html_duns "$DIR/llms.html")
+  check_duns_format "llms.html" "$llms_html_duns" || true
+  if [ -n "$LLMS_DUNS" ]; then
+    check_duns_match "llms.html" "$llms_html_duns" "$LLMS_DUNS"
+  elif [ -n "$llms_html_duns" ]; then
+    warn "llms.html includes DUNS number but llms.txt does not"
+  fi
+fi
+
+if [ -f "$DIR/identity.json" ]; then
+  identity_json_duns=$(extract_json_value "$DIR/identity.json" "dunsNumber")
+  check_duns_format "identity.json" "$identity_json_duns" || true
+  if [ -n "$LLMS_DUNS" ]; then
+    check_duns_match "identity.json" "$identity_json_duns" "$LLMS_DUNS"
+  elif [ -n "$identity_json_duns" ]; then
+    warn "identity.json includes dunsNumber but llms.txt does not"
+  fi
+fi
+
+if [ -f "$DIR/ai.json" ]; then
+  ai_json_duns=$(extract_json_value "$DIR/ai.json" "identity.dunsNumber")
+  check_duns_format "ai.json identity.dunsNumber" "$ai_json_duns" || true
+  if [ -n "$LLMS_DUNS" ]; then
+    check_duns_match "ai.json identity.dunsNumber" "$ai_json_duns" "$LLMS_DUNS"
+  elif [ -n "$ai_json_duns" ]; then
+    warn "ai.json identity.dunsNumber includes a value but llms.txt does not"
+  fi
+fi
+
 # ─── Placeholder Check ───────────────────────────────────────
 
 section "Placeholder Check"

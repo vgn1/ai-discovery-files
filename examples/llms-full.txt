@@ -27,6 +27,9 @@ Geographic availability:
 - Delivery model: Hybrid (on-site sensor installation + remote dashboard access)
 - Excluded regions: Outside the Pacific Northwest (sensor installation logistics limit range)
 
+Business identifiers:
+- DUNS number: 123456789
+
 ## Core Pages
 
 - [Homepage](https://www.mossbridge-analytics.example.com/): Primary website entry point.

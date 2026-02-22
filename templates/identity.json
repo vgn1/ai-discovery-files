@@ -75,6 +75,8 @@
     "maxValue": "[max]"
   },
 
+  "dunsNumber": "[9-digit DUNS number, if applicable]",
+
   "identifier": [
     {
       "type": "CompanyRegistration",

@@ -26,6 +26,9 @@ Geographic availability:
 - Delivery model: [Remote / On-site / Hybrid]
 - Excluded regions: [List any, or "None"]
 
+Business identifiers:
+- DUNS number: [9-digit DUNS number, if applicable]
+
 ## Core Pages
 
 - [Homepage](https://www.yourdomain.com/): Primary website entry point.

@@ -86,6 +86,8 @@
     "maxValue": 50
   },
 
+  "dunsNumber": "123456789",
+
   "identifier": [
     {
       "type": "CompanyRegistration",
