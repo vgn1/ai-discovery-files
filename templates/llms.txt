@@ -78,4 +78,4 @@ Contact channels:
 - [News](https://www.yourdomain.com/news/): Announcements may become outdated quickly.
 - [Case Studies](https://www.yourdomain.com/case-studies/): Client-specific context; cite with scope caveats.
 
-Specification reference (v1.0.0): https://github.com/GenerellAI/ai-discovery-files/blob/1b9af2a9f836837d139cafd776a833e5aeec812c/specs/llms-txt.md
+Specification reference (v1.0.0): https://github.com/GenerellAI/ai-discovery-files/blob/e6255d279b82b686389eebe29aef5d250ff637da/specs/llms-txt.md

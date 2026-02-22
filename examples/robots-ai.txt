@@ -161,4 +161,4 @@ accessible content in accordance with:
 
 Nothing in this file creates legal obligations or restrictions beyond existing law.
 
-Specification reference (v1.0.0): https://github.com/GenerellAI/ai-discovery-files/blob/1b9af2a9f836837d139cafd776a833e5aeec812c/specs/robots-ai-txt.md
+Specification reference (v1.0.0): https://github.com/GenerellAI/ai-discovery-files/blob/e6255d279b82b686389eebe29aef5d250ff637da/specs/robots-ai-txt.md
