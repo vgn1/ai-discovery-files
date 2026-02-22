@@ -10,6 +10,8 @@ The format is based on Keep a Changelog and this project uses Semantic Versionin
 
 - Added `CHANGELOG.md` to track repository-level updates.
 - Added missing Mossbridge example files in `examples/`: `llm.txt`, `llms.html`, `ai.json`, `developer-ai.txt`, and `robots-ai.txt`.
+- Added a repository extension for `llms-full.txt`, including a new specification (`specs/llms-full-txt.md`), template (`templates/llms-full.txt`), and filled Mossbridge example (`examples/llms-full.txt`).
+- Added a machine-readable cross-file dependency map (`specs/dependency-map.yaml`) and a first-pass validator helper (`scripts/check-dependency-map.py`) for exact-match dependency checks.
 
 ### Changed
 
@@ -19,6 +21,8 @@ The format is based on Keep a Changelog and this project uses Semantic Versionin
 - Updated `specs/llms-html.md`, `templates/llms.html`, and `examples/llms.html` so HTML output mirrors the upstream-aligned `llms.txt` structure and section groups.
 - Clarified `README.md` and `AGENTS.md` so Core Identity consistency applies to files that include Core Identity fields, not every file.
 - Enhanced `scripts/validate.sh` to validate full Core Identity field alignment across relevant files (including `brand.txt` and `ai.json`), use robust UTF-8 decoding checks, and ignore Markdown link labels in placeholder detection while treating placeholders in `examples/` as errors.
+- Updated docs, templates, examples, and structured manifests (`ai.json`) to include `llms-full.txt` in AI Discovery file lists and references.
+- Updated `scripts/validate.sh`, `README.md`, and `AGENTS.md` to integrate the dependency map workflow and include `llms-full.txt` in recommended/core-identity validation coverage.
 
 ## [1.0.0] - 2026-02-16
 

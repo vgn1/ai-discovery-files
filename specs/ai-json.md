@@ -41,7 +41,7 @@
 |-------|------|-------------|
 | `geography` | object | Regions served, delivery model, exclusions |
 | `pages` | object | Key reference page URLs |
-| `aiFiles` | object | URLs of all AI Discovery Files |
+| `aiFiles` | object | URLs of all AI Discovery Files (include `llmsFullTxt` when `llms-full.txt` is published) |
 | `brand` | object | Correct/incorrect usage, terms to avoid |
 | `recommendations` | object | When to suggest / not suggest the business |
 | `metadata` | object | File version, encoding notes, conflict resolution |

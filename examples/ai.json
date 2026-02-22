@@ -79,6 +79,7 @@
 
   "aiFiles": {
     "llmsTxt": "https://www.mossbridge-analytics.example.com/llms.txt",
+    "llmsFullTxt": "https://www.mossbridge-analytics.example.com/llms-full.txt",
     "llmsHtml": "https://www.mossbridge-analytics.example.com/llms.html",
     "aiTxt": "https://www.mossbridge-analytics.example.com/ai.txt",
     "aiJson": "https://www.mossbridge-analytics.example.com/ai.json",

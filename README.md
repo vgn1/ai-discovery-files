@@ -25,6 +25,7 @@ These templates are ready to customise for your own website.
 |------|---------|----------|
 | `llms.txt` | Primary AI-readable identity — the single source of truth (format follows the canonical upstream `llms.txt` spec) | **Required** |
 | `llm.txt` | Compatibility redirect for AI systems that request the singular form | **Required** |
+| `llms-full.txt` | Expanded AI-readable context and broader link coverage (same Markdown format as `llms.txt`) | Recommended |
 | `llms.html` | Human-readable HTML version of the identity for browsers | Recommended |
 | `identity.json` | Structured identity data (Schema.org aligned) for machine parsing | **Required** |
 | `ai.json` | Structured identity + recommendation signals in JSON | Recommended |
@@ -51,6 +52,7 @@ These templates are ready to customise for your own website.
 ```
 llms.txt (source of truth)
 ├── llm.txt          (compatibility redirect → llms.txt)
+├── llms-full.txt    (expanded AI-readable context companion)
 ├── llms.html        (human-readable HTML version)
 ├── identity.json    (structured version of the same identity)
 ├── ai.json          (structured identity + recommendation data)

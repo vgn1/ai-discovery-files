@@ -37,7 +37,7 @@ section() { echo -e "\n${BOLD}$1${NC}"; }
 section "File Existence"
 
 REQUIRED_FILES=("llms.txt" "identity.json")
-RECOMMENDED_FILES=("llm.txt" "ai.txt" "brand.txt" "faq-ai.txt" "llms.html" "ai.json")
+RECOMMENDED_FILES=("llm.txt" "llms-full.txt" "ai.txt" "brand.txt" "faq-ai.txt" "llms.html" "ai.json")
 OPTIONAL_FILES=("robots-ai.txt" "developer-ai.txt")
 
 for f in "${REQUIRED_FILES[@]}"; do
@@ -155,7 +155,7 @@ if [ -f "$DIR/llms.txt" ]; then
   fi
 
   # Check consistency across other txt files
-  IDENTITY_FILES=("ai.txt" "developer-ai.txt" "faq-ai.txt" "robots-ai.txt")
+  IDENTITY_FILES=("llms-full.txt" "ai.txt" "developer-ai.txt" "faq-ai.txt" "robots-ai.txt")
 
   for f in "${IDENTITY_FILES[@]}"; do
     [ -f "$DIR/$f" ] || continue

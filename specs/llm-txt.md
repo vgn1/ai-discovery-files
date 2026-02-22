@@ -66,6 +66,7 @@ https://github.com/AnswerDotAI/llms-txt/blob/main/nbs/index.qmd#format
 | File             | URL                              |
 |------------------|----------------------------------|
 | llms.txt         | https://example.com/llms.txt     |
+| llms-full.txt    | https://example.com/llms-full.txt |
 | ai.txt           | https://example.com/ai.txt       |
 | ...              | ...                              |
 

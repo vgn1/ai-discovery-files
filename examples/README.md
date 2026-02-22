@@ -18,6 +18,7 @@ Use these as a reference when filling in your own templates. The example is enti
 |------|-------------|
 | `llms.txt` | Primary identity with full business details |
 | `llm.txt` | Compatibility redirect to `llms.txt` |
+| `llms-full.txt` | Expanded AI-readable context and broader link coverage |
 | `llms.html` | Human-readable HTML version of the identity |
 | `identity.json` | Structured identity data |
 | `ai.txt` | Recommendation guidance |

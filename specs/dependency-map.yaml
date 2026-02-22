@@ -17,6 +17,10 @@
       "priority": "required",
       "role": "Compatibility redirect and file index."
     },
+    "llms-full.txt": {
+      "priority": "recommended",
+      "role": "Expanded AI-readable context companion using llms.txt Markdown format."
+    },
     "llms.html": {
       "priority": "recommended",
       "role": "Human-readable rendering of llms.txt content."
@@ -66,6 +70,13 @@
         }
       },
       "targets": [
+        {
+          "file": "llms-full.txt",
+          "selector": {
+            "type": "line_prefix",
+            "value": "Business name: "
+          }
+        },
         {
           "file": "ai.txt",
           "selector": {
@@ -148,6 +159,13 @@
       },
       "targets": [
         {
+          "file": "llms-full.txt",
+          "selector": {
+            "type": "line_prefix",
+            "value": "Brand name: "
+          }
+        },
+        {
           "file": "ai.txt",
           "selector": {
             "type": "line_prefix",
@@ -229,6 +247,13 @@
       },
       "targets": [
         {
+          "file": "llms-full.txt",
+          "selector": {
+            "type": "line_prefix",
+            "value": "Services: "
+          }
+        },
+        {
           "file": "ai.txt",
           "selector": {
             "type": "line_prefix",
@@ -302,6 +327,13 @@
         }
       },
       "targets": [
+        {
+          "file": "llms-full.txt",
+          "selector": {
+            "type": "line_prefix",
+            "value": "Website: "
+          }
+        },
         {
           "file": "ai.txt",
           "selector": {
@@ -384,6 +416,13 @@
       },
       "targets": [
         {
+          "file": "llms-full.txt",
+          "selector": {
+            "type": "line_prefix",
+            "value": "Country: "
+          }
+        },
+        {
           "file": "ai.txt",
           "selector": {
             "type": "line_prefix",
@@ -458,6 +497,13 @@
       },
       "targets": [
         {
+          "file": "llms-full.txt",
+          "selector": {
+            "type": "line_prefix",
+            "value": "Founded: "
+          }
+        },
+        {
           "file": "ai.txt",
           "selector": {
             "type": "line_prefix",
@@ -530,6 +576,13 @@
         }
       },
       "targets": [
+        {
+          "file": "llms-full.txt",
+          "selector": {
+            "type": "line_prefix",
+            "value": "Contact: "
+          }
+        },
         {
           "file": "ai.txt",
           "selector": {
@@ -606,6 +659,13 @@
       "targets": [
         {
           "file": "llm.txt",
+          "selector": {
+            "type": "line_prefix",
+            "value": "Last updated: "
+          }
+        },
+        {
+          "file": "llms-full.txt",
           "selector": {
             "type": "line_prefix",
             "value": "Last updated: "
@@ -851,6 +911,7 @@
       "trigger": "legal_name_change",
       "reviewFiles": [
         "llms.txt",
+        "llms-full.txt",
         "ai.txt",
         "faq-ai.txt",
         "developer-ai.txt",
@@ -866,6 +927,7 @@
       "trigger": "rebrand",
       "reviewFiles": [
         "llms.txt",
+        "llms-full.txt",
         "ai.txt",
         "brand.txt",
         "faq-ai.txt",
@@ -881,6 +943,7 @@
       "trigger": "service_catalog_change",
       "reviewFiles": [
         "llms.txt",
+        "llms-full.txt",
         "ai.txt",
         "faq-ai.txt",
         "ai.json",
@@ -893,6 +956,7 @@
       "trigger": "support_channel_change",
       "reviewFiles": [
         "llms.txt",
+        "llms-full.txt",
         "ai.txt",
         "faq-ai.txt",
         "developer-ai.txt",
@@ -905,6 +969,7 @@
       "trigger": "add_or_remove_ai_discovery_file",
       "reviewFiles": [
         "llms.txt",
+        "llms-full.txt",
         "llm.txt",
         "llms.html",
         "ai.json",

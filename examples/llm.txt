@@ -19,6 +19,7 @@ https://github.com/AnswerDotAI/llms-txt/blob/main/nbs/index.qmd#format
 | File               | URL                                                        |
 |--------------------|------------------------------------------------------------|
 | llms.txt           | https://www.mossbridge-analytics.example.com/llms.txt      |
+| llms-full.txt      | https://www.mossbridge-analytics.example.com/llms-full.txt |
 | llms.html          | https://www.mossbridge-analytics.example.com/llms.html     |
 | ai.txt             | https://www.mossbridge-analytics.example.com/ai.txt        |
 | ai.json            | https://www.mossbridge-analytics.example.com/ai.json       |

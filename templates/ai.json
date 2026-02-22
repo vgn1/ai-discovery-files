@@ -76,6 +76,7 @@
 
   "aiFiles": {
     "llmsTxt": "https://www.yourdomain.com/llms.txt",
+    "llmsFullTxt": "https://www.yourdomain.com/llms-full.txt",
     "llmsHtml": "https://www.yourdomain.com/llms.html",
     "aiTxt": "https://www.yourdomain.com/ai.txt",
     "aiJson": "https://www.yourdomain.com/ai.json",

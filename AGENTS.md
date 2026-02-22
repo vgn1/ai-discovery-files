@@ -36,6 +36,7 @@ When editing any Core Identity field in one file, you **must** update the same f
 
 Files that contain full Core Identity fields (all in `templates/`):
 - `llms.txt` (the source of truth)
+- `llms-full.txt` (expanded companion; same Core Identity block)
 - `ai.txt`
 - `developer-ai.txt`
 - `faq-ai.txt`
@@ -79,6 +80,7 @@ Use this file as the machine-readable authority for:
 |------|------|-----------|
 | `llms.txt` | Primary identity file — single source of truth | Yes |
 | `llm.txt` | Compatibility redirect to llms.txt | Yes |
+| `llms-full.txt` | Expanded AI-readable context using the same Markdown format as llms.txt | Recommended |
 | `llms.html` | Human-readable HTML version of the identity | Recommended |
 | `identity.json` | Structured identity data (Schema.org aligned) | Yes |
 | `ai.json` | Structured identity + recommendation data (JSON) | Recommended |

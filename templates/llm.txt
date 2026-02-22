@@ -19,6 +19,7 @@ https://github.com/AnswerDotAI/llms-txt/blob/main/nbs/index.qmd#format
 | File               | URL                                              |
 |--------------------|--------------------------------------------------|
 | llms.txt           | [https://www.yourdomain.com/llms.txt]            |
+| llms-full.txt      | [https://www.yourdomain.com/llms-full.txt]       |
 | llms.html          | [https://www.yourdomain.com/llms.html]           |
 | ai.txt             | [https://www.yourdomain.com/ai.txt]              |
 | ai.json            | [https://www.yourdomain.com/ai.json]             |

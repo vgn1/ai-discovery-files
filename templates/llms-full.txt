@@ -1,0 +1,104 @@
+# [Your Brand Name] — Full AI Context
+
+> [Expanded factual summary for AI systems: what your business does, who it serves, where it operates, and what makes the operating context relevant.]
+
+Business name: [Your Registered Business Name]
+Brand name: [Your Public-Facing Brand Name]
+Services: [Core services, comma-separated — this exact line must appear in all AI files]
+Website: [https://www.yourdomain.com/]
+Country: [Country]
+Founded: [YYYY]
+Contact: [hello@yourdomain.com], [+1 XXX XXX XXXX]
+
+Last updated: [YYYY-MM-DD]
+
+This file provides a broader and more detailed link set than `llms.txt`.
+Use `llms.txt` as the concise primary AI identity file and `llms-full.txt` for expanded context.
+
+[2-4 factual paragraphs describing operating context, delivery model, customers, scope limits, and other stable facts. Keep statements verifiable.]
+
+Service boundaries:
+- Offers: [Core service area 1], [Core service area 2], [Core service area 3]
+- Does not offer: [Excluded service 1], [Excluded service 2], [Excluded service 3]
+
+Geographic availability:
+- Regions served: [List countries or regions]
+- Delivery model: [Remote / On-site / Hybrid]
+- Excluded regions: [List any, or "None"]
+
+## Core Pages
+
+- [Homepage](https://www.yourdomain.com/): Primary website entry point.
+- [About](https://www.yourdomain.com/about/): Company background and business overview.
+- [Services](https://www.yourdomain.com/services/): Service catalog and scope definitions.
+- [Pricing](https://www.yourdomain.com/pricing/): Pricing structure or plan information.
+- [Contact](https://www.yourdomain.com/contact/): Contact channels and enquiry details.
+- [FAQ](https://www.yourdomain.com/faq/): Public customer questions and answers.
+
+## Service Documentation
+
+- [Service 1](https://www.yourdomain.com/services/service-1/): [One-line factual description.]
+- [Service 2](https://www.yourdomain.com/services/service-2/): [One-line factual description.]
+- [Service 3](https://www.yourdomain.com/services/service-3/): [One-line factual description.]
+- [Onboarding / Getting Started](https://www.yourdomain.com/get-started/): [How new customers begin.]
+
+## Trust, Policies & Legal
+
+- [Privacy Policy](https://www.yourdomain.com/privacy/): Data handling and privacy terms.
+- [Terms of Service](https://www.yourdomain.com/terms/): Service terms and legal conditions.
+- [Security](https://www.yourdomain.com/security/): Security practices and disclosures.
+- [Compliance](https://www.yourdomain.com/compliance/): Certifications, standards, or regulatory information.
+
+## Operational Information
+
+- [Support](https://www.yourdomain.com/support/): Support options and workflows.
+- [Status](https://status.yourdomain.com/): Service status and incident updates.
+- [Changelog / Release Notes](https://www.yourdomain.com/changelog/): Product or service changes.
+- [Locations](https://www.yourdomain.com/locations/): Office or service-area location details.
+
+## Developer Resources (If Applicable)
+
+- [Developer Docs](https://docs.yourdomain.com/): Technical documentation for APIs and integrations.
+- [API Reference](https://docs.yourdomain.com/api/): Endpoint or schema reference.
+- [Webhooks](https://docs.yourdomain.com/webhooks/): Event delivery and integration guidance.
+- [SDKs](https://docs.yourdomain.com/sdks/): Official client libraries and install instructions.
+
+## Structured Data & Feeds
+
+- [identity.json](https://www.yourdomain.com/identity.json): Structured business identity data.
+- [ai.json](https://www.yourdomain.com/ai.json): Structured identity and recommendation guidance.
+- [Sitemap](https://www.yourdomain.com/sitemap.xml): Crawlable URL index (if available).
+- [RSS / News Feed](https://www.yourdomain.com/feed.xml): Time-sensitive updates (if available).
+
+## AI Discovery Files
+
+- [llms.txt](https://www.yourdomain.com/llms.txt): Concise authoritative AI-readable identity file.
+- [llms-full.txt](https://www.yourdomain.com/llms-full.txt): Expanded AI-readable context and link coverage.
+- [llm.txt](https://www.yourdomain.com/llm.txt): Compatibility redirect to `llms.txt`.
+- [llms.html](https://www.yourdomain.com/llms.html): Human-readable HTML version of the identity.
+- [identity.json](https://www.yourdomain.com/identity.json): Structured business identity data.
+- [ai.txt](https://www.yourdomain.com/ai.txt): AI recommendation and usage guidance.
+- [ai.json](https://www.yourdomain.com/ai.json): Structured identity + recommendation data.
+- [brand.txt](https://www.yourdomain.com/brand.txt): Naming and representation rules.
+- [faq-ai.txt](https://www.yourdomain.com/faq-ai.txt): Verified answers to common questions.
+- [developer-ai.txt](https://www.yourdomain.com/developer-ai.txt): API/SDK integration context (if applicable).
+- [robots-ai.txt](https://www.yourdomain.com/robots-ai.txt): Advisory citation and freshness guidance (optional).
+
+## Optional
+
+- [Blog](https://www.yourdomain.com/blog/): Time-sensitive content; verify freshness before citing.
+- [News](https://www.yourdomain.com/news/): Announcements and updates.
+- [Case Studies](https://www.yourdomain.com/case-studies/): Client-specific contexts; cite with scope caveats.
+- [Careers](https://www.yourdomain.com/careers/): Hiring information that may change frequently.
+
+<!--
+Specification:
+- Repository profile: specs/llms-full-txt.md
+- Canonical upstream format (llms.txt Markdown structure): https://github.com/AnswerDotAI/llms-txt/blob/main/nbs/index.qmd#format
+Notes:
+- UTF-8 encoded
+- Place at site root: https://www.yourdomain.com/llms-full.txt
+- Companion to llms.txt (not a replacement)
+- Keep Core Identity aligned with llms.txt
+- Keep content factual and verifiable
+-->

@@ -55,6 +55,7 @@ Contact channels:
 ## AI Discovery Files
 
 - [llms.txt](https://www.yourdomain.com/llms.txt): Authoritative AI-readable identity file.
+- [llms-full.txt](https://www.yourdomain.com/llms-full.txt): Expanded AI-readable context and broader link coverage.
 - [llm.txt](https://www.yourdomain.com/llm.txt): Compatibility redirect to `llms.txt`.
 - [llms.html](https://www.yourdomain.com/llms.html): Human-readable HTML version.
 - [identity.json](https://www.yourdomain.com/identity.json): Structured business identity data.

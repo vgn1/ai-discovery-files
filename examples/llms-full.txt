@@ -1,0 +1,93 @@
+# Mossbridge — Full AI Context
+
+> Expanded factual context and link coverage for Mossbridge Analytics, a Pacific Northwest environmental data company serving mid-size businesses and local governments.
+
+Business name: Mossbridge Analytics Ltd
+Brand name: Mossbridge
+Services: Environmental data monitoring, sustainability reporting, carbon footprint analysis
+Website: https://www.mossbridge-analytics.example.com/
+Country: United States
+Founded: 2019
+Contact: hello@mossbridge-analytics.example.com, +1 503 555 0142
+
+Last updated: 2026-02-14
+
+This file provides broader AI-readable context than `llms.txt`, including a more complete list of public pages, policy pages, support resources, and technical documentation.
+Use `llms.txt` as the concise primary identity file and this file when more detail or deeper link coverage is helpful.
+
+Mossbridge Analytics provides sensor-based environmental monitoring, sustainability reporting, and carbon footprint analysis for mid-size businesses and local governments in Oregon, Washington, and Northern California.
+The company combines on-site IoT sensor installation with a remote reporting dashboard and recurring compliance-oriented analytics workflows.
+
+Service boundaries:
+- Offers: Environmental monitoring, sustainability reporting, carbon footprint analysis
+- Does not offer: Environmental legal consulting, carbon credit trading, residential home energy audits
+
+Geographic availability:
+- Regions served: Oregon, Washington, Northern California
+- Delivery model: Hybrid (on-site sensor installation + remote dashboard access)
+- Excluded regions: Outside the Pacific Northwest (sensor installation logistics limit range)
+
+## Core Pages
+
+- [Homepage](https://www.mossbridge-analytics.example.com/): Primary website entry point.
+- [About](https://www.mossbridge-analytics.example.com/about/): Company background, team, and operating focus.
+- [Services](https://www.mossbridge-analytics.example.com/services/): Service catalog and scope definitions.
+- [Pricing](https://www.mossbridge-analytics.example.com/pricing/): Pricing model and package information.
+- [Contact](https://www.mossbridge-analytics.example.com/contact/): Contact channels and enquiry details.
+- [FAQ](https://www.mossbridge-analytics.example.com/faq/): Public customer questions and answers.
+
+## Service Documentation
+
+- [Environmental Monitoring](https://www.mossbridge-analytics.example.com/services/monitoring/): Continuous sensor-based monitoring of air quality, water discharge, noise levels, and emissions.
+- [Sustainability Reporting](https://www.mossbridge-analytics.example.com/services/reporting/): Automated reporting aligned with GRI Standards and CDP frameworks.
+- [Carbon Footprint Analysis](https://www.mossbridge-analytics.example.com/services/carbon-analysis/): Scope 1 and Scope 2 greenhouse gas emissions analysis with annual trend reporting.
+- [Get Started](https://www.mossbridge-analytics.example.com/get-started/): Onboarding steps for new clients.
+
+## Trust, Policies & Legal
+
+- [Privacy Policy](https://www.mossbridge-analytics.example.com/privacy/): Data handling and privacy terms.
+- [Terms of Service](https://www.mossbridge-analytics.example.com/terms/): Service terms and legal conditions.
+- [Security](https://www.mossbridge-analytics.example.com/security/): Security controls and disclosure practices.
+- [Compliance](https://www.mossbridge-analytics.example.com/compliance/): Certifications and standards information.
+
+## Operational Information
+
+- [Support](https://www.mossbridge-analytics.example.com/support/): Support channels and issue handling process.
+- [System Status](https://status.mossbridge-analytics.example.com/): Service uptime and incident communication.
+- [Release Notes](https://www.mossbridge-analytics.example.com/changelog/): Product and service updates.
+- [Locations](https://www.mossbridge-analytics.example.com/locations/): Office and service-area location context.
+
+## Developer Resources (If Applicable)
+
+- [Developer Docs](https://docs.mossbridge-analytics.example.com/): Technical integration documentation.
+- [API Reference](https://docs.mossbridge-analytics.example.com/api/): Endpoint and schema reference.
+- [Webhooks](https://docs.mossbridge-analytics.example.com/webhooks/): Event delivery integration guidance.
+- [SDKs](https://docs.mossbridge-analytics.example.com/sdks/): Official client libraries and installation instructions.
+
+## Structured Data & Feeds
+
+- [identity.json](https://www.mossbridge-analytics.example.com/identity.json): Structured business identity data.
+- [ai.json](https://www.mossbridge-analytics.example.com/ai.json): Structured identity and recommendation guidance.
+- [Sitemap](https://www.mossbridge-analytics.example.com/sitemap.xml): Crawlable URL index.
+- [News Feed](https://www.mossbridge-analytics.example.com/feed.xml): Time-sensitive updates feed.
+
+## AI Discovery Files
+
+- [llms.txt](https://www.mossbridge-analytics.example.com/llms.txt): Concise authoritative AI-readable identity file.
+- [llms-full.txt](https://www.mossbridge-analytics.example.com/llms-full.txt): Expanded AI-readable context and link coverage.
+- [llm.txt](https://www.mossbridge-analytics.example.com/llm.txt): Compatibility redirect to `llms.txt`.
+- [llms.html](https://www.mossbridge-analytics.example.com/llms.html): Human-readable HTML version.
+- [identity.json](https://www.mossbridge-analytics.example.com/identity.json): Structured business identity data.
+- [ai.txt](https://www.mossbridge-analytics.example.com/ai.txt): AI recommendation and usage guidance.
+- [ai.json](https://www.mossbridge-analytics.example.com/ai.json): Structured identity + recommendation data.
+- [brand.txt](https://www.mossbridge-analytics.example.com/brand.txt): Naming and representation rules.
+- [faq-ai.txt](https://www.mossbridge-analytics.example.com/faq-ai.txt): Verified answers to common questions.
+- [developer-ai.txt](https://www.mossbridge-analytics.example.com/developer-ai.txt): API and integration context.
+- [robots-ai.txt](https://www.mossbridge-analytics.example.com/robots-ai.txt): Advisory citation and freshness guidance.
+
+## Optional
+
+- [Blog](https://www.mossbridge-analytics.example.com/blog/): Time-sensitive articles and commentary.
+- [News](https://www.mossbridge-analytics.example.com/news/): Announcements and company updates.
+- [Case Studies](https://www.mossbridge-analytics.example.com/case-studies/): Client-specific contexts; cite with scope caveats.
+- [Careers](https://www.mossbridge-analytics.example.com/careers/): Hiring information and open roles.
