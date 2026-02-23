@@ -114,9 +114,14 @@ For multilingual websites, see `/specs/multilingual-sites.md` for repository gui
 Run the validation script to check your files for common issues:
 
 ```sh
-./scripts/validate.sh              # checks templates/ by default
-./scripts/validate.sh path/to/dir  # check a custom directory
+./scripts/validate.sh                     # structural/consistency checks (templates/ by default)
+./scripts/validate.sh path/to/dir         # structural/consistency checks for a custom directory
+./scripts/validate.sh --strict path/to/dir  # deployment-readiness checks (placeholders/defaults fail)
 ```
+
+Validation terminology:
+- `Valid` (default mode) means structurally/format-consistent and internally aligned.
+- `Deploy-ready` (`--strict`) means no placeholders and no obvious default/dummy values remain in key fields.
 
 Template/example spec-link pinning:
 - Template and example files include pinned GitHub spec links (commit SHA, not `main`) for provenance.
@@ -132,8 +137,14 @@ The script checks:
 | **JSON validity** | Confirms `identity.json` and `ai.json` parse without errors |
 | **UTF-8 encoding** | Checks all `.txt`, `.json`, and `.html` files are UTF-8 compatible |
 | **Core Identity consistency** | Compares `Business name`, `Brand name`, and `Services` fields across all `.txt` files against `llms.txt` (the source of truth) |
+| **DUNS number (optional)** | Validates DUNS format (9 digits) and cross-file consistency when present |
 | **Dependency map (first pass)** | Loads `specs/dependency-map.yaml` and enforces all `exact_match` + `literal` rules |
 | **Placeholder detection** | Counts remaining `[bracket]` placeholders that need to be replaced before deploying |
+
+In `--strict` mode, the validator also:
+- Fails when placeholders remain (including generated bundles, not just examples)
+- Checks key fields for obvious default/dummy values (for example `yourdomain.com`, reserved `.example` domains, template phone numbers)
+- Validates `llm.txt` points to a usable `/llms.txt` URL (not a placeholder/example URL)
 
 ---
 

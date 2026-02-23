@@ -2,15 +2,71 @@
 #
 # validate.sh — Check AI Discovery Files for common issues
 #
-# Usage: ./validate.sh [directory]
+# Usage: ./validate.sh [--strict] [directory]
+#   --strict: enable deployment-readiness checks (placeholders/defaults become errors)
 #   directory: path to the folder containing AI Discovery Files (default: templates/)
 #
 
 set -euo pipefail
 
-DIR="${1:-templates}"
+usage() {
+  cat <<'EOF'
+Usage: ./scripts/validate.sh [--strict] [directory]
+
+Options:
+  --strict      Enable deployment-readiness checks (in addition to structural validation)
+  -h, --help    Show this help
+
+Arguments:
+  directory     Directory containing AI Discovery Files (default: templates)
+EOF
+}
+
+STRICT_MODE=0
+DIR=""
+
+while [ $# -gt 0 ]; do
+  case "$1" in
+    --strict)
+      STRICT_MODE=1
+      ;;
+    -h|--help)
+      usage
+      exit 0
+      ;;
+    --)
+      shift
+      if [ $# -gt 0 ]; then
+        DIR="$1"
+        shift
+      fi
+      break
+      ;;
+    -*)
+      echo "Unknown option: $1" >&2
+      usage >&2
+      exit 2
+      ;;
+    *)
+      if [ -n "$DIR" ]; then
+        echo "Multiple directories provided: '$DIR' and '$1'" >&2
+        usage >&2
+        exit 2
+      fi
+      DIR="$1"
+      ;;
+  esac
+  shift
+done
+
+if [ -z "$DIR" ]; then
+  DIR="templates"
+fi
+
 ERRORS=0
 WARNINGS=0
+READINESS_ERRORS=0
+READINESS_WARNINGS=0
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 REPO_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
 DEPENDENCY_MAP="$REPO_ROOT/specs/dependency-map.yaml"
@@ -31,6 +87,22 @@ pass()    { echo -e "  ${GREEN}✓${NC} $1"; }
 fail()    { echo -e "  ${RED}✗${NC} $1"; ERRORS=$((ERRORS + 1)); }
 warn()    { echo -e "  ${YELLOW}!${NC} $1"; WARNINGS=$((WARNINGS + 1)); }
 section() { echo -e "\n${BOLD}$1${NC}"; }
+readiness_fail() { fail "$1"; READINESS_ERRORS=$((READINESS_ERRORS + 1)); }
+readiness_warn() { warn "$1"; READINESS_WARNINGS=$((READINESS_WARNINGS + 1)); }
+warn_or_fail_strict() {
+  if [ "$STRICT_MODE" -eq 1 ]; then
+    readiness_fail "$1"
+  else
+    warn "$1"
+  fi
+}
+
+section "Mode"
+if [ "$STRICT_MODE" -eq 1 ]; then
+  echo -e "  ${YELLOW}-${NC} Strict mode enabled (structural + deployment-readiness checks)"
+else
+  echo -e "  ${YELLOW}-${NC} Default mode (structural/consistency validation)"
+fi
 
 # ─── File Existence ───────────────────────────────────────────
 
@@ -481,6 +553,196 @@ if [ -f "$DIR/ai.json" ]; then
   fi
 fi
 
+# ─── Default / Dummy Value Check (Strict Mode) ───────────────
+
+section "Default / Dummy Value Check"
+
+if [ "$STRICT_MODE" -eq 0 ]; then
+  echo -e "  ${YELLOW}-${NC} Skipped in default mode (use --strict)"
+else
+  dummy_results_file=$(mktemp)
+  python3 - "$DIR" > "$dummy_results_file" <<'PY'
+import json
+import pathlib
+import re
+import sys
+
+root = pathlib.Path(sys.argv[1])
+
+def emit(level, msg):
+    print(f"{level}\t{msg}")
+
+def read_text(path):
+    try:
+        return path.read_text(encoding="utf-8")
+    except Exception:
+        return None
+
+def read_json(path):
+    try:
+        return json.loads(path.read_text(encoding="utf-8"))
+    except Exception:
+        return None
+
+def extract_text_line_value(text, prefix):
+    for line in text.splitlines():
+        if line.startswith(prefix):
+            return line[len(prefix):].strip()
+    return None
+
+def get_path(data, path_expr):
+    cur = data
+    for part in path_expr.split("."):
+        if cur is None:
+            return None
+        m = re.fullmatch(r"([A-Za-z0-9_-]+)(\[[0-9]+\])?", part)
+        if not m:
+            return None
+        key = m.group(1)
+        if not isinstance(cur, dict) or key not in cur:
+            return None
+        cur = cur[key]
+        if m.group(2):
+            idx = int(m.group(2)[1:-1])
+            if not isinstance(cur, list) or idx >= len(cur):
+                return None
+            cur = cur[idx]
+    return cur
+
+dummy_patterns = [
+    ("yourdomain", re.compile(r"yourdomain\.com", re.I)),
+    ("reserved-example-domain", re.compile(r"https?://[^\s\"')>]*\.example(?:\.[A-Za-z0-9-]+)?(?:/|$)", re.I)),
+    ("template-email", re.compile(r"\b(?:hello|support)@yourdomain\.com\b", re.I)),
+    ("template-phone", re.compile(r"\+1\s*XXX\s*XXX\s*XXXX", re.I)),
+    ("n/a", re.compile(r"^\s*N/?A\s*$", re.I)),
+    ("tbd", re.compile(r"^\s*TBD\s*$", re.I)),
+    ("todo", re.compile(r"^\s*TODO\s*$", re.I)),
+    ("dummy-zip", re.compile(r"^\s*0{5}(?:-0{4})?\s*$")),
+]
+
+def check_value(label, value):
+    if value is None:
+        return
+    if not isinstance(value, str):
+        return
+    v = value.strip()
+    if v == "":
+        emit("FAIL", f"{label} is empty")
+        return
+    for pattern_name, pattern in dummy_patterns:
+        if pattern.search(v):
+            emit("FAIL", f"{label} contains obvious default/dummy value ({pattern_name})")
+            return
+
+# Text files: check main fields that commonly remain default-ish after generation.
+text_targets = [
+    ("llms.txt", [
+        "Website: ", "Contact: ", "- DUNS number: ",
+        "- Legal name: ", "- Registration: ", "- Tax ID / VAT: ", "- Registered address: "
+    ]),
+    ("llms-full.txt", [
+        "Website: ", "Contact: ", "- DUNS number: "
+    ]),
+]
+
+for file_name, prefixes in text_targets:
+    path = root / file_name
+    if not path.exists():
+        continue
+    text = read_text(path)
+    if text is None:
+        continue
+    for prefix in prefixes:
+        value = extract_text_line_value(text, prefix)
+        if value is not None:
+            check_value(f"{file_name} '{prefix.strip()}'", value)
+
+# JSON files: targeted keys that should be real deploy values when present.
+json_targets = {
+    "identity.json": [
+        "name", "legalName", "url", "dunsNumber",
+        "headquarters.addressLocality", "headquarters.addressRegion", "headquarters.postalCode",
+        "contactPoints[0].email", "contactPoints[0].telephone"
+    ],
+    "ai.json": [
+        "identity.registeredName", "identity.website", "identity.companyRegistration",
+        "identity.taxId", "identity.dunsNumber",
+        "contact.general", "contact.support", "contact.phone",
+        "pages.homepage", "aiFiles.llmsTxt"
+    ]
+}
+
+for file_name, paths in json_targets.items():
+    path = root / file_name
+    if not path.exists():
+        continue
+    data = read_json(path)
+    if data is None:
+        continue
+    for path_expr in paths:
+        check_value(f"{file_name} {path_expr}", get_path(data, path_expr))
+PY
+
+  if [ -s "$dummy_results_file" ]; then
+    while IFS=$'\t' read -r check_level check_message; do
+      [ -n "$check_level" ] || continue
+      case "$check_level" in
+        FAIL) readiness_fail "$check_message" ;;
+        WARN) readiness_warn "$check_message" ;;
+        PASS) pass "$check_message" ;;
+        *) readiness_warn "Dummy check emitted unknown level '$check_level': $check_message" ;;
+      esac
+    done < "$dummy_results_file"
+  else
+    pass "No obvious default/dummy values detected in checked fields"
+  fi
+  rm -f "$dummy_results_file"
+fi
+
+# ─── llm.txt URL Sanity (Strict Mode) ────────────────────────
+
+section "llm.txt URL Sanity"
+
+if [ "$STRICT_MODE" -eq 0 ]; then
+  echo -e "  ${YELLOW}-${NC} Skipped in default mode (use --strict)"
+elif [ ! -f "$DIR/llm.txt" ]; then
+  echo -e "  ${YELLOW}-${NC} llm.txt not present (checked in File Existence)"
+else
+  llm_target_url=$(python3 - "$DIR/llm.txt" <<'PY'
+import re
+import sys
+
+try:
+    text = open(sys.argv[1], encoding="utf-8").read()
+except Exception:
+    print("")
+    raise SystemExit(0)
+
+match = re.search(r"\[(https?://[^\]\s]+)\]", text)
+if not match:
+    match = re.search(r"(https?://[^\s]+)", text)
+print(match.group(1).strip() if match else "")
+PY
+)
+
+  if [ -z "$llm_target_url" ]; then
+    readiness_fail "llm.txt does not contain a parseable target URL"
+  else
+    pass "llm.txt target URL found"
+    if [[ "$llm_target_url" != *"/llms.txt" ]]; then
+      readiness_fail "llm.txt target URL should point to /llms.txt"
+    else
+      pass "llm.txt target URL points to /llms.txt"
+    fi
+    if [[ "$llm_target_url" =~ yourdomain\.com ]]; then
+      readiness_fail "llm.txt target URL contains template placeholder domain"
+    fi
+    if [[ "$llm_target_url" =~ \.example([/:]|$) || "$llm_target_url" =~ \.example\. ]]; then
+      readiness_fail "llm.txt target URL uses reserved example domain"
+    fi
+  fi
+fi
+
 # ─── Placeholder Check ───────────────────────────────────────
 
 section "Placeholder Check"
@@ -509,6 +771,8 @@ PY
 if [ "$PLACEHOLDER_COUNT" -gt 0 ]; then
   if [ "$(basename "$DIR")" = "examples" ]; then
     fail "$PLACEHOLDER_COUNT placeholder(s) found in examples — examples should be fully filled and placeholder-free"
+  elif [ "$STRICT_MODE" -eq 1 ]; then
+    readiness_fail "$PLACEHOLDER_COUNT placeholder(s) found — strict mode requires deploy-ready values (no placeholders)"
   else
     warn "$PLACEHOLDER_COUNT placeholder(s) found — replace [brackets] with real values before deploying"
   fi
@@ -570,6 +834,16 @@ elif [ "$ERRORS" -eq 0 ]; then
   echo -e "  ${YELLOW}$WARNINGS warning(s), no errors${NC}"
 else
   echo -e "  ${RED}$ERRORS error(s), $WARNINGS warning(s)${NC}"
+fi
+
+if [ "$STRICT_MODE" -eq 1 ]; then
+  if [ "$READINESS_ERRORS" -eq 0 ] && [ "$READINESS_WARNINGS" -eq 0 ]; then
+    echo -e "  ${GREEN}Deployment readiness: PASS${NC}"
+  elif [ "$READINESS_ERRORS" -eq 0 ]; then
+    echo -e "  ${YELLOW}Deployment readiness: WARN ($READINESS_WARNINGS warning(s))${NC}"
+  else
+    echo -e "  ${RED}Deployment readiness: FAIL ($READINESS_ERRORS error(s), $READINESS_WARNINGS warning(s))${NC}"
+  fi
 fi
 
 exit "$ERRORS"
