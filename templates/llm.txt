@@ -36,5 +36,5 @@ Last updated: [YYYY-MM-DD]
 ---
 
 # Notes
-# - Specification reference (v1.0.0): [https://github.com/GenerellAI/ai-discovery-files/blob/e0be0e9de590dd1a6a62fcc164cd8ad2e273a3e0/specs/llm-txt.md](https://github.com/GenerellAI/ai-discovery-files/blob/e0be0e9de590dd1a6a62fcc164cd8ad2e273a3e0/specs/llm-txt.md)
+# - File specification (v1.0.0): [https://github.com/GenerellAI/ai-discovery-files/blob/e0be0e9de590dd1a6a62fcc164cd8ad2e273a3e0/specs/llm-txt.md](https://github.com/GenerellAI/ai-discovery-files/blob/e0be0e9de590dd1a6a62fcc164cd8ad2e273a3e0/specs/llm-txt.md)
 # - Deploy path: https://www.yourdomain.com/llm.txt

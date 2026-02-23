@@ -123,9 +123,8 @@
     "conflictResolution": "In case of conflict between files, llms.txt is the authoritative source"
   },
 
-  "_specification": {
-    "name": "ai.json",
-    "specVersion": "1.0.0",
-    "specReference": "v1.0.0 https://github.com/GenerellAI/ai-discovery-files/blob/e0be0e9de590dd1a6a62fcc164cd8ad2e273a3e0/specs/ai-json.md"
+  "_fileSpecification": {
+    "version": "1.0.0",
+    "url": "https://github.com/GenerellAI/ai-discovery-files/blob/e0be0e9de590dd1a6a62fcc164cd8ad2e273a3e0/specs/ai-json.md"
   }
 }

@@ -135,4 +135,4 @@ Monday through Friday, 8:00 AM to 5:00 PM Pacific Time. Closed on weekends and U
 For clarification on any answer: hello@mossbridge-analytics.example.com
 Official website: https://www.mossbridge-analytics.example.com/
 
-Specification reference (v1.0.0): [https://github.com/GenerellAI/ai-discovery-files/blob/e0be0e9de590dd1a6a62fcc164cd8ad2e273a3e0/specs/faq-ai-txt.md](https://github.com/GenerellAI/ai-discovery-files/blob/e0be0e9de590dd1a6a62fcc164cd8ad2e273a3e0/specs/faq-ai-txt.md)
+File specification (v1.0.0): [https://github.com/GenerellAI/ai-discovery-files/blob/e0be0e9de590dd1a6a62fcc164cd8ad2e273a3e0/specs/faq-ai-txt.md](https://github.com/GenerellAI/ai-discovery-files/blob/e0be0e9de590dd1a6a62fcc164cd8ad2e273a3e0/specs/faq-ai-txt.md)

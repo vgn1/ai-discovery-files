@@ -128,9 +128,8 @@
     "authorityNote": "For conflicts between files, llms.txt is the primary source."
   },
 
-  "_specification": {
-    "name": "identity.json",
-    "specVersion": "1.0.0",
-    "specReference": "v1.0.0 https://github.com/GenerellAI/ai-discovery-files/blob/e0be0e9de590dd1a6a62fcc164cd8ad2e273a3e0/specs/identity-json.md"
+  "_fileSpecification": {
+    "version": "1.0.0",
+    "url": "https://github.com/GenerellAI/ai-discovery-files/blob/e0be0e9de590dd1a6a62fcc164cd8ad2e273a3e0/specs/identity-json.md"
   }
 }
