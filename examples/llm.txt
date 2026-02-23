@@ -33,4 +33,4 @@ Website: https://www.mossbridge-analytics.example.com/
 
 Last updated: 2026-02-14
 
-Specification reference (v1.0.0): https://github.com/GenerellAI/ai-discovery-files/blob/e6255d279b82b686389eebe29aef5d250ff637da/specs/llm-txt.md
+Specification reference (v1.0.0): [https://github.com/GenerellAI/ai-discovery-files/blob/e6255d279b82b686389eebe29aef5d250ff637da/specs/llm-txt.md](https://github.com/GenerellAI/ai-discovery-files/blob/e6255d279b82b686389eebe29aef5d250ff637da/specs/llm-txt.md)

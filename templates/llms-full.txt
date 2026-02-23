@@ -99,4 +99,4 @@ Business identifiers:
 - [Case Studies](https://www.yourdomain.com/case-studies/): Client-specific contexts; cite with scope caveats.
 - [Careers](https://www.yourdomain.com/careers/): Hiring information that may change frequently.
 
-Specification reference (v1.0.0): https://github.com/GenerellAI/ai-discovery-files/blob/e6255d279b82b686389eebe29aef5d250ff637da/specs/llms-full-txt.md
+Specification reference (v1.0.0): [https://github.com/GenerellAI/ai-discovery-files/blob/e6255d279b82b686389eebe29aef5d250ff637da/specs/llms-full-txt.md](https://github.com/GenerellAI/ai-discovery-files/blob/e6255d279b82b686389eebe29aef5d250ff637da/specs/llms-full-txt.md)

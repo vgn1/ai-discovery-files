@@ -70,6 +70,7 @@ Use this file as the machine-readable authority for:
 - Do not replace placeholders with example data — keep them as templates
 - URLs use the pattern `[https://www.yourdomain.com/path/]`
 - Dates use `[YYYY-MM-DD]`
+- If an optional field/section does not apply in a deployed file, omit it (do not leave it empty), unless an explicit `None` / `Not applicable` / `No ...` statement is clearer and reduces incorrect assumptions
 - The `examples/` directory contains filled-in samples — these are for reference only and should not be treated as templates
 
 ---
@@ -103,6 +104,7 @@ Use this file as the machine-readable authority for:
 - Use consistent formatting (Markdown headers, bullet styles) within each file
 - Update the `Last updated: [YYYY-MM-DD]` placeholder note if adding date-relevant content
 - Keep template/example spec links pinned to a repo commit SHA; after spec changes, run `python3 scripts/pin-template-spec-links.py`
+- Omit optional fields/lines/sections that do not apply instead of leaving them empty in deployed outputs, unless an explicit `None` / `Not applicable` / `No ...` statement is clearer and reduces incorrect assumptions
 
 ### Do Not
 - Remove existing spec-reference footer/notes blocks in templates/examples
@@ -110,6 +112,7 @@ Use this file as the machine-readable authority for:
 - Rename any template files — AI systems expect these exact filenames
 - Move template files out of the `templates/` directory
 - Add example/dummy business data in place of `[placeholder]` values
+- Leave non-applicable optional fields empty in examples/deployed outputs (use omission or an explicit `None` / `Not applicable` / `No ...` statement instead)
 - Introduce undocumented cross-file dependencies; if a new dependency is required, record it in `specs/dependency-map.yaml`
 
 ---

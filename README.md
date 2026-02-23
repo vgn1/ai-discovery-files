@@ -12,8 +12,9 @@ These templates are ready to customise for your own website.
 2. **Start with the essentials:** `llms.txt` and `identity.json`
 3. **Fill in your details:** Replace all `[placeholder]` values with real business information
 4. **Ensure consistency:** Core Identity fields must be word-for-word identical across files that contain them
-5. **Deploy:** Upload completed files to your website root (e.g., `https://yourdomain.com/llms.txt`)
-6. **Validate:** Run `./scripts/validate.sh path/to/your/files/` and check each file is accessible at its expected URL
+5. **Handle optional fields clearly:** Omit optional lines/sections/JSON keys that do not apply, but for important items that people or AI might wrongly assume, state the answer explicitly (for example: `DUNS number: None` or `No public API`)
+6. **Deploy:** Upload completed files to your website root (e.g., `https://yourdomain.com/llms.txt`)
+7. **Validate:** Run `./scripts/validate.sh path/to/your/files/` and check each file is accessible at its expected URL
 
 ---
 
@@ -90,6 +91,7 @@ Machine-readable dependency authority: [`specs/dependency-map.yaml`](specs/depen
 - **No renaming.** AI systems look for these exact filenames.
 - **UTF-8 encoding** for all files.
 - **Facts only.** Avoid marketing language — AI systems work best with straightforward, verifiable statements.
+- **Handle optional fields clearly.** In deployed files, omit optional lines/sections/JSON keys that do not apply instead of leaving empty values (`""`, `null`, blank placeholders, empty list items`). For important items that people or AI might wrongly assume, state the answer explicitly (for example `DUNS number: None` or `No public API`).
 - **Keep files current.** Update the "Last updated" date whenever you make changes.
 
 ---
@@ -122,6 +124,7 @@ Run the validation script to check your files for common issues:
 Validation terminology:
 - `Valid` (default mode) means structurally/format-consistent and internally aligned.
 - `Deploy-ready` (`--strict`) means no placeholders and no obvious default/dummy values remain in key fields.
+- Deploy-ready files should omit non-applicable optional fields rather than leaving them empty, except when an explicit `None` / `Not applicable` / `No ...` statement is clearer and reduces incorrect assumptions.
 
 Template/example spec-link pinning:
 - Template and example files include pinned GitHub spec links (commit SHA, not `main`) for provenance.

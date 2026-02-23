@@ -19,6 +19,7 @@ Thanks for your interest in contributing! This project provides open-source temp
 1. **Read [AGENTS.md](AGENTS.md)** — It explains the repo structure, consistency rules, and validation requirements
 2. **Understand the Core Identity rule** — The Core Identity block must be identical across all `.txt` files and reflected in the `.json` files. If you change it in one file, change it in all of them
 3. **Keep templates generic** — Don't replace `[placeholder]` values with real business data in the templates themselves
+4. **Handle optional fields clearly** — In examples/deployed outputs, remove optional fields that do not apply rather than leaving empty values, unless an explicit `None` / `Not applicable` / `No ...` statement is clearer and reduces incorrect assumptions
 
 ---
 
@@ -84,12 +85,14 @@ Maintainers may reclassify a PR as spec-level if it affects interoperability, va
 - Preserve the section hierarchy and formatting conventions
 - Test that JSON files parse correctly after any edit
 - Keep placeholder format consistent: `[Description of what to fill in]`
+- Omit optional fields/sections in examples when they do not apply (do not leave empty values), unless an explicit `None` / `Not applicable` / `No ...` statement is clearer and reduces incorrect assumptions
 
 ### Don't
 - Rename template files — AI systems expect these exact filenames
 - Move template files out of the `templates/` directory
 - Add dependencies or build steps
 - Include real business data in template placeholders
+- Leave non-applicable optional fields empty in examples/deployed outputs (use omission or an explicit `None` / `Not applicable` / `No ...` statement instead)
 - Remove structural elements (section dividers, heading hierarchy)
 
 ---
