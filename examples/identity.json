@@ -124,12 +124,10 @@
 
   "metadata": {
     "lastUpdated": "2026-02-14",
-    "specificationVersion": "1.0.0",
-    "authorityNote": "For conflicts between files, llms.txt is the primary source."
-  },
-
-  "_fileSpecification": {
-    "version": "1.0.0",
-    "url": "https://github.com/GenerellAI/ai-discovery-files/blob/6f5439117dd2b83987af5e260168cfc47047614c/specs/identity-json.md"
+    "authorityNote": "For conflicts between AI Discovery Files, llms.txt is the primary source of truth.",
+    "fileSpecification": {
+      "version": "1.0.0",
+      "url": "https://github.com/GenerellAI/ai-discovery-files/blob/6f5439117dd2b83987af5e260168cfc47047614c/specs/identity-json.md"
+    }
   }
 }

@@ -120,11 +120,10 @@
     "fileVersion": "1.0",
     "format": "ai-identity-json",
     "encodingNote": "canonicalIdentityBlock is a string value so text-based extractors can detect it",
-    "conflictResolution": "In case of conflict between files, llms.txt is the authoritative source"
-  },
-
-  "_fileSpecification": {
-    "version": "1.0.0",
-    "url": "https://github.com/GenerellAI/ai-discovery-files/blob/6f5439117dd2b83987af5e260168cfc47047614c/specs/ai-json.md"
+    "conflictResolution": "In case of conflict between AI Discovery Files, llms.txt is the primary source of truth",
+    "fileSpecification": {
+      "version": "1.0.0",
+      "url": "https://github.com/GenerellAI/ai-discovery-files/blob/6f5439117dd2b83987af5e260168cfc47047614c/specs/ai-json.md"
+    }
   }
 }
