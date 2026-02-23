@@ -118,5 +118,5 @@ This file governs naming and representation only — it does not redefine busine
 ---
 
 # Notes
-# - File specification (v1.0.0): [https://github.com/GenerellAI/ai-discovery-files/blob/e0be0e9de590dd1a6a62fcc164cd8ad2e273a3e0/specs/brand-txt.md](https://github.com/GenerellAI/ai-discovery-files/blob/e0be0e9de590dd1a6a62fcc164cd8ad2e273a3e0/specs/brand-txt.md)
+# - File specification (v1.0.0): [https://github.com/GenerellAI/ai-discovery-files/blob/6f5439117dd2b83987af5e260168cfc47047614c/specs/brand-txt.md](https://github.com/GenerellAI/ai-discovery-files/blob/6f5439117dd2b83987af5e260168cfc47047614c/specs/brand-txt.md)
 # - Deploy path: https://www.yourdomain.com/brand.txt
