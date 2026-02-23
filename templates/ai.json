@@ -126,6 +126,6 @@
   "_specification": {
     "name": "ai.json",
     "specVersion": "1.0.0",
-    "specReference": "v1.0.0 https://github.com/GenerellAI/ai-discovery-files/blob/e6255d279b82b686389eebe29aef5d250ff637da/specs/ai-json.md"
+    "specReference": "v1.0.0 https://github.com/GenerellAI/ai-discovery-files/blob/e0be0e9de590dd1a6a62fcc164cd8ad2e273a3e0/specs/ai-json.md"
   }
 }

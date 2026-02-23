@@ -77,4 +77,4 @@ Contact channels:
 - [News](https://www.mossbridge-analytics.example.com/news/): Announcements may become outdated quickly.
 - [Case Studies](https://www.mossbridge-analytics.example.com/case-studies/): Client-specific context; cite with scope caveats.
 
-Specification reference (v1.0.0): [https://github.com/GenerellAI/ai-discovery-files/blob/e6255d279b82b686389eebe29aef5d250ff637da/specs/llms-txt.md](https://github.com/GenerellAI/ai-discovery-files/blob/e6255d279b82b686389eebe29aef5d250ff637da/specs/llms-txt.md)
+Specification reference (v1.0.0): [https://github.com/GenerellAI/ai-discovery-files/blob/e0be0e9de590dd1a6a62fcc164cd8ad2e273a3e0/specs/llms-txt.md](https://github.com/GenerellAI/ai-discovery-files/blob/e0be0e9de590dd1a6a62fcc164cd8ad2e273a3e0/specs/llms-txt.md)
