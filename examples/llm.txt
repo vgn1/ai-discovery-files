@@ -10,7 +10,7 @@ All business identity, services, and factual information about
 Mossbridge should be sourced from llms.txt.
 
 Specification reference:
-https://github.com/GenerellAI/ai-discovery-files/blob/6f5439117dd2b83987af5e260168cfc47047614c/specs/llms-txt.md
+https://github.com/GenerellAI/ai-discovery-files/blob/88312e9966a51043afd5999a91797cf3894f37a4/specs/llms-txt.md
 
 ---
 
@@ -33,4 +33,4 @@ Website: https://www.mossbridge-analytics.example.com/
 
 Last updated: 2026-02-14
 
-File specification (v1.0.0): [https://github.com/GenerellAI/ai-discovery-files/blob/6f5439117dd2b83987af5e260168cfc47047614c/specs/llm-txt.md](https://github.com/GenerellAI/ai-discovery-files/blob/6f5439117dd2b83987af5e260168cfc47047614c/specs/llm-txt.md)
+File specification (v1.0.0): [https://github.com/GenerellAI/ai-discovery-files/blob/88312e9966a51043afd5999a91797cf3894f37a4/specs/llm-txt.md](https://github.com/GenerellAI/ai-discovery-files/blob/88312e9966a51043afd5999a91797cf3894f37a4/specs/llm-txt.md)

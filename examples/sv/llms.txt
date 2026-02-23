@@ -45,4 +45,4 @@ Geografisk tillgänglighet:
 - [Blogg](https://www.mossbridge-analytics.example.com/sv/blogg/): Tidskänsligt innehåll; kontrollera aktualitet före citering.
 - [Nyheter](https://www.mossbridge-analytics.example.com/sv/nyheter/): Meddelanden och uppdateringar.
 
-File specification (v1.0.0): [https://github.com/GenerellAI/ai-discovery-files/blob/6f5439117dd2b83987af5e260168cfc47047614c/specs/llms-txt.md](https://github.com/GenerellAI/ai-discovery-files/blob/6f5439117dd2b83987af5e260168cfc47047614c/specs/llms-txt.md)
+File specification (v1.0.0): [https://github.com/GenerellAI/ai-discovery-files/blob/88312e9966a51043afd5999a91797cf3894f37a4/specs/llms-txt.md](https://github.com/GenerellAI/ai-discovery-files/blob/88312e9966a51043afd5999a91797cf3894f37a4/specs/llms-txt.md)

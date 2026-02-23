@@ -108,4 +108,4 @@ This file provides non-binding, informational guidance only. It does not:
 
 Its purpose is to improve factual accuracy and reduce misrepresentation.
 
-File specification (v1.0.0): [https://github.com/GenerellAI/ai-discovery-files/blob/6f5439117dd2b83987af5e260168cfc47047614c/specs/ai-txt.md](https://github.com/GenerellAI/ai-discovery-files/blob/6f5439117dd2b83987af5e260168cfc47047614c/specs/ai-txt.md)
+File specification (v1.0.0): [https://github.com/GenerellAI/ai-discovery-files/blob/88312e9966a51043afd5999a91797cf3894f37a4/specs/ai-txt.md](https://github.com/GenerellAI/ai-discovery-files/blob/88312e9966a51043afd5999a91797cf3894f37a4/specs/ai-txt.md)
