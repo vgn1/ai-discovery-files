@@ -62,6 +62,7 @@ This file should be readable by both humans and LLMs and parseable using standar
 - The same Core Identity block used in `llms.txt` (repository profile rule)
 - Additional operational context (service boundaries, geography, contact, policies)
 - Optional standalone business identifiers (for example `DUNS number`) in non-Core sections
+- Optional alternate official domains in a non-Core section (keep `Website:` as canonical)
 - More complete link coverage than `llms.txt`
 - Clear section grouping (e.g., pages, services, policies, docs, support, AI files)
 - Brief factual descriptions for links
@@ -84,6 +85,7 @@ Use `llms.txt` for curated, high-priority links and `llms-full.txt` for expanded
 - Must be valid UTF-8 plain text
 - Must follow the repository's Core Identity consistency rules when Core Identity is included
 - Optional `DUNS number` values should be 9 digits when provided
+- Optional `Alternate domains` values should be absolute URLs when provided
 - Link lists should use standard Markdown link format: `- [Name](https://...)`
 - `llms.txt` and `llms-full.txt` should be updated together when key site structure changes
 

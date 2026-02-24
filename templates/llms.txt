@@ -32,6 +32,7 @@ Business details:
 - Registration: [Company number, if applicable]
 - Tax ID / VAT: [Number, if applicable]
 - DUNS number: [9-digit DUNS number, if applicable]
+- Alternate domains: [https://www.yourdomain.net/], [https://yourdomain.co/]
 - Registered address: [Full address]
 
 Contact channels:

@@ -64,6 +64,7 @@
 | `operatingHours` | object | Timezone, weekday/weekend hours |
 | `naicsCode` | string | Industry classification code |
 | `dunsNumber` | string | Standalone DUNS number (9 digits) if applicable |
+| `alternateDomains` | array of strings | Other official domains/aliases (absolute URLs) if applicable |
 
 Remove optional fields entirely if they don't apply — don't leave them empty.
 
@@ -76,6 +77,7 @@ Remove optional fields entirely if they don't apply — don't leave them empty.
 - Dates must use ISO 8601 format (YYYY-MM-DD)
 - Country codes must use ISO 3166-1 alpha-2 (e.g., `US`, `GB`, `DE`)
 - `dunsNumber` must be 9 digits when present
+- `alternateDomains` entries must be absolute URLs when present
 - File must be served with `Content-Type: application/json`
 
 ---
@@ -85,6 +87,7 @@ Remove optional fields entirely if they don't apply — don't leave them empty.
 - `llms.txt` is the plain-text equivalent and the overall source of truth
 - `ai.json` extends identity data with recommendation signals
 - Identity data in this file must not contradict `llms.txt`
+- Keep `url` as the canonical domain; list other official domains in `alternateDomains`
 
 ---
 

@@ -10,6 +10,10 @@
     "brandName": "[Your Public-Facing Brand Name]",
     "tradingName": "[Trading name, if different — remove if same as brand]",
     "website": "https://www.yourdomain.com/",
+    "alternateDomains": [
+      "https://www.yourdomain.net/",
+      "https://yourdomain.co/"
+    ],
     "country": "[Country]",
     "founded": "[YYYY]",
     "companyRegistration": "[Registration number, if applicable]",

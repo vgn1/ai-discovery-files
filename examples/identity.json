@@ -80,6 +80,10 @@
 
   "industry": "Environmental Technology (Cleantech)",
   "naicsCode": "541620",
+  "alternateDomains": [
+    "https://mossbridgeanalytics.example.com/",
+    "https://mossbridge-analytics.co.example/"
+  ],
 
   "numberOfEmployees": {
     "minValue": 25,

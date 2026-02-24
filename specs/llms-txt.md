@@ -97,6 +97,7 @@ The Core Identity fields must match word-for-word across repository files that i
 
 Non-Core business identifiers may be included in supporting sections such as `Business details`.
 If a standalone `DUNS number:` line is included, treat it as an optional identifier (not part of Core Identity) and keep it consistent across files that publish it.
+If `Alternate domains:` are included, keep `Website:` as the canonical domain and list other official domains separately in a non-Core section (for example `Business details`).
 
 ### Multilingual Sites (Project Rule)
 

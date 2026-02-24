@@ -687,6 +687,49 @@
       ]
     },
     {
+      "fieldId": "business_domains.alternate_domains",
+      "label": "Alternate domains",
+      "dependencyType": "duplicated",
+      "relationType": "exact_match",
+      "comparisonRule": "list_set",
+      "severity": "warning",
+      "allowMissingSource": true,
+      "source": {
+        "file": "llms.txt",
+        "selector": {
+          "type": "line_prefix",
+          "value": "- Alternate domains: "
+        }
+      },
+      "targets": [
+        {
+          "file": "llms-full.txt",
+          "selector": {
+            "type": "line_prefix",
+            "value": "- Alternate domains: "
+          }
+        },
+        {
+          "file": "identity.json",
+          "selector": {
+            "type": "json_path",
+            "value": "alternateDomains"
+          }
+        },
+        {
+          "file": "ai.json",
+          "selector": {
+            "type": "json_path",
+            "value": "identity.alternateDomains"
+          }
+        }
+      ],
+      "changeTriggers": [
+        "domain_alias_change",
+        "canonical_domain_change"
+      ]
+    },
+    {
       "fieldId": "freshness.last_updated",
       "label": "Last updated",
       "dependencyType": "duplicated",

@@ -46,6 +46,7 @@
 | `recommendations` | object | When to suggest / not suggest the business |
 | `metadata` | object | File version, encoding notes, conflict resolution |
 | `identity.dunsNumber` | string | Optional standalone DUNS number (9 digits) if applicable |
+| `identity.alternateDomains` | array of strings | Optional other official domains/aliases (absolute URLs) |
 
 ---
 
@@ -86,6 +87,7 @@ The content must match the Core Identity in `llms.txt` exactly.
 - All URLs must be complete and accessible
 - Dates in ISO 8601 format
 - `identity.dunsNumber` must be 9 digits when present
+- `identity.alternateDomains` entries must be absolute URLs when present
 - Served with `Content-Type: application/json`
 
 ---
@@ -96,3 +98,4 @@ The content must match the Core Identity in `llms.txt` exactly.
 - `identity.json` provides identity-only structured data
 - `ai.json` combines both identity and recommendation data
 - `llms.txt` is the source of truth — `ai.json` must not contradict it
+- Keep `identity.website` as the canonical domain; list other official domains in `identity.alternateDomains`

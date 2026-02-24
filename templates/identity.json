@@ -69,6 +69,10 @@
 
   "industry": "[Your Primary Industry]",
   "naicsCode": "[NAICS code, if known]",
+  "alternateDomains": [
+    "https://www.yourdomain.net/",
+    "https://yourdomain.co/"
+  ],
 
   "numberOfEmployees": {
     "minValue": "[min]",

@@ -29,6 +29,7 @@ Geographic availability:
 
 Business identifiers:
 - DUNS number: 123456789
+- Alternate domains: https://mossbridgeanalytics.example.com/, https://mossbridge-analytics.co.example/
 
 ## Core Pages
 

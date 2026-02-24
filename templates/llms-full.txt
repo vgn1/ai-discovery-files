@@ -28,6 +28,7 @@ Geographic availability:
 
 Business identifiers:
 - DUNS number: [9-digit DUNS number, if applicable]
+- Alternate domains: [https://www.yourdomain.net/], [https://yourdomain.co/]
 
 ## Core Pages
 

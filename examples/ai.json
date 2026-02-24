@@ -9,6 +9,10 @@
     "registeredName": "Mossbridge Analytics Ltd",
     "brandName": "Mossbridge",
     "website": "https://www.mossbridge-analytics.example.com/",
+    "alternateDomains": [
+      "https://mossbridgeanalytics.example.com/",
+      "https://mossbridge-analytics.co.example/"
+    ],
     "country": "United States",
     "founded": "2019",
     "companyRegistration": "Oregon Business Registry #1284759",

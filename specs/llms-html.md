@@ -61,6 +61,7 @@ For each H2 file-list group:
 - Only replace placeholder text — do not modify the HTML structure or layout
 - Link lists and descriptive text must stay aligned with `llms.txt`
 - If business details include optional identifiers (for example `DUNS number`), mirror them consistently with `llms.txt`
+- If `Alternate domains` are shown, keep them in the business-details area and mirror the values from `llms.txt` (while keeping `Website:` canonical)
 - If `llms.txt` section groups change, update `llms.html` to match
 - All content must be factual and verifiable
 

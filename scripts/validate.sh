@@ -465,6 +465,80 @@ print(m.group(1).strip() if m else "")
 PY
 }
 
+extract_html_alternate_domains() {
+  local file_path="$1"
+  python3 - "$file_path" <<'PY'
+import re
+import sys
+
+try:
+    text = open(sys.argv[1], encoding="utf-8").read()
+except Exception:
+    print("")
+    raise SystemExit(0)
+
+m = re.search(r"<li>\s*Alternate domains:\s*([^<\n]+)\s*</li>", text)
+print(m.group(1).strip() if m else "")
+PY
+}
+
+extract_json_string_list() {
+  local file_path="$1"
+  local json_path="$2"
+  python3 - "$file_path" "$json_path" <<'PY'
+import json
+import re
+import sys
+
+def parse_path(expr):
+    tokens = []
+    for part in expr.split("."):
+        if not part:
+            continue
+        m = re.fullmatch(r"([A-Za-z0-9_-]+)(\[[0-9]+\])?", part)
+        if not m:
+            tokens.append(part)
+            continue
+        tokens.append(m.group(1))
+        if m.group(2):
+            tokens.append(int(m.group(2)[1:-1]))
+    return tokens
+
+try:
+    with open(sys.argv[1], encoding="utf-8") as fh:
+        data = json.load(fh)
+except Exception:
+    print("")
+    raise SystemExit(0)
+
+value = data
+for token in parse_path(sys.argv[2]):
+    if isinstance(token, int):
+        if not isinstance(value, list) or token >= len(value):
+            print("")
+            raise SystemExit(0)
+        value = value[token]
+    else:
+        if not isinstance(value, dict) or token not in value:
+            print("")
+            raise SystemExit(0)
+        value = value[token]
+
+if not isinstance(value, list):
+    print("")
+    raise SystemExit(0)
+
+items = []
+for item in value:
+    if isinstance(item, str):
+        stripped = item.strip()
+        if stripped:
+            items.append(stripped)
+
+print(", ".join(items))
+PY
+}
+
 is_placeholder_duns() {
   [[ "$1" =~ ^\[[^][]+\]$ ]]
 }
@@ -499,6 +573,95 @@ check_duns_match() {
     pass "$label DUNS number matches llms.txt"
   else
     fail "$label DUNS number differs from llms.txt"
+  fi
+}
+
+normalize_url_list() {
+  local value="$1"
+  python3 - "$value" <<'PY'
+import sys
+
+raw = sys.argv[1].strip()
+items = []
+for part in raw.split(","):
+    item = part.strip()
+    if not item:
+        continue
+    if item.startswith("[") and item.endswith("]"):
+        item = item[1:-1].strip()
+    if item:
+        items.append(item)
+
+for item in sorted(set(items)):
+    print(item)
+PY
+}
+
+check_alternate_domains_format() {
+  local label="$1"
+  local value="$2"
+  if [ -z "$value" ]; then
+    return 1
+  fi
+
+  local result
+  result=$(python3 - "$value" <<'PY'
+import re
+import sys
+
+v = sys.argv[1].strip()
+parts = [p.strip() for p in v.split(",") if p.strip()]
+if not parts:
+    print("invalid")
+    raise SystemExit(0)
+
+all_placeholder = True
+for part in parts:
+    if part.startswith("[") and part.endswith("]"):
+      url = part[1:-1].strip()
+      if not re.fullmatch(r"https?://[^\s\]]+", url):
+          print("invalid")
+          raise SystemExit(0)
+    else:
+      all_placeholder = False
+      if not re.fullmatch(r"https?://\S+", part):
+          print("invalid")
+          raise SystemExit(0)
+
+print("placeholder" if all_placeholder else "valid")
+PY
+)
+
+  case "$result" in
+    placeholder)
+      pass "$label alternate domains placeholder list present"
+      ;;
+    valid)
+      pass "$label alternate domains format is valid"
+      ;;
+    *)
+      fail "$label alternate domains must be a comma-separated list of absolute URLs"
+      ;;
+  esac
+  return 0
+}
+
+check_alternate_domains_match() {
+  local label="$1"
+  local value="$2"
+  local source_value="$3"
+  if [ -z "$value" ]; then
+    warn "$label alternate domains not present while llms.txt includes them"
+    return
+  fi
+
+  local norm_value norm_source
+  norm_value=$(normalize_url_list "$value")
+  norm_source=$(normalize_url_list "$source_value")
+  if [ "$norm_value" = "$norm_source" ]; then
+    pass "$label alternate domains match llms.txt"
+  else
+    fail "$label alternate domains differ from llms.txt"
   fi
 }
 
@@ -550,6 +713,61 @@ if [ -f "$DIR/ai.json" ]; then
     check_duns_match "ai.json identity.dunsNumber" "$ai_json_duns" "$LLMS_DUNS"
   elif [ -n "$ai_json_duns" ]; then
     warn "ai.json identity.dunsNumber includes a value but llms.txt does not"
+  fi
+fi
+
+# ─── Alternate Domains (Optional) ────────────────────────────
+
+section "Alternate Domains (Optional)"
+
+LLMS_ALT_DOMAINS=""
+if [ -f "$DIR/llms.txt" ]; then
+  LLMS_ALT_DOMAINS=$(grep -m1 "^- Alternate domains:" "$DIR/llms.txt" 2>/dev/null | sed 's/^- Alternate domains: *//' || true)
+fi
+
+if [ -z "$LLMS_ALT_DOMAINS" ]; then
+  echo -e "  ${YELLOW}-${NC} llms.txt alternate domains not present (optional)"
+else
+  check_alternate_domains_format "llms.txt" "$LLMS_ALT_DOMAINS" || true
+fi
+
+if [ -f "$DIR/llms-full.txt" ]; then
+  llms_full_alt_domains=$(grep -m1 "^- Alternate domains:" "$DIR/llms-full.txt" 2>/dev/null | sed 's/^- Alternate domains: *//' || true)
+  check_alternate_domains_format "llms-full.txt" "$llms_full_alt_domains" || true
+  if [ -n "$LLMS_ALT_DOMAINS" ]; then
+    check_alternate_domains_match "llms-full.txt" "$llms_full_alt_domains" "$LLMS_ALT_DOMAINS"
+  elif [ -n "$llms_full_alt_domains" ]; then
+    warn "llms-full.txt includes alternate domains but llms.txt does not"
+  fi
+fi
+
+if [ -f "$DIR/llms.html" ]; then
+  llms_html_alt_domains=$(extract_html_alternate_domains "$DIR/llms.html")
+  check_alternate_domains_format "llms.html" "$llms_html_alt_domains" || true
+  if [ -n "$LLMS_ALT_DOMAINS" ]; then
+    check_alternate_domains_match "llms.html" "$llms_html_alt_domains" "$LLMS_ALT_DOMAINS"
+  elif [ -n "$llms_html_alt_domains" ]; then
+    warn "llms.html includes alternate domains but llms.txt does not"
+  fi
+fi
+
+if [ -f "$DIR/identity.json" ]; then
+  identity_json_alt_domains=$(extract_json_string_list "$DIR/identity.json" "alternateDomains")
+  check_alternate_domains_format "identity.json" "$identity_json_alt_domains" || true
+  if [ -n "$LLMS_ALT_DOMAINS" ]; then
+    check_alternate_domains_match "identity.json" "$identity_json_alt_domains" "$LLMS_ALT_DOMAINS"
+  elif [ -n "$identity_json_alt_domains" ]; then
+    warn "identity.json includes alternateDomains but llms.txt does not"
+  fi
+fi
+
+if [ -f "$DIR/ai.json" ]; then
+  ai_json_alt_domains=$(extract_json_string_list "$DIR/ai.json" "identity.alternateDomains")
+  check_alternate_domains_format "ai.json identity.alternateDomains" "$ai_json_alt_domains" || true
+  if [ -n "$LLMS_ALT_DOMAINS" ]; then
+    check_alternate_domains_match "ai.json identity.alternateDomains" "$ai_json_alt_domains" "$LLMS_ALT_DOMAINS"
+  elif [ -n "$ai_json_alt_domains" ]; then
+    warn "ai.json identity.alternateDomains includes values but llms.txt does not"
   fi
 fi
 
@@ -637,11 +855,11 @@ def check_value(label, value):
 # Text files: check main fields that commonly remain default-ish after generation.
 text_targets = [
     ("llms.txt", [
-        "Website: ", "Contact: ", "- DUNS number: ",
+        "Website: ", "Contact: ", "- DUNS number: ", "- Alternate domains: ",
         "- Legal name: ", "- Registration: ", "- Tax ID / VAT: ", "- Registered address: "
     ]),
     ("llms-full.txt", [
-        "Website: ", "Contact: ", "- DUNS number: "
+        "Website: ", "Contact: ", "- DUNS number: ", "- Alternate domains: "
     ]),
 ]
 
@@ -660,13 +878,13 @@ for file_name, prefixes in text_targets:
 # JSON files: targeted keys that should be real deploy values when present.
 json_targets = {
     "identity.json": [
-        "name", "legalName", "url", "dunsNumber",
+        "name", "legalName", "url", "dunsNumber", "alternateDomains[0]",
         "headquarters.addressLocality", "headquarters.addressRegion", "headquarters.postalCode",
         "contactPoints[0].email", "contactPoints[0].telephone"
     ],
     "ai.json": [
         "identity.registeredName", "identity.website", "identity.companyRegistration",
-        "identity.taxId", "identity.dunsNumber",
+        "identity.taxId", "identity.dunsNumber", "identity.alternateDomains[0]",
         "contact.general", "contact.support", "contact.phone",
         "pages.homepage", "aiFiles.llmsTxt"
     ]
