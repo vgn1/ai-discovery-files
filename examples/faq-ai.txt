@@ -139,4 +139,4 @@ Official website: https://www.mossbridge-analytics.example.com/
 
 ## File Metadata
 
-- File specification (v1.0.0): [faq-ai-txt.md](https://github.com/GenerellAI/ai-discovery-files/blob/e2a9fad34029b6b843454be2e6ec7dd9fa55f13a/specs/faq-ai-txt.md)
+- File specification (v1.0.0): [faq-ai-txt.md](https://github.com/GenerellAI/ai-discovery-files/blob/v1.0.0/specs/faq-ai-txt.md)

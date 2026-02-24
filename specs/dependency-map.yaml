@@ -1080,7 +1080,7 @@
         "templates/identity.json",
         "scripts/pin-template-spec-links.py"
       ],
-      "notes": "After changing specs/, refresh pinned template/example spec links so provenance references point to the intended commit SHA."
+      "notes": "After changing specs/, refresh pinned template/example spec links so provenance references point to the intended repo ref (release tag preferred)."
     }
   ]
 }

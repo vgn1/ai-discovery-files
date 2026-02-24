@@ -127,10 +127,12 @@ Validation terminology:
 - Deploy-ready files should omit non-applicable optional fields rather than leaving them empty, except when an explicit `None` / `Not applicable` / `No ...` statement is clearer and reduces incorrect assumptions.
 
 Template/example spec-link pinning:
-- Template and example files include pinned GitHub spec links (commit SHA, not `main`) for provenance.
+- Template and example files include pinned GitHub spec links (repo ref, not `main`) for provenance.
 - These spec-reference lines are template/example defaults for provenance/attribution and are not normative requirements of the file specifications.
 - After changing spec files in `specs/`, refresh pinned spec links with:
   `python3 scripts/pin-template-spec-links.py`
+- For a release snapshot, pin to the release tag (example):
+  `python3 scripts/pin-template-spec-links.py --ref v1.0.0`
 
 The script checks:
 

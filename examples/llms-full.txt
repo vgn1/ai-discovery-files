@@ -100,4 +100,4 @@ Business identifiers:
 
 ## File Metadata
 
-- File specification (v1.0.0): [llms-full-txt.md](https://github.com/GenerellAI/ai-discovery-files/blob/e2a9fad34029b6b843454be2e6ec7dd9fa55f13a/specs/llms-full-txt.md)
+- File specification (v1.0.0): [llms-full-txt.md](https://github.com/GenerellAI/ai-discovery-files/blob/v1.0.0/specs/llms-full-txt.md)

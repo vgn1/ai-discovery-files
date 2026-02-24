@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 """
-Pin template/example spec links to a specific repository commit SHA.
+Pin template/example spec links to a specific repository ref (tag/branch/SHA).
 
 Updates links in templates/* and examples/* that match:
 https://github.com/GenerellAI/ai-discovery-files/blob/<ref>/specs/<file>.md
 
-where <ref> may be `main` or a previous commit SHA.
+where <ref> may be a branch name, release tag, or commit SHA.
 """
 
 from __future__ import annotations
@@ -20,7 +20,7 @@ import sys
 REPO_URL_PREFIX = "https://github.com/GenerellAI/ai-discovery-files/blob/"
 LINK_PATTERN = re.compile(
     r"https://github\.com/GenerellAI/ai-discovery-files/blob/"
-    r"(main|[0-9a-f]{7,40})/specs/([A-Za-z0-9._-]+\.md)"
+    r"([A-Za-z0-9._-]+)/specs/([A-Za-z0-9._-]+\.md)"
 )
 
 
@@ -47,8 +47,12 @@ def iter_target_files(root: pathlib.Path):
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument(
+        "--ref",
+        help="Repository ref to pin to (tag/branch/SHA). Defaults to current git HEAD SHA.",
+    )
+    parser.add_argument(
         "--sha",
-        help="Commit SHA to pin to (defaults to current git HEAD).",
+        help="Deprecated alias for --ref (commit SHA).",
     )
     parser.add_argument(
         "--check",
@@ -59,13 +63,13 @@ def main() -> int:
 
     repo_root = pathlib.Path(__file__).resolve().parents[1]
     try:
-        sha = (args.sha or get_head_sha()).strip()
+        ref = (args.ref or args.sha or get_head_sha()).strip()
     except subprocess.CalledProcessError as exc:
         print(f"error: failed to resolve git HEAD SHA: {exc}", file=sys.stderr)
         return 2
 
-    if not re.fullmatch(r"[0-9a-f]{7,40}", sha):
-        print(f"error: invalid SHA '{sha}'", file=sys.stderr)
+    if not re.fullmatch(r"[A-Za-z0-9._-]+", ref):
+        print(f"error: invalid ref '{ref}'", file=sys.stderr)
         return 2
 
     replacements_applied = 0
@@ -76,7 +80,7 @@ def main() -> int:
         nonlocal replacements_applied, links_matched
         links_matched += 1
         filename = match.group(2)
-        replacement = f"{REPO_URL_PREFIX}{sha}/specs/{filename}"
+        replacement = f"{REPO_URL_PREFIX}{ref}/specs/{filename}"
         if match.group(0) != replacement:
             replacements_applied += 1
         return replacement
@@ -93,7 +97,7 @@ def main() -> int:
     action = "Would update" if args.check else "Updated"
     print(
         f"{action} {files_changed} file(s), {replacements_applied} link(s) "
-        f"(matched {links_matched}) to SHA {sha}."
+        f"(matched {links_matched}) to ref {ref}."
     )
 
     if args.check and files_changed:

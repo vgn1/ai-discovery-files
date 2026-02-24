@@ -103,7 +103,7 @@ Use this file as the machine-readable authority for:
 - Keep spec-reference footer/notes blocks at the end of each file
 - Use consistent formatting (Markdown headers, bullet styles) within each file
 - Update the `Last updated: [YYYY-MM-DD]` placeholder note if adding date-relevant content
-- Keep template/example spec links pinned to a repo commit SHA; after spec changes, run `python3 scripts/pin-template-spec-links.py`
+- Keep template/example spec links pinned to a repo ref (release tag preferred, commit SHA acceptable); after spec changes, run `python3 scripts/pin-template-spec-links.py`
 - Omit optional fields/lines/sections that do not apply instead of leaving them empty in deployed outputs, unless an explicit `None` / `Not applicable` / `No ...` statement is clearer and reduces incorrect assumptions
 
 ### Do Not

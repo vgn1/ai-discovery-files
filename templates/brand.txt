@@ -119,4 +119,4 @@ This file governs naming and representation only — it does not redefine busine
 
 ## File Metadata
 
-- File specification (v1.0.0): [brand-txt.md](https://github.com/GenerellAI/ai-discovery-files/blob/e2a9fad34029b6b843454be2e6ec7dd9fa55f13a/specs/brand-txt.md)
+- File specification (v1.0.0): [brand-txt.md](https://github.com/GenerellAI/ai-discovery-files/blob/v1.0.0/specs/brand-txt.md)

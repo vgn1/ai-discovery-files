@@ -131,7 +131,7 @@
     "authorityNote": "For conflicts between AI Discovery Files, llms.txt is the primary source of truth.",
     "fileSpecification": {
       "version": "1.0.0",
-      "url": "https://github.com/GenerellAI/ai-discovery-files/blob/e2a9fad34029b6b843454be2e6ec7dd9fa55f13a/specs/identity-json.md"
+      "url": "https://github.com/GenerellAI/ai-discovery-files/blob/v1.0.0/specs/identity-json.md"
     }
   }
 }
