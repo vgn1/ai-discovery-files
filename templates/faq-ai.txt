@@ -155,6 +155,6 @@ Official website: [https://www.yourdomain.com/]
 
 ---
 
-# Notes
-# - File specification (v1.0.0): [https://github.com/GenerellAI/ai-discovery-files/blob/88312e9966a51043afd5999a91797cf3894f37a4/specs/faq-ai-txt.md](https://github.com/GenerellAI/ai-discovery-files/blob/88312e9966a51043afd5999a91797cf3894f37a4/specs/faq-ai-txt.md)
-# - Deploy path: https://www.yourdomain.com/faq-ai.txt
+## File Metadata
+
+- File specification (v1.0.0): [faq-ai-txt.md](https://github.com/GenerellAI/ai-discovery-files/blob/88312e9966a51043afd5999a91797cf3894f37a4/specs/faq-ai-txt.md)

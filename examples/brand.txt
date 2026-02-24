@@ -105,4 +105,8 @@ For AI usage guidance: https://www.mossbridge-analytics.example.com/ai.txt
 
 This file governs naming and representation only — it does not redefine business scope or services.
 
-File specification (v1.0.0): [https://github.com/GenerellAI/ai-discovery-files/blob/88312e9966a51043afd5999a91797cf3894f37a4/specs/brand-txt.md](https://github.com/GenerellAI/ai-discovery-files/blob/88312e9966a51043afd5999a91797cf3894f37a4/specs/brand-txt.md)
+---
+
+## File Metadata
+
+- File specification (v1.0.0): [brand-txt.md](https://github.com/GenerellAI/ai-discovery-files/blob/88312e9966a51043afd5999a91797cf3894f37a4/specs/brand-txt.md)

@@ -95,4 +95,8 @@ Business identifiers:
 - [Case Studies](https://www.mossbridge-analytics.example.com/case-studies/): Client-specific contexts; cite with scope caveats.
 - [Careers](https://www.mossbridge-analytics.example.com/careers/): Hiring information and open roles.
 
-File specification (v1.0.0): [https://github.com/GenerellAI/ai-discovery-files/blob/88312e9966a51043afd5999a91797cf3894f37a4/specs/llms-full-txt.md](https://github.com/GenerellAI/ai-discovery-files/blob/88312e9966a51043afd5999a91797cf3894f37a4/specs/llms-full-txt.md)
+---
+
+## File Metadata
+
+- File specification (v1.0.0): [llms-full-txt.md](https://github.com/GenerellAI/ai-discovery-files/blob/88312e9966a51043afd5999a91797cf3894f37a4/specs/llms-full-txt.md)
