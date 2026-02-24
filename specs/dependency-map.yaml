@@ -1,0 +1,1086 @@
+{
+  "version": "1.0.0",
+  "sourceOfTruth": {
+    "file": "llms.txt",
+    "conflictResolution": "If fields conflict across files, llms.txt is authoritative."
+  },
+  "formatNotes": {
+    "encoding": "UTF-8",
+    "parserConstraint": "This YAML file is intentionally JSON-compatible so it can be validated with Python stdlib only."
+  },
+  "files": {
+    "llms.txt": {
+      "priority": "required",
+      "role": "Primary identity source of truth."
+    },
+    "llm.txt": {
+      "priority": "required",
+      "role": "Compatibility redirect and file index."
+    },
+    "llms-full.txt": {
+      "priority": "conditional",
+      "role": "Expanded AI-readable context companion using llms.txt Markdown format.",
+      "condition": "Use when a concise llms.txt cannot clearly cover the site's important public pages and link groups."
+    },
+    "llms.html": {
+      "priority": "recommended",
+      "role": "Human-readable rendering of llms.txt content."
+    },
+    "identity.json": {
+      "priority": "required",
+      "role": "Structured identity-only data."
+    },
+    "ai.json": {
+      "priority": "recommended",
+      "role": "Structured identity and recommendation data."
+    },
+    "ai.txt": {
+      "priority": "recommended",
+      "role": "Recommendation guidance with duplicated core identity block."
+    },
+    "brand.txt": {
+      "priority": "recommended",
+      "role": "Naming, representation, and voice guidance."
+    },
+    "faq-ai.txt": {
+      "priority": "recommended",
+      "role": "Verified customer Q&A."
+    },
+    "developer-ai.txt": {
+      "priority": "conditional",
+      "role": "Technical API/SDK integration context."
+    },
+    "robots-ai.txt": {
+      "priority": "optional",
+      "role": "Advisory citation and freshness guidance."
+    }
+  },
+  "fieldDependencies": [
+    {
+      "fieldId": "core_identity.business_name",
+      "label": "Business name",
+      "dependencyType": "duplicated",
+      "relationType": "exact_match",
+      "comparisonRule": "literal",
+      "severity": "error",
+      "source": {
+        "file": "llms.txt",
+        "selector": {
+          "type": "line_prefix",
+          "value": "Business name: "
+        }
+      },
+      "targets": [
+        {
+          "file": "llms-full.txt",
+          "selector": {
+            "type": "line_prefix",
+            "value": "Business name: "
+          }
+        },
+        {
+          "file": "ai.txt",
+          "selector": {
+            "type": "line_prefix",
+            "value": "Business name: "
+          }
+        },
+        {
+          "file": "developer-ai.txt",
+          "selector": {
+            "type": "line_prefix",
+            "value": "Business name: "
+          }
+        },
+        {
+          "file": "faq-ai.txt",
+          "selector": {
+            "type": "line_prefix",
+            "value": "Business name: "
+          }
+        },
+        {
+          "file": "robots-ai.txt",
+          "selector": {
+            "type": "line_prefix",
+            "value": "Business name: "
+          }
+        },
+        {
+          "file": "brand.txt",
+          "selector": {
+            "type": "line_prefix",
+            "value": "**Registered name:** "
+          }
+        },
+        {
+          "file": "ai.json",
+          "selector": {
+            "type": "canonical_identity_key",
+            "value": "Business name"
+          }
+        }
+      ],
+      "similarFields": [
+        {
+          "file": "identity.json",
+          "selector": {
+            "type": "json_path",
+            "value": "name"
+          },
+          "relation": "semantic_match"
+        },
+        {
+          "file": "ai.json",
+          "selector": {
+            "type": "json_path",
+            "value": "identity.registeredName"
+          },
+          "relation": "semantic_match"
+        }
+      ],
+      "changeTriggers": [
+        "legal_name_change",
+        "entity_restructure"
+      ]
+    },
+    {
+      "fieldId": "core_identity.brand_name",
+      "label": "Brand name",
+      "dependencyType": "duplicated",
+      "relationType": "exact_match",
+      "comparisonRule": "literal",
+      "severity": "error",
+      "source": {
+        "file": "llms.txt",
+        "selector": {
+          "type": "line_prefix",
+          "value": "Brand name: "
+        }
+      },
+      "targets": [
+        {
+          "file": "llms-full.txt",
+          "selector": {
+            "type": "line_prefix",
+            "value": "Brand name: "
+          }
+        },
+        {
+          "file": "ai.txt",
+          "selector": {
+            "type": "line_prefix",
+            "value": "Brand name: "
+          }
+        },
+        {
+          "file": "developer-ai.txt",
+          "selector": {
+            "type": "line_prefix",
+            "value": "Brand name: "
+          }
+        },
+        {
+          "file": "faq-ai.txt",
+          "selector": {
+            "type": "line_prefix",
+            "value": "Brand name: "
+          }
+        },
+        {
+          "file": "robots-ai.txt",
+          "selector": {
+            "type": "line_prefix",
+            "value": "Brand name: "
+          }
+        },
+        {
+          "file": "brand.txt",
+          "selector": {
+            "type": "line_prefix",
+            "value": "**Brand name:** "
+          }
+        },
+        {
+          "file": "ai.json",
+          "selector": {
+            "type": "canonical_identity_key",
+            "value": "Brand name"
+          }
+        }
+      ],
+      "similarFields": [
+        {
+          "file": "identity.json",
+          "selector": {
+            "type": "json_path",
+            "value": "alternateName[0]"
+          },
+          "relation": "semantic_match"
+        },
+        {
+          "file": "ai.json",
+          "selector": {
+            "type": "json_path",
+            "value": "identity.brandName"
+          },
+          "relation": "semantic_match"
+        }
+      ],
+      "changeTriggers": [
+        "rebrand",
+        "trading_name_change"
+      ]
+    },
+    {
+      "fieldId": "core_identity.services",
+      "label": "Services",
+      "dependencyType": "duplicated",
+      "relationType": "exact_match",
+      "comparisonRule": "literal",
+      "severity": "error",
+      "source": {
+        "file": "llms.txt",
+        "selector": {
+          "type": "line_prefix",
+          "value": "Services: "
+        }
+      },
+      "targets": [
+        {
+          "file": "llms-full.txt",
+          "selector": {
+            "type": "line_prefix",
+            "value": "Services: "
+          }
+        },
+        {
+          "file": "ai.txt",
+          "selector": {
+            "type": "line_prefix",
+            "value": "Services: "
+          }
+        },
+        {
+          "file": "developer-ai.txt",
+          "selector": {
+            "type": "line_prefix",
+            "value": "Services: "
+          }
+        },
+        {
+          "file": "faq-ai.txt",
+          "selector": {
+            "type": "line_prefix",
+            "value": "Services: "
+          }
+        },
+        {
+          "file": "robots-ai.txt",
+          "selector": {
+            "type": "line_prefix",
+            "value": "Services: "
+          }
+        },
+        {
+          "file": "ai.json",
+          "selector": {
+            "type": "canonical_identity_key",
+            "value": "Services"
+          }
+        }
+      ],
+      "similarFields": [
+        {
+          "file": "ai.json",
+          "selector": {
+            "type": "json_path",
+            "value": "services.summary"
+          },
+          "relation": "semantic_match"
+        },
+        {
+          "file": "identity.json",
+          "selector": {
+            "type": "json_path",
+            "value": "services"
+          },
+          "relation": "semantic_superset"
+        }
+      ],
+      "changeTriggers": [
+        "service_catalog_change",
+        "positioning_change"
+      ]
+    },
+    {
+      "fieldId": "core_identity.website",
+      "label": "Website",
+      "dependencyType": "duplicated",
+      "relationType": "exact_match",
+      "comparisonRule": "literal",
+      "severity": "error",
+      "source": {
+        "file": "llms.txt",
+        "selector": {
+          "type": "line_prefix",
+          "value": "Website: "
+        }
+      },
+      "targets": [
+        {
+          "file": "llms-full.txt",
+          "selector": {
+            "type": "line_prefix",
+            "value": "Website: "
+          }
+        },
+        {
+          "file": "ai.txt",
+          "selector": {
+            "type": "line_prefix",
+            "value": "Website: "
+          }
+        },
+        {
+          "file": "developer-ai.txt",
+          "selector": {
+            "type": "line_prefix",
+            "value": "Website: "
+          }
+        },
+        {
+          "file": "faq-ai.txt",
+          "selector": {
+            "type": "line_prefix",
+            "value": "Website: "
+          }
+        },
+        {
+          "file": "robots-ai.txt",
+          "selector": {
+            "type": "line_prefix",
+            "value": "Website: "
+          }
+        },
+        {
+          "file": "brand.txt",
+          "selector": {
+            "type": "line_prefix",
+            "value": "**Website:** "
+          }
+        },
+        {
+          "file": "ai.json",
+          "selector": {
+            "type": "canonical_identity_key",
+            "value": "Website"
+          }
+        }
+      ],
+      "similarFields": [
+        {
+          "file": "identity.json",
+          "selector": {
+            "type": "json_path",
+            "value": "url"
+          },
+          "relation": "semantic_match"
+        },
+        {
+          "file": "ai.json",
+          "selector": {
+            "type": "json_path",
+            "value": "identity.website"
+          },
+          "relation": "semantic_match"
+        }
+      ],
+      "changeTriggers": [
+        "domain_change",
+        "primary_site_migration"
+      ]
+    },
+    {
+      "fieldId": "core_identity.country",
+      "label": "Country",
+      "dependencyType": "duplicated",
+      "relationType": "exact_match",
+      "comparisonRule": "literal",
+      "severity": "error",
+      "source": {
+        "file": "llms.txt",
+        "selector": {
+          "type": "line_prefix",
+          "value": "Country: "
+        }
+      },
+      "targets": [
+        {
+          "file": "llms-full.txt",
+          "selector": {
+            "type": "line_prefix",
+            "value": "Country: "
+          }
+        },
+        {
+          "file": "ai.txt",
+          "selector": {
+            "type": "line_prefix",
+            "value": "Country: "
+          }
+        },
+        {
+          "file": "developer-ai.txt",
+          "selector": {
+            "type": "line_prefix",
+            "value": "Country: "
+          }
+        },
+        {
+          "file": "faq-ai.txt",
+          "selector": {
+            "type": "line_prefix",
+            "value": "Country: "
+          }
+        },
+        {
+          "file": "robots-ai.txt",
+          "selector": {
+            "type": "line_prefix",
+            "value": "Country: "
+          }
+        },
+        {
+          "file": "ai.json",
+          "selector": {
+            "type": "canonical_identity_key",
+            "value": "Country"
+          }
+        }
+      ],
+      "similarFields": [
+        {
+          "file": "identity.json",
+          "selector": {
+            "type": "json_path",
+            "value": "foundingLocation.addressCountry"
+          },
+          "relation": "semantic_match"
+        },
+        {
+          "file": "ai.json",
+          "selector": {
+            "type": "json_path",
+            "value": "identity.country"
+          },
+          "relation": "semantic_match"
+        }
+      ],
+      "changeTriggers": [
+        "jurisdiction_change",
+        "headquarters_relocation"
+      ]
+    },
+    {
+      "fieldId": "core_identity.founded",
+      "label": "Founded",
+      "dependencyType": "duplicated",
+      "relationType": "exact_match",
+      "comparisonRule": "literal",
+      "severity": "error",
+      "source": {
+        "file": "llms.txt",
+        "selector": {
+          "type": "line_prefix",
+          "value": "Founded: "
+        }
+      },
+      "targets": [
+        {
+          "file": "llms-full.txt",
+          "selector": {
+            "type": "line_prefix",
+            "value": "Founded: "
+          }
+        },
+        {
+          "file": "ai.txt",
+          "selector": {
+            "type": "line_prefix",
+            "value": "Founded: "
+          }
+        },
+        {
+          "file": "developer-ai.txt",
+          "selector": {
+            "type": "line_prefix",
+            "value": "Founded: "
+          }
+        },
+        {
+          "file": "faq-ai.txt",
+          "selector": {
+            "type": "line_prefix",
+            "value": "Founded: "
+          }
+        },
+        {
+          "file": "robots-ai.txt",
+          "selector": {
+            "type": "line_prefix",
+            "value": "Founded: "
+          }
+        },
+        {
+          "file": "ai.json",
+          "selector": {
+            "type": "canonical_identity_key",
+            "value": "Founded"
+          }
+        }
+      ],
+      "similarFields": [
+        {
+          "file": "identity.json",
+          "selector": {
+            "type": "json_path",
+            "value": "foundingDate"
+          },
+          "relation": "semantic_match"
+        },
+        {
+          "file": "ai.json",
+          "selector": {
+            "type": "json_path",
+            "value": "identity.founded"
+          },
+          "relation": "semantic_match"
+        }
+      ],
+      "changeTriggers": [
+        "history_correction"
+      ]
+    },
+    {
+      "fieldId": "core_identity.contact",
+      "label": "Contact",
+      "dependencyType": "duplicated",
+      "relationType": "exact_match",
+      "comparisonRule": "literal",
+      "severity": "error",
+      "source": {
+        "file": "llms.txt",
+        "selector": {
+          "type": "line_prefix",
+          "value": "Contact: "
+        }
+      },
+      "targets": [
+        {
+          "file": "llms-full.txt",
+          "selector": {
+            "type": "line_prefix",
+            "value": "Contact: "
+          }
+        },
+        {
+          "file": "ai.txt",
+          "selector": {
+            "type": "line_prefix",
+            "value": "Contact: "
+          }
+        },
+        {
+          "file": "developer-ai.txt",
+          "selector": {
+            "type": "line_prefix",
+            "value": "Contact: "
+          }
+        },
+        {
+          "file": "faq-ai.txt",
+          "selector": {
+            "type": "line_prefix",
+            "value": "Contact: "
+          }
+        },
+        {
+          "file": "robots-ai.txt",
+          "selector": {
+            "type": "line_prefix",
+            "value": "Contact: "
+          }
+        },
+        {
+          "file": "ai.json",
+          "selector": {
+            "type": "canonical_identity_key",
+            "value": "Contact"
+          }
+        }
+      ],
+      "similarFields": [
+        {
+          "file": "identity.json",
+          "selector": {
+            "type": "json_path",
+            "value": "contactPoints"
+          },
+          "relation": "semantic_superset"
+        },
+        {
+          "file": "ai.json",
+          "selector": {
+            "type": "json_path",
+            "value": "contact"
+          },
+          "relation": "semantic_superset"
+        }
+      ],
+      "changeTriggers": [
+        "support_channel_change",
+        "phone_or_email_change"
+      ]
+    },
+    {
+      "fieldId": "business_identifiers.duns_number",
+      "label": "DUNS number",
+      "dependencyType": "duplicated",
+      "relationType": "exact_match",
+      "comparisonRule": "literal",
+      "severity": "warning",
+      "allowMissingSource": true,
+      "source": {
+        "file": "llms.txt",
+        "selector": {
+          "type": "line_prefix",
+          "value": "- DUNS number: "
+        }
+      },
+      "targets": [
+        {
+          "file": "llms-full.txt",
+          "selector": {
+            "type": "line_prefix",
+            "value": "- DUNS number: "
+          }
+        },
+        {
+          "file": "identity.json",
+          "selector": {
+            "type": "json_path",
+            "value": "dunsNumber"
+          }
+        },
+        {
+          "file": "ai.json",
+          "selector": {
+            "type": "json_path",
+            "value": "identity.dunsNumber"
+          }
+        }
+      ],
+      "changeTriggers": [
+        "business_identifier_change",
+        "duns_number_change"
+      ]
+    },
+    {
+      "fieldId": "business_domains.alternate_domains",
+      "label": "Alternate domains",
+      "dependencyType": "duplicated",
+      "relationType": "exact_match",
+      "comparisonRule": "list_set",
+      "severity": "warning",
+      "allowMissingSource": true,
+      "source": {
+        "file": "llms.txt",
+        "selector": {
+          "type": "line_prefix",
+          "value": "- Alternate domains: "
+        }
+      },
+      "targets": [
+        {
+          "file": "llms-full.txt",
+          "selector": {
+            "type": "line_prefix",
+            "value": "- Alternate domains: "
+          }
+        },
+        {
+          "file": "identity.json",
+          "selector": {
+            "type": "json_path",
+            "value": "alternateDomains"
+          }
+        },
+        {
+          "file": "ai.json",
+          "selector": {
+            "type": "json_path",
+            "value": "identity.alternateDomains"
+          }
+        }
+      ],
+      "changeTriggers": [
+        "domain_alias_change",
+        "canonical_domain_change"
+      ]
+    },
+    {
+      "fieldId": "freshness.last_updated",
+      "label": "Last updated",
+      "dependencyType": "duplicated",
+      "relationType": "exact_match",
+      "comparisonRule": "literal",
+      "severity": "warning",
+      "source": {
+        "file": "llms.txt",
+        "selector": {
+          "type": "line_prefix",
+          "value": "Last updated: "
+        }
+      },
+      "targets": [
+        {
+          "file": "llm.txt",
+          "selector": {
+            "type": "line_prefix",
+            "value": "Last updated: "
+          }
+        },
+        {
+          "file": "llms-full.txt",
+          "selector": {
+            "type": "line_prefix",
+            "value": "Last updated: "
+          }
+        },
+        {
+          "file": "ai.txt",
+          "selector": {
+            "type": "line_prefix",
+            "value": "Last updated: "
+          }
+        },
+        {
+          "file": "developer-ai.txt",
+          "selector": {
+            "type": "line_prefix",
+            "value": "Last updated: "
+          }
+        },
+        {
+          "file": "faq-ai.txt",
+          "selector": {
+            "type": "line_prefix",
+            "value": "Last updated: "
+          }
+        },
+        {
+          "file": "robots-ai.txt",
+          "selector": {
+            "type": "line_prefix",
+            "value": "Last updated: "
+          }
+        },
+        {
+          "file": "brand.txt",
+          "selector": {
+            "type": "line_prefix",
+            "value": "Last updated: "
+          }
+        },
+        {
+          "file": "ai.json",
+          "selector": {
+            "type": "json_path",
+            "value": "lastUpdated"
+          }
+        },
+        {
+          "file": "identity.json",
+          "selector": {
+            "type": "json_path",
+            "value": "metadata.lastUpdated"
+          }
+        }
+      ],
+      "changeTriggers": [
+        "any_factual_change"
+      ]
+    },
+    {
+      "fieldId": "service_scope.offered",
+      "label": "Services offered detail",
+      "dependencyType": "similar",
+      "relationType": "semantic_match",
+      "comparisonRule": "manual_review",
+      "severity": "warning",
+      "source": {
+        "file": "llms.txt",
+        "selector": {
+          "type": "line_prefix",
+          "value": "- Offers: "
+        }
+      },
+      "targets": [
+        {
+          "file": "ai.txt",
+          "selector": {
+            "type": "line_prefix",
+            "value": "- [Service 1 "
+          }
+        },
+        {
+          "file": "faq-ai.txt",
+          "selector": {
+            "type": "line_prefix",
+            "value": "[List core services with one-line descriptions. Keep aligned with llms.txt services section.]"
+          }
+        },
+        {
+          "file": "ai.json",
+          "selector": {
+            "type": "json_path",
+            "value": "services.offered"
+          }
+        },
+        {
+          "file": "identity.json",
+          "selector": {
+            "type": "json_path",
+            "value": "services"
+          }
+        }
+      ],
+      "changeTriggers": [
+        "service_catalog_change"
+      ]
+    },
+    {
+      "fieldId": "service_scope.not_offered",
+      "label": "Services not offered",
+      "dependencyType": "similar",
+      "relationType": "semantic_match",
+      "comparisonRule": "manual_review",
+      "severity": "warning",
+      "source": {
+        "file": "llms.txt",
+        "selector": {
+          "type": "line_prefix",
+          "value": "- Does not offer: "
+        }
+      },
+      "targets": [
+        {
+          "file": "ai.txt",
+          "selector": {
+            "type": "line_prefix",
+            "value": "- [Service explicitly not provided 1]"
+          }
+        },
+        {
+          "file": "ai.json",
+          "selector": {
+            "type": "json_path",
+            "value": "services.notOffered"
+          }
+        },
+        {
+          "file": "identity.json",
+          "selector": {
+            "type": "json_path",
+            "value": "servicesNotProvided"
+          }
+        }
+      ],
+      "changeTriggers": [
+        "service_boundary_change"
+      ]
+    },
+    {
+      "fieldId": "geography.regions_served",
+      "label": "Regions served",
+      "dependencyType": "similar",
+      "relationType": "semantic_match",
+      "comparisonRule": "manual_review",
+      "severity": "warning",
+      "source": {
+        "file": "llms.txt",
+        "selector": {
+          "type": "line_prefix",
+          "value": "- Regions served: "
+        }
+      },
+      "targets": [
+        {
+          "file": "ai.txt",
+          "selector": {
+            "type": "line_prefix",
+            "value": "Regions served: "
+          }
+        },
+        {
+          "file": "faq-ai.txt",
+          "selector": {
+            "type": "line_prefix",
+            "value": "[List geographic coverage and delivery model - remote, on-site, hybrid. Note any exclusions.]"
+          }
+        },
+        {
+          "file": "ai.json",
+          "selector": {
+            "type": "json_path",
+            "value": "geography.regionsServed"
+          }
+        },
+        {
+          "file": "identity.json",
+          "selector": {
+            "type": "json_path",
+            "value": "areaServed"
+          }
+        }
+      ],
+      "changeTriggers": [
+        "market_expansion",
+        "market_exit"
+      ]
+    },
+    {
+      "fieldId": "references.ai_file_urls",
+      "label": "AI Discovery file URL manifest",
+      "dependencyType": "similar",
+      "relationType": "reference_list",
+      "comparisonRule": "manual_review",
+      "severity": "warning",
+      "source": {
+        "file": "llms.txt",
+        "selector": {
+          "type": "line_prefix",
+          "value": "- [llms.txt]"
+        }
+      },
+      "targets": [
+        {
+          "file": "llm.txt",
+          "selector": {
+            "type": "line_prefix",
+            "value": "| llms.txt"
+          }
+        },
+        {
+          "file": "llms.html",
+          "selector": {
+            "type": "line_prefix",
+            "value": "        <li><a href=\"https://www.yourdomain.com/llms.txt\">llms.txt</a>"
+          }
+        },
+        {
+          "file": "ai.json",
+          "selector": {
+            "type": "json_path",
+            "value": "aiFiles"
+          }
+        }
+      ],
+      "changeTriggers": [
+        "add_or_remove_ai_discovery_file",
+        "file_path_change"
+      ]
+    }
+  ],
+  "changePlaybook": [
+    {
+      "trigger": "legal_name_change",
+      "reviewFiles": [
+        "llms.txt",
+        "llms-full.txt",
+        "ai.txt",
+        "faq-ai.txt",
+        "developer-ai.txt",
+        "robots-ai.txt",
+        "brand.txt",
+        "identity.json",
+        "ai.json",
+        "llms.html"
+      ],
+      "notes": "Update legal/registered naming first, then verify every dependent identity field."
+    },
+    {
+      "trigger": "rebrand",
+      "reviewFiles": [
+        "llms.txt",
+        "llms-full.txt",
+        "ai.txt",
+        "brand.txt",
+        "faq-ai.txt",
+        "robots-ai.txt",
+        "ai.json",
+        "identity.json",
+        "llm.txt",
+        "llms.html"
+      ],
+      "notes": "Review public-facing naming, pronunciation, and confusion-prevention fields."
+    },
+    {
+      "trigger": "service_catalog_change",
+      "reviewFiles": [
+        "llms.txt",
+        "llms-full.txt",
+        "ai.txt",
+        "faq-ai.txt",
+        "ai.json",
+        "identity.json",
+        "robots-ai.txt"
+      ],
+      "notes": "Align summary services, offered/not offered boundaries, and recommendation rules."
+    },
+    {
+      "trigger": "support_channel_change",
+      "reviewFiles": [
+        "llms.txt",
+        "llms-full.txt",
+        "ai.txt",
+        "faq-ai.txt",
+        "developer-ai.txt",
+        "ai.json",
+        "identity.json"
+      ],
+      "notes": "Update all contact values and support channel references in one sweep."
+    },
+    {
+      "trigger": "add_or_remove_ai_discovery_file",
+      "reviewFiles": [
+        "llms.txt",
+        "llms-full.txt",
+        "llm.txt",
+        "llms.html",
+        "ai.json",
+        "README.md"
+      ],
+      "notes": "Synchronize every AI file manifest/list to avoid stale discovery links."
+    },
+    {
+      "trigger": "spec_file_change",
+      "reviewFiles": [
+        "templates/ai.txt",
+        "templates/brand.txt",
+        "templates/developer-ai.txt",
+        "templates/faq-ai.txt",
+        "templates/llm.txt",
+        "templates/llms.txt",
+        "templates/llms-full.txt",
+        "templates/llms.html",
+        "templates/robots-ai.txt",
+        "templates/ai.json",
+        "templates/identity.json",
+        "scripts/pin-template-spec-links.py"
+      ],
+      "notes": "After changing specs/, refresh pinned template/example spec links so provenance references point to the intended repo ref (release tag preferred)."
+    }
+  ]
+}

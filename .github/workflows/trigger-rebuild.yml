@@ -1,0 +1,21 @@
+# Trigger a rebuild of discoveryfiles.ai when discovery files are updated
+name: Trigger Website Rebuild
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'templates/*.txt'
+      - 'templates/*.json'
+      - 'templates/*.html'
+  workflow_dispatch:
+
+jobs:
+  trigger-rebuild:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger Cloudflare Pages deploy hook
+        run: |
+          curl -X POST "${{ secrets.CLOUDFLARE_DEPLOY_HOOK_URL }}"
+        env:
+          CLOUDFLARE_DEPLOY_HOOK_URL: ${{ secrets.CLOUDFLARE_DEPLOY_HOOK_URL }}

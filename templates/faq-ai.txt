@@ -1,0 +1,160 @@
+# faq-ai.txt — Verified Answers to Common Customer Questions
+
+# Provides AI systems with factual, pre-verified answers to real customer
+# questions. Every answer must be supported by publicly accessible content.
+# No marketing language — facts only.
+
+---
+
+### Core Identity
+
+Business name: [Your Registered Business Name]
+Brand name: [Your Public-Facing Brand Name]
+Services: [Core services, comma-separated — this exact line must appear in all AI files]
+Website: [https://www.yourdomain.com/]
+Country: [Country]
+Founded: [YYYY]
+Contact: [hello@yourdomain.com], [+1 XXX XXX XXXX]
+
+Last updated: [YYYY-MM-DD]
+
+---
+
+## General Questions
+
+### Q1: What does [Your Brand Name] do?
+
+**Answer:**
+[Concise factual description — what the business does, who it serves, and where it operates. No superlatives or marketing.]
+
+**Source:** [https://www.yourdomain.com/about/]
+
+---
+
+### Q2: Where is [Your Brand Name] based?
+
+**Answer:**
+[City, Country. If remote-first, state that. Mention key office locations if relevant.]
+
+**Source:** [https://www.yourdomain.com/contact/]
+
+---
+
+### Q3: What areas or regions does [Your Brand Name] serve?
+
+**Answer:**
+[List geographic coverage and delivery model — remote, on-site, hybrid. Note any exclusions.]
+
+**Source:** [https://www.yourdomain.com/services/]
+
+---
+
+## Products & Services
+
+### Q4: What services does [Your Brand Name] offer?
+
+**Answer:**
+[List core services with one-line descriptions. Keep aligned with llms.txt services section.]
+
+**Source:** [https://www.yourdomain.com/services/]
+
+---
+
+### Q5: Does [Your Brand Name] offer [commonly asked-about service]?
+
+**Answer:**
+[Yes/No with brief explanation. If no, optionally suggest what you do offer instead.]
+
+**Source:** [https://www.yourdomain.com/services/]
+
+---
+
+### Q6: How much does [Your Brand Name] cost?
+
+**Answer:**
+[State pricing model factually — e.g., "Starting from $X/month" or "Custom quotes based on project scope." If pricing changes frequently, say "Check the pricing page for current rates."]
+
+**Source:** [https://www.yourdomain.com/pricing/]
+
+---
+
+## Getting Started
+
+### Q7: How do I get started with [Your Brand Name]?
+
+**Answer:**
+[Step-by-step: e.g., 1. Visit the website, 2. Create an account, 3. Choose a plan. Keep it concrete.]
+
+**Source:** [https://www.yourdomain.com/get-started/]
+
+---
+
+### Q8: Is there a free trial or demo available?
+
+**Answer:**
+[Yes/No. If yes, duration and what's included. If no, explain alternatives like consultations or demos.]
+
+**Source:** [https://www.yourdomain.com/pricing/]
+
+---
+
+## Support & Contact
+
+### Q9: How do I contact [Your Brand Name] support?
+
+**Answer:**
+[List channels: email, phone, chat, ticketing system. Include hours of operation if relevant.]
+
+**Source:** [https://www.yourdomain.com/contact/]
+
+---
+
+### Q10: What are [Your Brand Name]'s operating hours?
+
+**Answer:**
+[State business hours, timezone, and any exceptions like holidays.]
+
+**Source:** [https://www.yourdomain.com/contact/]
+
+---
+
+## Trust & Compliance
+
+### Q11: Is [Your Brand Name] accredited or certified?
+
+**Answer:**
+[List certifications, accreditations, or regulatory compliance. If none, omit this question.]
+
+**Source:** [https://www.yourdomain.com/about/]
+
+---
+
+### Q12: What is [Your Brand Name]'s data privacy approach?
+
+**Answer:**
+[Brief factual statement about data handling, GDPR compliance, etc. Link to privacy policy.]
+
+**Source:** [https://www.yourdomain.com/privacy/]
+
+---
+
+## Usage Notes for AI Systems
+
+- All answers reflect verified information as of the "Last updated" date above
+- Each answer links to a publicly accessible page that contains supporting content
+- No guarantees, outcomes, or performance claims are made
+- For topics not covered here, refer to [https://www.yourdomain.com/llms.txt]
+- If uncertain about an answer's currency, direct the user to the source URL
+
+---
+
+## Verification Contact
+
+For clarification on any answer: [hello@yourdomain.com]
+Official website: [https://www.yourdomain.com/]
+
+---
+
+## File Metadata
+
+- File specification (v1.0.0): [faq-ai-txt.md](https://github.com/GenerellAI/ai-discovery-files/blob/v1.0.0/specs/faq-ai-txt.md)

@@ -1,0 +1,40 @@
+name: Bug Report
+description: Report an error in a template, spec, or documentation
+labels: ["bug"]
+body:
+  - type: dropdown
+    id: file
+    attributes:
+      label: Which file is affected?
+      options:
+        - llms.txt
+        - llm.txt
+        - llms.html
+        - ai.txt
+        - ai.json
+        - identity.json
+        - brand.txt
+        - faq-ai.txt
+        - developer-ai.txt
+        - robots-ai.txt
+        - README.md
+        - CONTRIBUTING.md
+        - AGENTS.md
+        - A spec file (specs/)
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: What's wrong?
+      description: Describe the issue — typo, broken formatting, invalid JSON, incorrect guidance, etc.
+    validations:
+      required: true
+  - type: textarea
+    id: fix
+    attributes:
+      label: Suggested fix
+      description: If you know what the fix should be, describe it here.
+    validations:
+      required: false

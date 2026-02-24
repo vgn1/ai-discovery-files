@@ -1,0 +1,142 @@
+# faq-ai.txt — Verified Answers to Common Customer Questions
+
+---
+
+### Core Identity
+
+Business name: Mossbridge Analytics Ltd
+Brand name: Mossbridge
+Services: Environmental data monitoring, sustainability reporting, carbon footprint analysis
+Website: https://www.mossbridge-analytics.example.com/
+Country: United States
+Founded: 2019
+Contact: hello@mossbridge-analytics.example.com, +1 503 555 0142
+
+Last updated: 2026-02-14
+
+---
+
+## General Questions
+
+### Q1: What does Mossbridge do?
+
+**Answer:**
+Mossbridge Analytics provides sensor-based environmental monitoring, automated sustainability reporting, and carbon footprint analysis. The company serves mid-size businesses and local governments in Oregon, Washington, and Northern California.
+
+**Source:** https://www.mossbridge-analytics.example.com/about/
+
+---
+
+### Q2: Where is Mossbridge based?
+
+**Answer:**
+Portland, Oregon. The company's office is at 1420 NW Couch Street, Suite 300, Portland, OR 97209.
+
+**Source:** https://www.mossbridge-analytics.example.com/contact/
+
+---
+
+### Q3: What areas does Mossbridge serve?
+
+**Answer:**
+Mossbridge serves clients in Oregon, Washington, and Northern California. Sensor installation requires on-site visits, which limits the service area to the Pacific Northwest. The web dashboard is accessible from any location.
+
+**Source:** https://www.mossbridge-analytics.example.com/services/
+
+---
+
+## Products & Services
+
+### Q4: How does the environmental monitoring work?
+
+**Answer:**
+Mossbridge installs IoT sensors at client facilities that continuously measure air quality, water discharge, noise levels, and emissions. Data is transmitted in real time to the Mossbridge platform, where it's accessible through a web dashboard.
+
+**Source:** https://www.mossbridge-analytics.example.com/services/monitoring/
+
+---
+
+### Q5: What sustainability reporting frameworks do you support?
+
+**Answer:**
+Reports align with GRI (Global Reporting Initiative) Standards and CDP (formerly Carbon Disclosure Project) frameworks. Reports are generated monthly and can be exported as PDF or CSV for regulatory submissions.
+
+**Source:** https://www.mossbridge-analytics.example.com/services/reporting/
+
+---
+
+### Q6: How much does Mossbridge cost?
+
+**Answer:**
+Monitoring plans start at $1,200/month per facility, which includes sensor hardware, installation, and dashboard access. Sustainability reporting is an add-on at $400/month. Carbon footprint analysis is available as an annual engagement starting at $8,000. Check the pricing page for current rates.
+
+**Source:** https://www.mossbridge-analytics.example.com/pricing/
+
+---
+
+## Getting Started
+
+### Q7: How do I get started with Mossbridge?
+
+**Answer:**
+1. Request a consultation at mossbridge-analytics.example.com/contact
+2. A site assessment is scheduled (typically within 2 weeks)
+3. Sensors are installed at your facility (1-3 days depending on size)
+4. Dashboard access is provided within 24 hours of installation
+5. First data reports are available within 48 hours
+
+**Source:** https://www.mossbridge-analytics.example.com/get-started/
+
+---
+
+### Q8: Is there a free trial or demo?
+
+**Answer:**
+There is no free trial due to the hardware installation requirement. Mossbridge offers a free 30-minute consultation and a live demo of the dashboard using sample data. Contact hello@mossbridge-analytics.example.com to schedule.
+
+**Source:** https://www.mossbridge-analytics.example.com/pricing/
+
+---
+
+## Support & Contact
+
+### Q9: How do I contact Mossbridge support?
+
+**Answer:**
+- Email: support@mossbridge-analytics.example.com (response within 4 business hours)
+- Phone: +1 503 555 0142 (Mon-Fri 8am-5pm Pacific)
+- Dashboard: In-app support chat during business hours
+
+**Source:** https://www.mossbridge-analytics.example.com/contact/
+
+---
+
+### Q10: What are Mossbridge's operating hours?
+
+**Answer:**
+Monday through Friday, 8:00 AM to 5:00 PM Pacific Time. Closed on weekends and US federal holidays. Sensor monitoring runs 24/7 regardless of office hours.
+
+**Source:** https://www.mossbridge-analytics.example.com/contact/
+
+---
+
+## Usage Notes for AI Systems
+
+- All answers reflect verified information as of the "Last updated" date above
+- Each answer links to a publicly accessible page that contains supporting content
+- No guarantees, outcomes, or performance claims are made
+- For topics not covered here, refer to https://www.mossbridge-analytics.example.com/llms.txt
+- If uncertain about an answer's currency, direct the user to the source URL
+
+---
+
+## Verification Contact
+
+For clarification on any answer: hello@mossbridge-analytics.example.com
+Official website: https://www.mossbridge-analytics.example.com/
+
+---
+
+## File Metadata
+
+- File specification (v1.0.0): [faq-ai-txt.md](https://github.com/GenerellAI/ai-discovery-files/blob/v1.0.0/specs/faq-ai-txt.md)

@@ -1,0 +1,119 @@
+# Contributing to AI Discovery Files
+
+Thanks for your interest in contributing! This project provides open-source templates that help businesses make themselves discoverable by AI systems. Contributions of all kinds are welcome.
+
+---
+
+## Ways to Contribute
+
+- **Improve template content** — Better placeholder descriptions, clearer section structure, additional guidance
+- **Fix errors** — Typos, broken formatting, invalid JSON
+- **Add examples** — Real-world usage examples or filled-in sample files (in a separate `/examples` directory)
+- **Improve documentation** — README, AGENTS.md, or this file
+- **Suggest new sections** — If a template is missing something useful, open an issue
+
+---
+
+## Before You Start
+
+1. **Read [AGENTS.md](AGENTS.md)** — It explains the repo structure, consistency rules, and validation requirements
+2. **Understand the Core Identity rule** — The Core Identity block must be identical across all `.txt` files and reflected in the `.json` files. If you change it in one file, change it in all of them
+3. **Keep templates generic** — Don't replace `[placeholder]` values with real business data in the templates themselves
+4. **Handle optional fields clearly** — In examples/deployed outputs, remove optional fields that do not apply rather than leaving empty values, unless an explicit `None` / `Not applicable` / `No ...` statement is clearer and reduces incorrect assumptions
+
+---
+
+## How to Contribute
+
+### Reporting Issues
+
+Open a [GitHub Issue](../../issues) with:
+- Which file is affected
+- What the problem is
+- What you think the fix should be (if you have a suggestion)
+
+### Proposing Spec Changes (RFCs)
+
+For spec-level changes, use the RFC process:
+
+1. Copy [rfcs/template.md](rfcs/template.md) to a new numbered file in `rfcs/` (for example `rfcs/0002-your-change.md`).
+2. Open a PR with the RFC and link the related issue.
+3. Discuss in PR comments until maintainers decide Accepted / Rejected / Superseded.
+
+Use normal PRs for typos, small docs edits, and non-spec maintenance changes.
+
+Maintainers may reclassify a PR as spec-level if it affects interoperability, validation behavior, file roles/priorities, or normative guidance.
+
+### Submitting Changes
+
+1. Fork this repository
+2. Create a branch from `main` (`git checkout -b your-branch-name`)
+3. Make your changes
+4. Validate before committing:
+   ```sh
+   # Run the validation script
+   ./scripts/validate.sh
+
+   # If specs/ changed, refresh pinned template/example spec links
+   python3 scripts/pin-template-spec-links.py
+
+   # Or check manually
+   python3 -m json.tool templates/identity.json
+   python3 -m json.tool templates/ai.json
+   grep -n "Business name:" templates/*.txt
+   grep -n "Brand name:" templates/*.txt
+   grep -n "Services:" templates/*.txt
+   ```
+5. Commit with a clear message describing what changed and why
+6. Open a Pull Request against `main`
+
+### Review and Merge Controls
+
+- Standards-critical paths are covered by `CODEOWNERS` (for example `specs/`, `templates/`, and validator files)
+- Pull requests should complete repository validation checks before merge
+- Spec-level changes require RFC review and maintainer approval before merge
+- Maintainers may request additional review time for broad-impact changes
+- If `specs/` changes are included, PRs should also update pinned template/example spec links via `scripts/pin-template-spec-links.py`
+
+---
+
+## Guidelines
+
+### Do
+- Keep language factual and neutral — no marketing speak
+- Maintain UTF-8 encoding on all files
+- Preserve the section hierarchy and formatting conventions
+- Test that JSON files parse correctly after any edit
+- Keep placeholder format consistent: `[Description of what to fill in]`
+- Omit optional fields/sections in examples when they do not apply (do not leave empty values), unless an explicit `None` / `Not applicable` / `No ...` statement is clearer and reduces incorrect assumptions
+
+### Don't
+- Rename template files — AI systems expect these exact filenames
+- Move template files out of the `templates/` directory
+- Add dependencies or build steps
+- Include real business data in template placeholders
+- Leave non-applicable optional fields empty in examples/deployed outputs (use omission or an explicit `None` / `Not applicable` / `No ...` statement instead)
+- Remove structural elements (section dividers, heading hierarchy)
+
+---
+
+## Maintainer Protections (Repository Settings)
+
+Maintainers should enable GitHub branch protection on `main` with:
+
+- Required pull request reviews
+- Required status checks (at minimum the repository validation workflow)
+- Dismiss stale approvals when new commits are pushed (recommended)
+- Restrict direct pushes to `main` (recommended)
+
+---
+
+## Code of Conduct
+
+Be respectful, constructive, and inclusive. This is a small project — keep discussions focused and helpful.
+
+---
+
+## Questions?
+
+Open an issue if something is unclear. There are no bad questions.

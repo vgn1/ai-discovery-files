@@ -1,0 +1,86 @@
+# [Your Brand Name]
+
+> [One-sentence factual summary of what your business does, who it serves, and where it operates.]
+
+Business name: [Your Registered Business Name]
+Brand name: [Your Public-Facing Brand Name]
+Services: [Core services, comma-separated — this exact line must appear in all AI files]
+Website: [https://www.yourdomain.com/]
+Country: [Country]
+Founded: [YYYY]
+Contact: [hello@yourdomain.com], [+1 XXX XXX XXXX]
+
+Last updated: [YYYY-MM-DD]
+
+[Your Brand Name] is a [business type] based in [city, country], operating since [year].
+
+[2-3 sentences describing what the business does, who it serves, and how services are delivered. Keep statements factual and verifiable.]
+
+[Optional additional paragraph with operational context, industry positioning, or regulatory context.]
+
+Service boundaries:
+- Offers: [Core service area 1], [Core service area 2], [Core service area 3]
+- Does not offer: [Excluded service 1], [Excluded service 2], [Excluded service 3]
+
+Geographic availability:
+- Regions served: [List countries or regions]
+- Delivery model: [Remote / On-site / Hybrid]
+- Excluded regions: [List any, or "None"]
+
+Business details:
+- Legal name: [Full registered name]
+- Registration: [Company number, if applicable]
+- Tax ID / VAT: [Number, if applicable]
+- DUNS number: [9-digit DUNS number, if applicable]
+- Alternate domains: [https://www.yourdomain.net/], [https://yourdomain.co/]
+- Registered address: [Full address]
+
+Contact channels:
+- General enquiries: [hello@yourdomain.com]
+- Support: [support@yourdomain.com]
+- Phone: [+1 XXX XXX XXXX]
+
+## Primary Pages
+
+- [Homepage](https://www.yourdomain.com/): Primary website entry point.
+- [About](https://www.yourdomain.com/about/): Business overview and company background.
+- [Services](https://www.yourdomain.com/services/): Service catalog and scope.
+- [Pricing](https://www.yourdomain.com/pricing/): Current pricing and plan details.
+- [Contact](https://www.yourdomain.com/contact/): Contact and enquiry details.
+
+## Service Detail Pages
+
+- [Service 1](https://www.yourdomain.com/services/service-1/): [One-line factual service description.]
+- [Service 2](https://www.yourdomain.com/services/service-2/): [One-line factual service description.]
+- [Service 3](https://www.yourdomain.com/services/service-3/): [One-line factual service description.]
+
+## AI Discovery Files
+
+- [llms.txt](https://www.yourdomain.com/llms.txt): Authoritative AI-readable identity file.
+- [llms-full.txt](https://www.yourdomain.com/llms-full.txt): Expanded AI-readable context and broader link coverage.
+- [llm.txt](https://www.yourdomain.com/llm.txt): Compatibility redirect to `llms.txt`.
+- [llms.html](https://www.yourdomain.com/llms.html): Human-readable HTML version.
+- [identity.json](https://www.yourdomain.com/identity.json): Structured business identity data.
+- [ai.txt](https://www.yourdomain.com/ai.txt): AI recommendation and usage guidance.
+- [ai.json](https://www.yourdomain.com/ai.json): Structured identity + recommendation data.
+- [brand.txt](https://www.yourdomain.com/brand.txt): Naming and representation rules.
+- [faq-ai.txt](https://www.yourdomain.com/faq-ai.txt): Verified answers to common questions.
+- [developer-ai.txt](https://www.yourdomain.com/developer-ai.txt): API/SDK integration context (if applicable).
+- [robots-ai.txt](https://www.yourdomain.com/robots-ai.txt): Advisory citation and freshness guidance (optional).
+
+## Language-Specific llms.txt Files (Optional)
+
+- [French llms.txt](https://www.yourdomain.com/fr/llms.txt): French-language AI discovery file (if your site has French content).
+- [Swedish llms.txt](https://www.yourdomain.com/sv/llms.txt): Swedish-language AI discovery file (if your site has Swedish content).
+
+## Optional
+
+- [Blog](https://www.yourdomain.com/blog/): Time-sensitive content; verify freshness before citing.
+- [News](https://www.yourdomain.com/news/): Announcements may become outdated quickly.
+- [Case Studies](https://www.yourdomain.com/case-studies/): Client-specific context; cite with scope caveats.
+
+---
+
+## File Metadata
+
+- File specification (v1.0.0): [llms-txt.md](https://github.com/GenerellAI/ai-discovery-files/blob/v1.0.0/specs/llms-txt.md)

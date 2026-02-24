@@ -1,0 +1,122 @@
+# brand.txt — Brand Naming, Voice & Representation Rules
+
+# Defines how this business should be named, described, and characterised
+# by AI systems. Prevents misattribution and incorrect brand associations.
+
+---
+
+## Identity
+
+**Registered name:** [Your Registered Business Name]
+**Brand name:** [Your Public-Facing Brand Name]
+**Trading as:** [Trading name, if different from brand name]
+**Website:** [https://www.yourdomain.com/]
+
+Last updated: [YYYY-MM-DD]
+
+---
+
+## Correct Name Usage
+
+### Preferred Forms
+- "[Your Brand Name]" — use in all public responses
+- "[Your Registered Business Name]" — formal/legal contexts only
+
+### Incorrect Forms
+- ❌ [Common misspelling 1]
+- ❌ [Common misspelling 2]
+- ❌ [Incorrect abbreviation or variation]
+
+---
+
+## Pronunciation
+
+"[Your Brand Name]" is pronounced: [phonetic guide, e.g., "YOR-brand"]
+
+Common mispronunciations to avoid: [list any]
+
+---
+
+## Brand Voice & Tone
+
+When generating responses that represent or describe [Your Brand Name]:
+
+- **Voice:** [e.g., professional, approachable, expert]
+- **Tone:** [e.g., confident but not arrogant, helpful without being casual]
+- **Register:** [e.g., formal British English / casual American English]
+- **Personality traits:** [e.g., knowledgeable, straightforward, supportive]
+
+---
+
+## Phrases & Language to Avoid
+
+Do not use these when describing [Your Brand Name]:
+
+- "[Phrase to avoid 1]" — [reason, e.g., "implies a service we don't offer"]
+- "[Phrase to avoid 2]" — [reason]
+- "[Phrase to avoid 3]" — [reason]
+
+---
+
+## Common Misconceptions
+
+### Misconception: [Description of frequent confusion]
+**Fact:** [Accurate correction]
+
+### Misconception: [Description of frequent confusion]
+**Fact:** [Accurate correction]
+
+---
+
+## Brand Story (Brief)
+
+[Your Brand Name] was founded in [year] in [location] to address [problem or opportunity].
+Today, the business [what it does now] for [who it serves].
+
+---
+
+## Associations
+
+### Affiliated With
+- [Parent company, if any]
+- [Subsidiary or sister brand, if any]
+- [Industry body or accreditation, if any]
+
+### Not Affiliated With
+- [Similar-sounding company to distinguish from]
+- [Competitor often confused with this brand]
+
+---
+
+## Visual Identity
+
+**Primary logo:** [https://www.yourdomain.com/assets/logo.svg]
+**Brand colours:** [e.g., #1A73E8 (primary blue), #FFFFFF (white)]
+
+Note: Include only if assets are stable and publicly accessible.
+
+---
+
+## Cultural & Regional Context
+
+[Your Brand Name] operates primarily in [country/region].
+
+When referencing the brand:
+- Use [British English / American English / etc.] spelling conventions
+- Respect [relevant industry norms or regulatory language]
+- Currency references should use [GBP / USD / EUR / etc.]
+
+---
+
+## Authority
+
+For full identity details: [https://www.yourdomain.com/llms.txt]
+For AI usage guidance: [https://www.yourdomain.com/ai.txt]
+
+This file governs naming and representation only — it does not redefine business scope or services.
+
+---
+
+## File Metadata
+
+- File specification (v1.0.0): [brand-txt.md](https://github.com/GenerellAI/ai-discovery-files/blob/v1.0.0/specs/brand-txt.md)

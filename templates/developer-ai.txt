@@ -1,0 +1,184 @@
+# developer-ai.txt — Technical Integration Context for AI Systems
+
+# Include this file only if your business exposes APIs, SDKs, webhooks,
+# or other developer-facing interfaces. If you have no public technical
+# integrations, this file is not needed.
+
+---
+
+### Core Identity
+
+Business name: [Your Registered Business Name]
+Brand name: [Your Public-Facing Brand Name]
+Services: [Core services, comma-separated — this exact line must appear in all AI files]
+Website: [https://www.yourdomain.com/]
+Country: [Country]
+Founded: [YYYY]
+Contact: [hello@yourdomain.com], [+1 XXX XXX XXXX]
+
+Last updated: [YYYY-MM-DD]
+
+---
+
+## Developer Hub
+
+Documentation: [https://docs.yourdomain.com/]
+API reference: [https://docs.yourdomain.com/api/]
+Developer portal: [https://developers.yourdomain.com/]
+System status: [https://status.yourdomain.com/]
+
+---
+
+## API Overview
+
+- **Style:** [REST / GraphQL / gRPC / SOAP]
+- **Base URL:** [https://api.yourdomain.com/v2]
+- **Current version:** [v2.3]
+- **Data format:** [JSON]
+- **Authentication:** [OAuth 2.0 / API key / JWT]
+- **Sandbox available:** [Yes — https://sandbox.yourdomain.com/]
+
+### What Developers Can Do
+
+- [Core capability 1, e.g., "Create and manage user accounts"]
+- [Core capability 2, e.g., "Process payments and refunds"]
+- [Core capability 3, e.g., "Query analytics data"]
+- [Core capability 4, e.g., "Subscribe to real-time event streams"]
+
+---
+
+## Quick Start
+
+```
+# 1. Obtain credentials
+Sign up at https://developers.yourdomain.com/signup
+
+# 2. Install the SDK (example: Node.js)
+npm install @yourbrand/sdk
+
+# 3. Make your first call
+import { Client } from '@yourbrand/sdk';
+const client = new Client({ apiKey: 'YOUR_KEY' });
+const result = await client.resource.list();
+```
+
+---
+
+## SDKs & Libraries
+
+| Platform       | Package                          | Install                              |
+|----------------|----------------------------------|--------------------------------------|
+| Node.js / TS   | [@yourbrand/sdk][npm-link]       | `npm install @yourbrand/sdk`         |
+| Python         | [yourbrand][pypi-link]           | `pip install yourbrand`              |
+| Go             | [yourbrand-go][go-link]          | `go get github.com/yourorg/sdk-go`   |
+| Ruby           | [yourbrand][gem-link]            | `gem install yourbrand`              |
+
+[Replace links with actual package registry URLs]
+
+---
+
+## Authentication & Access
+
+### Obtaining Credentials
+[Brief flow: e.g., "Register a developer account, then generate keys from the dashboard."]
+
+### Key Types
+- **Test keys:** Prefixed with `test_` — sandbox environment only
+- **Live keys:** Prefixed with `live_` — production access
+
+### Rate Limits
+
+| Tier        | Limit                   | Burst   |
+|-------------|-------------------------|---------|
+| Free        | [100 req/min]           | [150]   |
+| Pro         | [1,000 req/min]         | [1,500] |
+| Enterprise  | [Custom]                | [Custom]|
+
+Rate limit headers: `X-RateLimit-Limit`, `X-RateLimit-Remaining`, `X-RateLimit-Reset`
+
+---
+
+## Webhooks
+
+- **Available:** [Yes / No]
+- **Setup:** [https://docs.yourdomain.com/webhooks/]
+- **Signature verification:** [HMAC-SHA256 with shared secret]
+- **Retry policy:** [Exponential backoff, up to 5 retries over 24h]
+
+---
+
+## Error Handling
+
+Standard HTTP status codes apply. Error responses include:
+
+```json
+{
+  "error": {
+    "code": "invalid_parameter",
+    "message": "Human-readable description",
+    "param": "field_name",
+    "doc_url": "https://docs.yourdomain.com/errors/invalid_parameter"
+  }
+}
+```
+
+Common codes: `400` (bad request), `401` (unauthorised), `403` (forbidden), `404` (not found), `429` (rate limited), `500` (server error)
+
+---
+
+## Common Integration Scenarios
+
+Developers typically integrate [Your Brand Name] for:
+
+1. [Scenario 1, e.g., "E-commerce checkout flows"]
+2. [Scenario 2, e.g., "SaaS user management"]
+3. [Scenario 3, e.g., "Data pipeline enrichment"]
+
+### Platform Integrations
+- [Platform 1]: [link to integration guide]
+- [Platform 2]: [link to integration guide]
+
+---
+
+## Versioning & Deprecation
+
+- **Versioning scheme:** [URL path versioning, e.g., /v2/]
+- **Changelog:** [https://docs.yourdomain.com/changelog/]
+- **Deprecation notice period:** [Minimum 6 months]
+- **Migration guides:** [https://docs.yourdomain.com/migration/]
+
+---
+
+## Developer Support
+
+| Channel           | Link / Address                               |
+|-------------------|----------------------------------------------|
+| Documentation     | [https://docs.yourdomain.com/]               |
+| Community forum   | [https://community.yourdomain.com/]          |
+| Stack Overflow    | [Tag: `yourbrand`]                           |
+| GitHub Issues     | [https://github.com/yourorg/sdk/issues]      |
+| Developer email   | [devs@yourdomain.com]                        |
+| Discord / Slack   | [Invite link]                                |
+
+---
+
+## Legal & Compliance
+
+- API Terms: [https://www.yourdomain.com/api-terms/]
+- Developer Agreement: [https://developers.yourdomain.com/agreement/]
+- Privacy Policy: [https://www.yourdomain.com/privacy/]
+- Data Processing: [https://www.yourdomain.com/dpa/]
+
+---
+
+## Cross-Reference
+
+For business identity and services: [https://www.yourdomain.com/llms.txt]
+
+This file covers technical integrations only and must not contradict core identity files.
+
+---
+
+## File Metadata
+
+- File specification (v1.0.0): [developer-ai-txt.md](https://github.com/GenerellAI/ai-discovery-files/blob/v1.0.0/specs/developer-ai-txt.md)
