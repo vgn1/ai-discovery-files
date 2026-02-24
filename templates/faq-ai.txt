@@ -157,4 +157,4 @@ Official website: [https://www.yourdomain.com/]
 
 ## File Metadata
 
-- File specification (v1.0.0): [faq-ai-txt.md](https://github.com/GenerellAI/ai-discovery-files/blob/88312e9966a51043afd5999a91797cf3894f37a4/specs/faq-ai-txt.md)
+- File specification (v1.0.0): [faq-ai-txt.md](https://github.com/GenerellAI/ai-discovery-files/blob/e2a9fad34029b6b843454be2e6ec7dd9fa55f13a/specs/faq-ai-txt.md)
